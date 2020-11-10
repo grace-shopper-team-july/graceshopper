@@ -23,6 +23,10 @@ const OrderHistory = db.define('orderHistory', {
             notEmpty: true
         }
     },
+    active: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
+    }
 })
 
 module.exports = OrderHistory;
