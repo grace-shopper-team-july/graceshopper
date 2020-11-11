@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// do we need a separate table for order history? Or can we combine it with Orders?
 const OrderHistory = db.define('orderHistory', {
     price: {
         type: Sequelize.DECIMAL(10,2),
