@@ -110,6 +110,42 @@ const seedProducts = [
         qoh: 20
     },
     {
+        name: 'pup-tux',
+        description: 'This East Side Collection "Yappily Ever After" Groom Tuxedo for dogs makes it easy to include pets in the wedding-day fun. White satin shirt is paired with a double-breasted tux coat with tails. A sharp-looking suit for the dog of the hour. Comfortable, easy-fit design with velcro closures and a high-cut belly.',
+        price: 20.80,
+        imageUrl: 'data:image/jpeg;base64,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',
+        qoh: 35
+    },
+    {
+        name: 'santas-lil-pupper',
+        description: 'Dress up your pupp as Santas helper this Holiday season! Great for holiday cards or pictures.',
+        price: 19.45,
+        imageUrl: 'https://cdn11.bigcommerce.com/s-dppmv5/images/stencil/608x608/products/42578/59648/Elf_Pet-Dog_costume_PupRwear.550__74279.1537995369.jpg?c=2',
+        qoh: 47
+    },
+    {
+        name: 'spider-pup',
+        description: 'Transform your dog into a the biggest, friendliest spider this Halloween season. With a set of 4 extra legs and 4 extra eyes, your pup is sure to put on a scare!',
+        price: 24.99,
+        imageUrl: 'https://images.halloweencostumes.com/products/39940/1-1/spider-pup-costume.jpg',
+        qoh: 7
+    },
+    {
+        name: 'pj-pup',
+        description: 'Keep your puppy warm and cozy during its peaceful sleep in this adorable set of piggy-patterned jammies!',
+        price: 13.59,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/71Xf-s%2BdHHL._AC_SL1500_.jpg',
+        qoh: 21
+    },
+    {
+        name: 'puppy-bow',
+        description: 'Dress up your pup with these cute bows. Buy one for everyday of the week!',
+        price: 6.00,
+        imageUrl: 'https://i.etsystatic.com/20527859/r/il/3fdaad/2005158613/il_794xN.2005158613_p7zq.jpg',
+        qoh: 3
+    },
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    {
         name: 'cat-ears',
         description: `Cray man bun skateboard helvetica marfa post-ironic +1 sustainable. Small batch you probably haven't heard of them blue bottle, +1 cornhole iceland food truck. Air plant viral taiyaki sriracha pitchfork single-origin coffee cardigan pour-over williamsburg cornhole bitters brooklyn tattooed lomo sustainable. Tilde cronut roof party, truffaut craft beer knausgaard celiac sustainable crucifix pitchfork butcher pork belly raw denim. Austin mixtape cronut, yr keytar fanny pack cloud bread.`,
         price: 29.99,
@@ -180,6 +216,42 @@ const seedProducts = [
         qoh: 20
     },
     {
+        name: 'cat-coveralls',
+        description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
+        price: 36.98,
+        imageUrl: 'https://i.pinimg.com/originals/99/32/21/9932215264fd7afa45b499acdb92aa4c.jpg',
+        qoh: 52
+    },
+    {
+        name: 'christmas-cat',
+        description: 'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
+        price: 31.90,
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQrmFuBLmxYsr0MNYcErxOwVVZvESiPzLXf0Q&usqp=CAU',
+        qoh: 78
+    },
+    {
+        name: 'kitty-collar',
+        description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+        price: 45.32,
+        imageUrl: 'https://ae01.alicdn.com/kf/H44ef5e09863c4d5c8e5d63f1387dc8a4A/Pet-ID-Collar-Shining-Diamond-Rhinestone-Cat-Collar-Puppy-Baby-Dog-Cat-Collar-Paw-Pattern-Strap.jpg',
+        qoh: 23
+    },
+    {
+        name: 'pizza-cat',
+        description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        price: 24.77,
+        imageUrl: 'https://i.pinimg.com/originals/c5/cd/ed/c5cdedae6551f9124241e886dfebdc7a.jpg',
+        qoh: 4
+    },
+    {
+        name: 'rainy-cat-coat',
+        description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
+        price: 12.99,
+        imageUrl: 'https://i.pinimg.com/originals/a4/3c/cf/a43ccfe4145b1e12480fc0b04e2624c8.jpg',
+        qoh: 18
+    },
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    {
         name: 'senor-hog',
         description: `Letterpress slow-carb tousled artisan, art party vegan bushwick palo santo cray organic taxidermy coloring book +1 authentic chillwave. Kickstarter schlitz letterpress keffiyeh. Ugh fixie disrupt brooklyn taiyaki, hashtag taxidermy tofu shoreditch post-ironic keytar try-hard. Flexitarian kogi lo-fi, heirloom jean shorts umami scenester sriracha you probably haven't heard of them.`,
         price: 39.99,
@@ -214,6 +286,42 @@ const seedProducts = [
         imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2F6MV9E0cRXrEnMV2k8tUBgMWK6P6YGBE2Vgn-fRVAQS4.jpg%3Fauto%3Dwebp%26s%3Dc4961ed477c9a7d7c207c58f768bbf6de026a736&f=1&nofb=1',
         qoh: 10
     },
+    {
+        name: 'hedgy-raincoat',
+        description: 'Vim habeo nostro iuvaret ut, sed ne partem quaeque, quod intellegat reformidans cum an. Sed solet cetero graecis at, corrumpit argumentum ne vim. Sit ex nibh sententiae, nam te dolorum fierent vituperata, audiam veritus philosophia pri ex. Cu fabulas voluptaria ius, eu nam enim tota.',
+        price: 8.99,
+        imageUrl: 'https://i.pinimg.com/474x/9d/7d/c7/9d7dc74a47d562ce3ff819419bb4f208--raincoat-hedgehogs.jpg',
+        qoh: 88
+    },
+    {
+        name: 'hedgy-hat',
+        description: 'Et quidam graeco pro, vix ex repudiare expetendis. Cu mentitum suscipit iudicabit eam, ei cum decore iudicabit reformidans. Qui expetenda expetendis ut.',
+        price: 3.45,
+        imageUrl: 'https://i.pinimg.com/originals/32/70/5d/32705dc6753be644f4bdc831d659c7ce.jpg',
+        qoh: 55
+    },
+    {
+        name: 'bumble-hog',
+        description: 'Ut eum utroque postulant, eu legimus lucilius sea, munere postea ocurreret ad nam. Ceteros tractatos ei mel, cu antiopam inimicus evertitur pri, sale salutatus voluptatum id nam.',
+        price: 18.90,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51JOjHNMNPL._AC_SY450_.jpg',
+        qoh: 43
+    },
+    {
+        name: 'hedgehog-socks',
+        description: 'Bonorum detracto mei et, mei justo ornatus ancillae ex, cu eam nihil perfecto hendrerit. At solum omnes salutatus nam. Et quidam graeco pro, vix ex repudiare expetendis. Cu mentitum suscipit iudicabit eam, ei cum decore iudicabit reformidans. ',
+        price: 0,
+        imageUrl: 'https://i.redd.it/503deuckunl01.jpg',
+        qoh: 12
+    },
+    {
+        name: 'hedge-tux',
+        description: 'Sit ex nibh sententiae, nam te dolorum fierent vituperata, audiam veritus philosophia pri ex. Cu fabulas voluptaria ius, eu nam enim tota. Eum ignota timeam senserit id, duo eu noster commodo diceret, at meis munere ornatus pri.',
+        price: 37.23,
+        imageUrl: 'https://i.pinimg.com/originals/2c/93/d7/2c93d763d2efe2a04bb50ce6cab71945.jpg',
+        qoh: 4
+    },
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     {
         name: 'turkey-turtle',
         description: `Palo santo plaid listicle, street art hoodie pug vinyl yr biodiesel vape artisan fanny pack pitchfork seitan. Gastropub gentrify squid af, biodiesel small batch blog hot chicken. Stumptown biodiesel vinyl, raw denim gastropub tilde kickstarter fingerstache yr air plant. IPhone sriracha chillwave, twee mlkshk yr next level vaporware thundercats actually viral. Lyft mustache adaptogen, plaid kale chips sartorial 8-bit. Gochujang trust fund normcore chillwave bitters. Roof party vice green juice vexillologist, af copper mug tousled portland YOLO kitsch kale chips gastropub +1 mlkshk.`,
@@ -257,6 +365,42 @@ const seedProducts = [
         qoh: 10
     },
     {
+        name: 'ssstylish-hat',
+        description: 'quod intellegat reformidans cum an. Sed solet cetero graecis at, corrumpit argumentum ne vim. Sit ex nibh sententiae, nam te dolorum fierent vituperata, audiam veritus philosophia pri ex',
+        price: 7.98,
+        imageUrl: 'https://www.thesun.co.uk/wp-content/uploads/2019/08/NINTCHDBPICT000516641595-e1567035622726.jpg',
+        qoh: 42
+    },
+    {
+        name: 'viking-snake',
+        description: 'Platonem repudiare his no, nulla tempor graecis ne vis. Impetus debitis posidonium duo ne, partiendo neglegentur usu in, ut esse quaerendum cum. Ullum senserit an mei, nam idque laoreet id. ',
+        price: 11.00,
+        imageUrl: 'https://i.pinimg.com/originals/72/cd/13/72cd1337c035cf95e9151a6b76397965.jpg',
+        qoh: 89
+    },
+    {
+        name: 'party-snake',
+        description: 'Eu qui accumsan gubergren adipiscing, at movet dolores mediocritatem eam, mei timeam mediocrem ne. Sed erant nominavi honestatis eu. Mei natum gloriatur temporibus id, vel an invenire consulatu, nam in saepe malorum eloquentiam.',
+        price: 2.66,
+        imageUrl: 'https://metro.co.uk/wp-content/uploads/2015/11/party-snake.jpg?quality=90&strip=all&w=1200&h=630&crop=1',
+        qoh: 1
+    },
+    {
+        name: 'santa-snake',
+        description: 'Movet soluta meliore eos ut. Ei graeco aperiri constituam sed, id sea cibo ponderum accommodare. At dicat petentium cum. Ut tacimates deseruisse has. Ius ea noluisse prodesset. His choro tantas incorrupte at.',
+        price: 15.10,
+        imageUrl: 'https://ball-pythons.net/forums/cache2.php?img=https://images.tapatalk-cdn.com/15/04/18/3e3275637baf7a67bedd62a85170ab9a.jpg',
+        qoh: 122
+    },
+    {
+        name: 'sweater-snake',
+        description: 'Qui ignota dicunt in, eam ei nonumy commune scriptorem. Te vel novum latine. Ne munere aperiam ius, pro soluta aliquam sadipscing ut, vix nullam soluta te. Has et brute veritus molestie. Urbanitas liberavisse vix et.',
+        price: 14.20,
+        imageUrl: 'https://64.media.tumblr.com/0cbbf1a898ab8b666b3e48ad930bbe4e/tumblr_mxuzcr51Vd1rbiizto1_1280.jpg',
+        qoh: 96
+    },
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    {
         name: 'ferret-pumpkin',
         description: `Hoodie photo booth seitan, succulents meditation pour-over portland actually wayfarers crucifix taxidermy. Literally bicycle rights plaid, lo-fi typewriter brunch small batch migas authentic shaman snackwave forage. Squid shaman austin scenester slow-carb green juice thundercats unicorn actually taiyaki mustache hexagon poke af iPhone. Tumeric organic flannel jianbing wolf.`,
         price: 29.99,
@@ -290,6 +434,41 @@ const seedProducts = [
         price: 29.99,
         imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F23%2F56%2F29%2F23562962c470c38da8382ba87e204a41--animals-in-costumes-pet-costumes.jpg&f=1&nofb=1',
         qoh: 15
+    },
+    {
+        name: 'jester-ferret',
+        description: 'In veritus delicata intellegebat est. Autem clita fuisset in mel, has ut illud saepe interesset. An per choro persius, in ius malis dicant, et graeci adipisci evertitur sea. Nam ut malis aliquid, sit te clita equidem philosophia.',
+        price: 6.96,
+        imageUrl: 'https://s7d5.scene7.com/is/image/PetsUnited/T651160?wid=328&hei=328',
+        qoh: 83
+    },
+    {
+        name: 'frenchie-ferret',
+        description: 'Vix nusquam moderatius cu, eos ei fabulas dignissim. Vis quas quaestio id, in audire maluisset duo, nec an eirmod nostrud constituto. Ferri disputationi concludaturque ius ei, agam viris maiorum cum an. Te mei idque fierent, ex modo impedit nostrum has. Qui ad nulla philosophia.',
+        price: 5.25,
+        imageUrl: 'https://i.redd.it/e1irn17a0w821.jpg',
+        qoh: 44
+    },
+    {
+        name: 'fourth-of-july-ferret',
+        description: 'Ius id prima tibique voluptua, ne vivendo elaboraret his. Eum ut ridens quaestio. Wisi iisque sit ut, ius cetero equidem accusamus an. Nec esse movet menandri cu, ex quo debet offendit consulatu, nam cu equidem accusamus.',
+        price: 12.70,
+        imageUrl: 'https://s7d5.scene7.com/is/image/PetsUnited/T650838?wid=328&hei=328',
+        qoh: 10
+    },
+    {
+        name: 'sweater-ferret',
+        description: 'Facer malorum noluisse eam ei, dicta elaboraret eos id. Eos no zril verear hendrerit. Nec mnesarchum necessitatibus ei, mei ei mutat senserit consectetuer. Sit agam fierent at, cum singulis pericula id.',
+        price: 36.99,
+        imageUrl: 'https://www.pikpng.com/pngl/m/153-1531264_free-png-images-cute-ferrets-in-clothes-clipart.png',
+        qoh: 31
+    },
+    {
+        name: 'ferret-hoodie',
+        description: ' Elit ludus praesent ad sit, eum eu abhorreant appellantur, ad quo suas congue intellegat. Ex has populo fabulas adipisci, ad postea aeterno delicatissimi per, ex quidam lobortis nec. Ius aperiam facilisi ut, elit oportere eu has. Ius no propriae sapientem. Mei legere utamur ut.',
+        price: 23.47,
+        imageUrl: 'https://allpetnews.com/wp-content/uploads/2011/08/Ferret-Clothes.jpg',
+        qoh: 67
     },
 
 
