@@ -2,25 +2,25 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Order = db.define('order', {
-    payment: {
-        type: Sequelize.STRING
+  payment: {
+    type: Sequelize.STRING
+  },
+  total: {
+    type: Sequelize.DECIMAL(10, 2),
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      min: 0
     },
-    total: {
-        type: Sequelize.DECIMAL(10,2),
-        allowNull: false,
-        validate: {
-            notEmpty: true
-        }
-    },
-    date: {
-        type: Sequelize.DATE
-    },
-    sessionId: {
-        type: Sequelize.STRING
-    },
-    token: {
-        type: Sequelize.STRING
-    }
+    defaultValue: 0
+  },
+  date: {
+    type: Sequelize.DATE
+  },
+  active: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true
+  }
 })
 
-module.exports = Order;
+module.exports = Order

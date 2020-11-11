@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// Should quantity on hand get a minimum value?
 const Product = db.define('product', {
   sku: {
     type: Sequelize.STRING
@@ -32,7 +33,8 @@ const Product = db.define('product', {
     type: Sequelize.INTEGER,
     allowNull: false,
     validate: {
-      notEmpty: true
+      notEmpty: true,
+      min: 0
     },
     defaultValue: 0
   },
