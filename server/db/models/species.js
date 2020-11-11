@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize')
+/*const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Species = db.define('species', {
@@ -7,4 +7,4 @@ const Species = db.define('species', {
     }
 })
 
-module.exports = Species;
+module.exports = Species; */

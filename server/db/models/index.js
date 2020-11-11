@@ -1,10 +1,10 @@
 const User = require('./user')
-const Species = require('./species')
+// const Species = require('./species')
 const Order = require('./order')
 const OrderHistory = require('./orderHistory')
 // const Cart = require('./cart')
 // const CartItem = require('./cartItem')
-const Category = require('./category')
+// const Category = require('./category')
 const Product = require('./products')
 
 
@@ -24,11 +24,11 @@ Order.hasMany(OrderHistory)
 OrderHistory.belongsTo(Product)
 Product.hasMany(OrderHistory)
 
-Product.belongsTo(Category)
-Category.hasMany(Product)
+// Product.belongsTo(Category)
+// Category.hasMany(Product)
 
-Product.belongsTo(Species)
-Species.hasMany(Product)
+// Product.belongsTo(Species)
+// Species.hasMany(Product)
 
 // Cart.belongsTo(User)
 // User.hasMany(Cart)
@@ -47,11 +47,11 @@ Species.hasMany(Product)
  */
 module.exports = {
   User,
-  Species,
+  // Species,
   Order,
   OrderHistory,
   // Cart,
   // CartItem,
-  Category,
+  // Category,
   Product
 }

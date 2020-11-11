@@ -38,6 +38,12 @@ const Product = db.define('product', {
     shop: {
         type: Sequelize.BOOLEAN,
         defaultValue: true
+    },
+    species: {
+        type: Sequelize.STRING,
+    },
+    category: {
+        type: Sequelize.STRING
     }
 })
 
