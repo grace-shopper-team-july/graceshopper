@@ -1,5 +1,5 @@
 const db = require('./db/db')
-const {User, Product, Order, OrderHistory} = require('./db/models/index')
+const {User, Product, Order, OrderLineItem} = require('./db/models/index')
 
 /*const seedSpecies = [
     {
