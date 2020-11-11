@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-// could our total have a default value?
-// talk me through the sessionId and token
+// Could our total have a default value? And a minimum of 0?
+// Talk me through the sessionId and token - we can safely remove these columns and deal with persistant guest storage during tier 2
 const Order = db.define('order', {
     payment: {
         type: Sequelize.STRING

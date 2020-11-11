@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-// should quantity on hand get a minimum value?
+// Should quantity on hand get a minimum value?
 const Product = db.define('product', {
   sku: {
     type: Sequelize.STRING

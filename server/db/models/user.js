@@ -2,7 +2,8 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-// how do we handle admin users?
+// How do we handle admin users?
+// add another column, be careful with the default value
 const User = db.define('user', {
   firstName: {
     type: Sequelize.STRING,

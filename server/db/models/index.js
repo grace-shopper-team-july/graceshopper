@@ -18,6 +18,9 @@ const Product = require('./products')
 Order.belongsTo(User)
 User.hasMany(Order)
 
+// reconfigure the below associations and create many-to-many
+// * check the docs * 
+
 OrderHistory.belongsTo(Order)
 Order.hasMany(OrderHistory)
 
