@@ -12,7 +12,7 @@ const getSingleProduct = product => {
 }
 
 //Thunk
-const fetchSingleProduct = id => {
+export const fetchSingleProduct = id => {
   return async dispatch => {
     try {
       const {data} = await axios.get(`api/products/${id}`)
@@ -37,3 +37,5 @@ const singleProductReducer = (state = initialState, action) => {
       return state
   }
 }
+
+export default singleProductReducer
