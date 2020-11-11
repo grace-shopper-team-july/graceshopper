@@ -4,7 +4,11 @@ module.exports = router
 
 router.get('/:productId', async (req, res, next) => {
   try {
-    let singleProduct = await Product.findById(req.params.productId)
+    let singleProduct = await Product.findOne({
+      where: {
+        id: req.params.productId
+      }
+    })
     res.send(singleProduct)
   } catch (err) {
     next(err)
