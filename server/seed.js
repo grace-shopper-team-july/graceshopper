@@ -144,26 +144,61 @@ const seedProducts = [
         imageUrl: 'https://i.etsystatic.com/20527859/r/il/3fdaad/2005158613/il_794xN.2005158613_p7zq.jpg',
         qoh: 3
     },
+    {
+        name: 'puppy-dog',
+        description: `Single-origin coffee knausgaard migas fashion axe venmo. Godard readymade disrupt sartorial bespoke, cold-pressed tofu mixtape hexagon letterpress four dollar toast flexitarian. Woke lomo offal, chicharrones williamsburg iPhone pickled. Copper mug woke swag, vice typewriter iPhone chambray air plant +1 letterpress.`,
+        price: 24.99,
+        imageUrl: 'https://lia-griffith-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2018/10/Hot_Dog_Halloween_Costume_2.jpg',
+        qoh: 10
+    },
+    {
+        name: 'puppy-taco',
+        description: `lumbersexual fixie mumblecore glossier vice scenester food truck vaporware pabst 8-bit freegan viral mustache. sartorial pitchfork lomo, succulents adaptogen enamel pin austin yuccie iphone scenester ramps shabby chic photo booth. cred jianbing biodiesel, craft beer synth fanny pack man braid lomo paleo mlkshk. twee umami thundercats, kickstarter etsy adaptogen bespoke pour-over trust fund shabby chic photo booth lomo viral. health goth vice whatever cornhole meggings jianbing truffaut pork belly irony brooklyn. selvage disrupt post-ironic kinfolk bushwick chicharrones pinterest mumblecore truffaut keffiyeh hexagon.`,
+        price: 19.99,
+        imageUrl: 'https://i.pinimg.com/originals/ee/1b/e4/ee1be4ceb63a559b0987231bea4b9aaa.jpg',
+        qoh: 9
+    },
+    {
+        name: 'puppy-gingerbread',
+        description: `salvia banjo disrupt etsy diy tbh. bicycle rights wolf post-ironic copper mug. vaporware taiyaki normcore hella drinking vinegar adaptogen palo santo snackwave pug green juice edison bulb vegan church-key butcher. portland gluten-free humblebrag hell of snackwave +1 iceland air plant mustache vape hoodie pbr&b put a bird on it crucifix ethical. plaid post-ironic squid, vhs cardigan xoxo tumeric master cleanse next level wayfarers swag succulents tattooed ethical aesthetic. aesthetic flexitarian freegan, jean shorts tattooed blog authentic.`,
+        price: 15.99,
+        imageUrl: 'https://img.chewy.com/is/image/catalog/132212_MAIN._AC_SL1500_V1540326487_.jpg',
+        qoh: 4
+    },
+    {
+        name: 'doggy-wellies',
+        description: `actually crucifix narwhal roof party palo santo kombucha portland 3 wolf moon 8-bit swag artisan unicorn. plaid blue bottle lyft next level. blog put a bird on it marfa tattooed pickled. mumblecore man braid occupy pok pok forage. echo park tote bag put a bird on it, taxidermy butcher bitters irony air plant. pinterest vaporware farm-to-table seitan hot chicken xoxo.`,
+        price: 10.99,
+        imageUrl: 'https://cdn.shopify.com/s/files/1/1811/2867/products/36_cf404a44-8451-4fff-81cc-11c25db0645c_1800x1800.png?v=1581350346',
+        qoh: 15
+    },
+    {
+        name: 'canada-woof',
+        description: `cray man bun skateboard helvetica marfa post-ironic +1 sustainable. small batch you probably haven't heard of them blue bottle, +1 cornhole iceland food truck. air plant viral taiyaki sriracha pitchfork single-origin coffee cardigan pour-over williamsburg cornhole bitters brooklyn tattooed lomo sustainable. tilde cronut roof party, truffaut craft beer knausgaard celiac sustainable crucifix pitchfork butcher pork belly raw denim. austin mixtape cronut, yr keytar fanny pack cloud bread.`,
+        price: 59.99,
+        imageUrl: 'https://www.supremepawsupply.com/wp-content/uploads/2020/01/products-e40931e2.jpg',
+        qoh: 5
+    },
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     {
         name: 'cat-ears',
-        description: `Cray man bun skateboard helvetica marfa post-ironic +1 sustainable. Small batch you probably haven't heard of them blue bottle, +1 cornhole iceland food truck. Air plant viral taiyaki sriracha pitchfork single-origin coffee cardigan pour-over williamsburg cornhole bitters brooklyn tattooed lomo sustainable. Tilde cronut roof party, truffaut craft beer knausgaard celiac sustainable crucifix pitchfork butcher pork belly raw denim. Austin mixtape cronut, yr keytar fanny pack cloud bread.`,
+        description: `cray man bun skateboard helvetica marfa post-ironic +1 sustainable. small batch you probably haven't heard of them blue bottle, +1 cornhole iceland food truck. air plant viral taiyaki sriracha pitchfork single-origin coffee cardigan pour-over williamsburg cornhole bitters brooklyn tattooed lomo sustainable. tilde cronut roof party, truffaut craft beer knausgaard celiac sustainable crucifix pitchfork butcher pork belly raw denim. austin mixtape cronut, yr keytar fanny pack cloud bread.`,
         price: 29.99,
         imageUrl: 'https://ae01.alicdn.com/kf/HTB1mFWabKLM8KJjSZFqq6y7.FXaz/Cute-Cat-Clothes-Easter-Rabbit-Animals-Clothing-Costume-Fleece-Warm-Cat-Clothes-Coat-Jackets-Outfit-for.jpg',
         qoh: 30
     },
     {
         name: 'pizza-kitty',
-        description: `Actually crucifix narwhal roof party palo santo kombucha portland 3 wolf moon 8-bit swag artisan unicorn. Plaid blue bottle lyft next level. Blog put a bird on it marfa tattooed pickled. Mumblecore man braid occupy pok pok forage. Echo park tote bag put a bird on it, taxidermy butcher bitters irony air plant. Pinterest vaporware farm-to-table seitan hot chicken XOXO.`,
+        description: `actually crucifix narwhal roof party palo santo kombucha portland 3 wolf moon 8-bit swag artisan unicorn. plaid blue bottle lyft next level. blog put a bird on it marfa tattooed pickled. mumblecore man braid occupy pok pok forage. echo park tote bag put a bird on it, taxidermy butcher bitters irony air plant. pinterest vaporware farm-to-table seitan hot chicken xoxo.`,
         price: 19.99,
         imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg0.etsystatic.com%2F125%2F1%2F10706456%2Fil_570xN.1022817008_31jv.jpg&f=1&nofb=1',
         qoh: 10
     },
     {
         name: 'tuxedo-cat',
-        description: `Salvia banjo disrupt etsy DIY tbh. Bicycle rights wolf post-ironic copper mug. Vaporware taiyaki normcore hella drinking vinegar adaptogen palo santo snackwave pug green juice edison bulb vegan church-key butcher. Portland gluten-free humblebrag hell of snackwave +1 iceland air plant mustache vape hoodie PBR&B put a bird on it crucifix ethical. Plaid post-ironic squid, VHS cardigan XOXO tumeric master cleanse next level wayfarers swag succulents tattooed ethical aesthetic. Aesthetic flexitarian freegan, jean shorts tattooed blog authentic.`,
+        description: `salvia banjo disrupt etsy diy tbh. bicycle rights wolf post-ironic copper mug. vaporware taiyaki normcore hella drinking vinegar adaptogen palo santo snackwave pug green juice edison bulb vegan church-key butcher. portland gluten-free humblebrag hell of snackwave +1 iceland air plant mustache vape hoodie pbr&b put a bird on it crucifix ethical. plaid post-ironic squid, vhs cardigan xoxo tumeric master cleanse next level wayfarers swag succulents tattooed ethical aesthetic. aesthetic flexitarian freegan, jean shorts tattooed blog authentic.`,
         price: 29.99,
-        imageUrl: 'https://www.outfittrends.com/wp-content/uploads/2018/03/Funny-Cat-Outfits10.jpg',
+        imageurl: 'https://www.outfittrends.com/wp-content/uploads/2018/03/funny-cat-outfits10.jpg',
         qoh: 20
     },
     {
@@ -175,7 +210,7 @@ const seedProducts = [
     },
     {
         name: 'cat-burger',
-        description: `Lumbersexual fixie mumblecore glossier vice scenester food truck vaporware pabst 8-bit freegan viral mustache. Sartorial pitchfork lomo, succulents adaptogen enamel pin austin yuccie iPhone scenester ramps shabby chic photo booth. Cred jianbing biodiesel, craft beer synth fanny pack man braid lomo paleo mlkshk. Twee umami thundercats, kickstarter etsy adaptogen bespoke pour-over trust fund shabby chic photo booth lomo viral. Health goth vice whatever cornhole meggings jianbing truffaut pork belly irony brooklyn. Selvage disrupt post-ironic kinfolk bushwick chicharrones pinterest mumblecore truffaut keffiyeh hexagon.`,
+        description: `lumbersexual fixie mumblecore glossier vice scenester food truck vaporware pabst 8-bit freegan viral mustache. sartorial pitchfork lomo, succulents adaptogen enamel pin austin yuccie iphone scenester ramps shabby chic photo booth. cred jianbing biodiesel, craft beer synth fanny pack man braid lomo paleo mlkshk. twee umami thundercats, kickstarter etsy adaptogen bespoke pour-over trust fund shabby chic photo booth lomo viral. health goth vice whatever cornhole meggings jianbing truffaut pork belly irony brooklyn. selvage disrupt post-ironic kinfolk bushwick chicharrones pinterest mumblecore truffaut keffiyeh hexagon.`,
         price: 29.99,
         imageUrl: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F3.bp.blogspot.com%2F-oPUUI0YqsdQ%2FUpShG9uyTUI%2FAAAAAAAAFVs%2FSPEwflew-GQ%2Fs1600%2FFunny-Halloween-Costumes-for-Cats.jpg&f=1&nofb=1',
         qoh: 15
@@ -250,6 +285,47 @@ const seedProducts = [
         imageUrl: 'https://i.pinimg.com/originals/a4/3c/cf/a43ccfe4145b1e12480fc0b04e2624c8.jpg',
         qoh: 18
     },
+    {
+        name: 'cat-bonnet',
+        description: `Letterpress slow-carb tousled artisan, art party vegan bushwick palo santo cray organic taxidermy coloring book +1 authentic chillwave. Kickstarter schlitz letterpress keffiyeh. Ugh fixie disrupt brooklyn taiyaki, hashtag taxidermy tofu shoreditch post-ironic keytar try-hard. Flexitarian kogi lo-fi, heirloom jean shorts umami scenester sriracha you probably haven't heard of them.`,
+        price: 8.99,
+        imageUrl: 'https://odditymall.com/includes/content/cat-bonnet-cat-hat-thumb.jpg',
+        qoh: 25
+    },
+    {
+        name: 'cat-gucci',
+        description: `Single-origin coffee hashtag taiyaki vice, yuccie DIY vaporware before they sold out narwhal poke. Yuccie meditation man braid green juice tbh cliche. Gochujang iPhone chambray, affogato gluten-free meh +1 enamel pin brunch taxidermy lomo pug kinfolk yr artisan. Paleo cronut whatever williamsburg intelligentsia. Kogi selfies hammock pabst, dreamcatcher adaptogen austin kale chips jean shorts four loko vinyl deep v mumblecore. Heirloom XOXO affogato actually, post-ironic kickstarter activated charcoal hammock bespoke kale chips twee sustainable artisan pug.`,
+        price: 470.00,
+        imageUrl: 'https://media.karousell.com/media/photos/products/2020/8/18/gucci_and_lv_pet_bowtie_collar_1597775954_3afb9338_progressive.jpg',
+        qoh: 3
+    },
+    {
+        name: 'cat-uniform',
+        description: `Four loko mixtape meh jianbing hella crucifix vegan chambray cray irony. Hexagon hoodie chia tote bag mlkshk kickstarter shabby chic pinterest organic tumblr swag yuccie vexillologist blue bottle. Copper mug tote bag dreamcatcher next level photo booth neutra. Sriracha gochujang you probably haven't heard of them semiotics iPhone pok pok. Subway tile neutra tattooed hoodie.`,
+        price: 38.74,
+        imageUrl: 'https://cdn.idntimes.com/content-images/community/2019/12/funny-dog-cat-costumes-high-school-uniform-cosplay-suit-pet-apparel-halloween-christmas-clothes-for-puppy-ec6faea02ac12265d1b2bb4111a6c1db.jpg',
+        qoh: 5
+    },
+    {
+        name: 'cat-jogger',
+        description: 'Et quidam graeco pro, vix ex repudiare expetendis. Cu mentitum suscipit iudicabit eam, ei cum decore iudicabit reformidans. Qui expetenda expetendis ut.',
+        price: 34.00,
+        imageUrl: 'https://i2.wp.com/ae01.alicdn.com/kf/HTB1vAZ2atfvK1RjSspoq6zfNpXaq/Fashion-Cat-Clothes-For-Cats-Winter-Warm-Cotton-Cat-Clothing-For-Pets-Kitten-Outfit-Kedi-Gatto.jpg?fit=600%2C600&ssl=1',
+        qoh: 5
+    },
+    {
+        name: 'cat-geometric-sweater',
+        description: 'Ut eum utroque postulant, eu legimus lucilius sea, munere postea ocurreret ad nam. Ceteros tractatos ei mel, cu antiopam inimicus evertitur pri, sale salutatus voluptatum id nam.',
+        imageUrl: 'https://ae01.alicdn.com/kf/Hb1b399fae8554199abadf6396a332264m/Summer-New-Fashion-Cat-Costume-Cat-Vest-Hoodie-Cozy-Mascoats-Clothes-For-Cats-Coat-Disfraz-Perro.jpg_q50.jpg',
+        qoh: 7
+    },
+    {
+        name: 'cat-flamingo-hat',
+        description: 'Vim habeo nostro iuvaret ut, sed ne partem quaeque, quod intellegat reformidans cum an. Sed solet cetero graecis at, corrumpit argumentum ne vim. Sit ex nibh sententiae, nam te dolorum fierent vituperata, audiam veritus philosophia pri ex. Cu fabulas voluptaria ius, eu nam enim tota.',
+        price: 12.34,
+        imageUrl: 'https://instagifts.co/wp-content/uploads/2019/09/flamingo-cat-costume-640x602.jpg',
+        qoh: 7
+    },
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     {
         name: 'senor-hog',
@@ -321,10 +397,45 @@ const seedProducts = [
         imageUrl: 'https://i.pinimg.com/originals/2c/93/d7/2c93d763d2efe2a04bb50ce6cab71945.jpg',
         qoh: 4
     },
+    {
+        name: 'hedge-shark',
+        description: `Paleo mumblecore gluten-free pok pok wolf viral XOXO farm-to-table twee everyday carry brunch subway tile ramps food truck forage. Brunch man bun freegan venmo, taiyaki kombucha typewriter hammock. Kogi cold-pressed affogato farm-to-table, enamel pin bespoke hashtag franzen before they sold out intelligentsia succulents hot chicken. Brooklyn vape enamel pin beard blue bottle cronut. Cliche helvetica squid fingerstache church-key, freegan brooklyn shaman pinterest. Fixie gentrify gochujang irony vegan, whatever distillery leggings truffaut you probably haven't heard of them edison bulb franzen tumblr lomo.`,
+        price: 16.88,
+        imageUrl: "https://images-na.ssl-images-amazon.com/images/I/610vVO93AbL._AC_SL1000_.jpg",
+        qoh: 5
+    },
+    {
+        name: 'hedgehog-glasses',
+        description: `palo santo plaid listicle, street art hoodie pug vinyl yr biodiesel vape artisan fanny pack pitchfork seitan. gastropub gentrify squid af, biodiesel small batch blog hot chicken. stumptown biodiesel vinyl, raw denim gastropub tilde kickstarter fingerstache yr air plant. iphone sriracha chillwave, twee mlkshk yr next level vaporware thundercats actually viral. lyft mustache adaptogen, plaid kale chips sartorial 8-bit. gochujang trust fund normcore chillwave bitters. roof party vice green juice vexillologist, af copper mug tousled portland yolo kitsch kale chips gastropub +1 mlkshk.`,
+        price: 5.99,
+        imageUrl: "https://images-na.ssl-images-amazon.com/images/I/71IpAL8t1iL._AC_SL1001_.jpg",
+        qoh: 6
+    },
+    {
+      name: 'hedgehog-sweater',
+      description: `Woke schlitz chia edison bulb letterpress affogato etsy swag tbh. Pitchfork edison bulb offal tacos helvetica bushwick, kogi farm-to-table kickstarter. Subway tile freegan coloring book organic fam. Neutra synth literally taxidermy, cray mixtape ennui waistcoat ugh master cleanse cronut. Stumptown mumblecore heirloom, chicharrones cloud bread knausgaard normcore sriracha chia hella crucifix letterpress.`,
+      price: 14.23,
+      imageUrl: 'https://i.redd.it/ydoe9el0k5n41.jpg',
+      qoh: 7
+    },
+    {
+      name: 'hedge-tutu',
+      description: `Normcore tousled deep v 90's palo santo, wayfarers DIY bicycle rights. Seitan cardigan enamel pin, pug 3 wolf moon gochujang PBR&B bushwick +1 hashtag iPhone fixie quinoa woke. Sartorial small batch four loko craft beer tumeric. Stumptown keffiyeh meggings cardigan next level, helvetica authentic polaroid glossier YOLO occupy yr cliche direct trade. Chambray affogato shoreditch, letterpress fashion axe yuccie succulents pok pok banjo viral offal everyday carry pitchfork slow-carb. PBR&B everyday carry aesthetic, kombucha edison bulb brunch portland flexitarian etsy`,
+      price: 16.78,
+      imageUrl: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2018%2F01%2Fpet-outfit-1.jpg&q=85',
+      qoh: 6
+    },
+    {
+      name: 'hedge-pig',
+      description: `Kombucha art party copper mug, glossier brooklyn green juice everyday carry bitters blue bottle hexagon ennui etsy subway tile chartreuse. Activated charcoal keffiyeh craft beer authentic man braid copper mug actually meditation. Retro live-edge iceland fam adaptogen street art man braid palo santo affogato kale chips authentic typewriter messenger bag. Squid disrupt drinking vinegar iPhone man braid mumblecore. Green juice chillwave YOLO, +1 vaporware etsy street art lumbersexual listicle seitan banh mi woke kickstarter freegan brooklyn. Iceland enamel pin cloud bread pug.`,
+      price: 14.99,
+      imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51N%2Bxy9bjDL._AC_SL1000_.jpg',
+      qoh: 3
+    },
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     {
         name: 'turkey-turtle',
-        description: `Palo santo plaid listicle, street art hoodie pug vinyl yr biodiesel vape artisan fanny pack pitchfork seitan. Gastropub gentrify squid af, biodiesel small batch blog hot chicken. Stumptown biodiesel vinyl, raw denim gastropub tilde kickstarter fingerstache yr air plant. IPhone sriracha chillwave, twee mlkshk yr next level vaporware thundercats actually viral. Lyft mustache adaptogen, plaid kale chips sartorial 8-bit. Gochujang trust fund normcore chillwave bitters. Roof party vice green juice vexillologist, af copper mug tousled portland YOLO kitsch kale chips gastropub +1 mlkshk.`,
+        description: `palo santo plaid listicle, street art hoodie pug vinyl yr biodiesel vape artisan fanny pack pitchfork seitan. gastropub gentrify squid af, biodiesel small batch blog hot chicken. stumptown biodiesel vinyl, raw denim gastropub tilde kickstarter fingerstache yr air plant. iphone sriracha chillwave, twee mlkshk yr next level vaporware thundercats actually viral. lyft mustache adaptogen, plaid kale chips sartorial 8-bit. gochujang trust fund normcore chillwave bitters. roof party vice green juice vexillologist, af copper mug tousled portland yolo kitsch kale chips gastropub +1 mlkshk.`,
         price: 29.99,
         imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eHhTQy43ouUkf6yuY9GveQHaFj%26pid%3DApi&f=1',
         qoh: 15
@@ -399,6 +510,41 @@ const seedProducts = [
         imageUrl: 'https://64.media.tumblr.com/0cbbf1a898ab8b666b3e48ad930bbe4e/tumblr_mxuzcr51Vd1rbiizto1_1280.jpg',
         qoh: 96
     },
+    {
+        name: 'lizard-backpack',
+        description: `Hoodie photo booth seitan, succulents meditation pour-over portland actually wayfarers crucifix taxidermy. Literally bicycle rights plaid, lo-fi typewriter brunch small batch migas authentic shaman snackwave forage. Squid shaman austin scenester slow-carb green juice thundercats unicorn actually taiyaki mustache hexagon poke af iPhone. Tumeric organic flannel jianbing wolf.`,
+        price: 9.98,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61G-04pn50L._AC_SL1001_.jpg',
+        qoh: 70
+    },
+    {
+        name: 'dragon-bow',
+        description: 'quod intellegat reformidans cum an. Sed solet cetero graecis at, corrumpit argumentum ne vim. Sit ex nibh sententiae, nam te dolorum fierent vituperata, audiam veritus philosophia pri ex',
+        price: 5.96,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51eGV4guQnL._AC_SL1000_.jpg',
+        qoh: 53
+    },
+    {
+        name: 'iguana-crown',
+        description: 'Platonem repudiare his no, nulla tempor graecis ne vis. Impetus debitis posidonium duo ne, partiendo neglegentur usu in, ut esse quaerendum cum. Ullum senserit an mei, nam idque laoreet id. ',
+        price: 7.56,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61f0yVrq5cL._AC_SL1001_.jpg',
+        qoh: 23
+    },
+    {
+        name: 'lizard-hoodie',
+        description: `Etsy bicycle rights actually, hella post-ironic raclette portland. Fam lo-fi messenger bag cred umami. Humblebrag before they sold out jianbing, food truck tofu migas tbh helvetica viral salvia keytar. Kogi forage vexillologist bicycle rights unicorn, stumptown ennui.`,
+        price: 12.74,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61GCPgjW1JL._AC_SL1200_.jpg',
+        qoh: 15
+    },
+    {
+        name: 'lizard-witch-bat',
+        description: 'Qui ignota dicunt in, eam ei nonumy commune scriptorem. Te vel novum latine. Ne munere aperiam ius, pro soluta aliquam sadipscing ut, vix nullam soluta te. Has et brute veritus molestie. Urbanitas liberavisse vix et.',
+        price: 10.74,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/71c8HBzjoWL._AC_SL1500_.jpg',
+        qoh: 10
+    },
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     {
         name: 'ferret-pumpkin',
@@ -465,12 +611,44 @@ const seedProducts = [
     },
     {
         name: 'ferret-hoodie',
-        description: ' Elit ludus praesent ad sit, eum eu abhorreant appellantur, ad quo suas congue intellegat. Ex has populo fabulas adipisci, ad postea aeterno delicatissimi per, ex quidam lobortis nec. Ius aperiam facilisi ut, elit oportere eu has. Ius no propriae sapientem. Mei legere utamur ut.',
+        description: 'Elit ludus praesent ad sit, eum eu abhorreant appellantur, ad quo suas congue intellegat. Ex has populo fabulas adipisci, ad postea aeterno delicatissimi per, ex quidam lobortis nec. Ius aperiam facilisi ut, elit oportere eu has. Ius no propriae sapientem. Mei legere utamur ut.',
         price: 23.47,
         imageUrl: 'https://allpetnews.com/wp-content/uploads/2011/08/Ferret-Clothes.jpg',
         qoh: 67
     },
-
-
-    
+    {
+        name: 'ferret-bear',
+        description: 'Ius id prima tibique voluptua, ne vivendo elaboraret his. Eum ut ridens quaestio. Wisi iisque sit ut, ius cetero equidem accusamus an. Nec esse movet menandri cu, ex quo debet offendit consulatu, nam cu equidem accusamus.',
+        price: 7.43,
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61mtVEQx4RL._AC_SL1000_.jpg',
+        qoh: 14
+    },
+    {
+        name: 'ferret-cop',
+        description: 'Qui ignota dicunt in, eam ei nonumy commune scriptorem. Te vel novum latine. Ne munere aperiam ius, pro soluta aliquam sadipscing ut, vix nullam soluta te. Has et brute veritus molestie. Urbanitas liberavisse vix et.',
+        price: 17.34,
+        imageUrl: 'https://thumbs.dreamstime.com/b/ferret-portrait-studio-police-style-hat-handcuffs-ferret-portrait-studio-little-sofa-police-style-112155038.jpg',
+        qoh: 8
+    },
+    {
+        name: 'ferret-red-hoodie',
+        description: 'Ius id prima tibique voluptua, ne vivendo elaboraret his. Eum ut ridens quaestio. Wisi iisque sit ut, ius cetero equidem accusamus an. Nec esse movet menandri cu, ex quo debet offendit consulatu, nam cu equidem accusamus.',
+        price: 12.35,
+        imageUrl: 'https://en.bcdn.biz/Images/2019/11/20/3188376e-2db9-4663-a4e8-8b70c5f5866b.jpg',
+        qoh: 14
+    },
+    {
+        name: 'ferret-sailor',
+        description: 'Elit ludus praesent ad sit, eum eu abhorreant appellantur, ad quo suas congue intellegat. Ex has populo fabulas adipisci, ad postea aeterno delicatissimi per, ex quidam lobortis nec. Ius aperiam facilisi ut, elit oportere eu has. Ius no propriae sapientem. Mei legere utamur ut.',
+        price: 14.45,
+        imageUrl: 'https://cdn.shopify.com/s/files/1/0248/4522/1987/files/ferret_costumes_5.jpg?247',
+        qoh: 65
+    },
+    {
+        name: 'ferret-plaid-dress',
+        description: 'Ius id prima tibique voluptua, ne vivendo elaboraret his. Eum ut ridens quaestio. Wisi iisque sit ut, ius cetero equidem accusamus an. Nec esse movet menandri cu, ex quo debet offendit consulatu, nam cu equidem accusamus.',
+        price: 12.99,
+        imageUrl: 'https://lh3.googleusercontent.com/proxy/RKd5wGeddHx-7KAa6JpnP2YCTEkYISelK0huSB94WcqpdgpfHcBVcM3AT-KkJ9d45PDPprWwc74K-IrFrYEhg8Rtk9i1vdJiG9TBFZMMQlgpb8uXyKAzJ1N68dCG965IrU1pIyCp8b_ZUDWq',
+        qoh: 22
+    }
 ]
