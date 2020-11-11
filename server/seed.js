@@ -179,6 +179,119 @@ const seedProducts = [
         imageUrl: 'http://www.hepper.com/wp-content/uploads/2017/10/tacocat.jpg',
         qoh: 20
     },
+    {
+        name: 'senor-hog',
+        description: `Letterpress slow-carb tousled artisan, art party vegan bushwick palo santo cray organic taxidermy coloring book +1 authentic chillwave. Kickstarter schlitz letterpress keffiyeh. Ugh fixie disrupt brooklyn taiyaki, hashtag taxidermy tofu shoreditch post-ironic keytar try-hard. Flexitarian kogi lo-fi, heirloom jean shorts umami scenester sriracha you probably haven't heard of them.`,
+        price: 39.99,
+        imageUrl: 'http://uploads.neatorama.com/images/posts/997/56/56997/1357192949-0.jpg',
+        qoh: 15
+    },
+    {
+        name: 'dracula-hog',
+        description: `Biodiesel snackwave drinking vinegar, DIY celiac lo-fi knausgaard. Flexitarian swag jianbing neutra squid fixie prism pabst coloring book selfies fingerstache authentic. Echo park master cleanse bicycle rights man bun edison bulb cronut, pok pok single-origin coffee try-hard pug helvetica. Hot chicken meggings pitchfork occupy dreamcatcher raw denim. Cold-pressed typewriter 3 wolf moon forage, dreamcatcher portland ennui. Shaman lumbersexual gastropub intelligentsia skateboard, venmo drinking vinegar you probably haven't heard of them bitters jianbing XOXO brunch vexillologist blog pop-up.`,
+        price: 49.99,
+        imageUrl: 'https://i.pinimg.com/originals/ff/a0/bd/ffa0bde20582aedb16cc9638b60eba14.jpg',
+        qoh: 20
+    },
+    {
+        name: 'harry-pot-hog',
+        description: `Four loko mixtape meh jianbing hella crucifix vegan chambray cray irony. Hexagon hoodie chia tote bag mlkshk kickstarter shabby chic pinterest organic tumblr swag yuccie vexillologist blue bottle. Copper mug tote bag dreamcatcher next level photo booth neutra. Sriracha gochujang you probably haven't heard of them semiotics iPhone pok pok. Subway tile neutra tattooed hoodie.`,
+        price: 59.99,
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F0d%2F47%2F03%2F0d4703e43351c68f6895acb867be5372.jpg&f=1&nofb=1',
+        qoh: 10
+    },
+    {
+        name: 'sweater-hog',
+        description: `Single-origin coffee hashtag taiyaki vice, yuccie DIY vaporware before they sold out narwhal poke. Yuccie meditation man braid green juice tbh cliche. Gochujang iPhone chambray, affogato gluten-free meh +1 enamel pin brunch taxidermy lomo pug kinfolk yr artisan. Paleo cronut whatever williamsburg intelligentsia. Kogi selfies hammock pabst, dreamcatcher adaptogen austin kale chips jean shorts four loko vinyl deep v mumblecore. Heirloom XOXO affogato actually, post-ironic kickstarter activated charcoal hammock bespoke kale chips twee sustainable artisan pug.`,
+        price: 39.99,
+        imageUrl: 'https://s-media-cache-ak0.pinimg.com/564x/45/cc/57/45cc573d687f10535a97f5a9ed192a5e.jpg',
+        qoh: 15
+    },
+    {
+        name: 'beanie-hog',
+        description: `Trust fund cardigan typewriter prism, letterpress green juice deep v cornhole food truck whatever iPhone. Pinterest hexagon letterpress typewriter affogato, prism lo-fi vape iceland man bun fanny pack forage tbh freegan tacos. Intelligentsia kombucha vegan bicycle rights, skateboard direct trade food truck pabst twee chillwave kale chips affogato occupy. Unicorn tumblr intelligentsia crucifix mixtape, PBR&B etsy typewriter sriracha cornhole single-origin coffee austin bushwick. Copper mug waistcoat twee poutine woke plaid paleo fam, vape swag bespoke cliche tbh next level.`,
+        price: 29.99,
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2F6MV9E0cRXrEnMV2k8tUBgMWK6P6YGBE2Vgn-fRVAQS4.jpg%3Fauto%3Dwebp%26s%3Dc4961ed477c9a7d7c207c58f768bbf6de026a736&f=1&nofb=1',
+        qoh: 10
+    },
+    {
+        name: 'turkey-turtle',
+        description: `Palo santo plaid listicle, street art hoodie pug vinyl yr biodiesel vape artisan fanny pack pitchfork seitan. Gastropub gentrify squid af, biodiesel small batch blog hot chicken. Stumptown biodiesel vinyl, raw denim gastropub tilde kickstarter fingerstache yr air plant. IPhone sriracha chillwave, twee mlkshk yr next level vaporware thundercats actually viral. Lyft mustache adaptogen, plaid kale chips sartorial 8-bit. Gochujang trust fund normcore chillwave bitters. Roof party vice green juice vexillologist, af copper mug tousled portland YOLO kitsch kale chips gastropub +1 mlkshk.`,
+        price: 29.99,
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eHhTQy43ouUkf6yuY9GveQHaFj%26pid%3DApi&f=1',
+        qoh: 15
+    },
+    {
+        name: 'turtle-tree',
+        description: `Paleo mumblecore gluten-free pok pok wolf viral XOXO farm-to-table twee everyday carry brunch subway tile ramps food truck forage. Brunch man bun freegan venmo, taiyaki kombucha typewriter hammock. Kogi cold-pressed affogato farm-to-table, enamel pin bespoke hashtag franzen before they sold out intelligentsia succulents hot chicken. Brooklyn vape enamel pin beard blue bottle cronut. Cliche helvetica squid fingerstache church-key, freegan brooklyn shaman pinterest. Fixie gentrify gochujang irony vegan, whatever distillery leggings truffaut you probably haven't heard of them edison bulb franzen tumblr lomo.`,
+        price: 29.99,
+        imageUrl: 'http://uploads.neatorama.com/images/posts/457/70/70457/1395441984-1.jpg',
+        qoh: 5
+    },
+    {
+        name: 'turtle-shark',
+        description: `Woke schlitz chia edison bulb letterpress affogato etsy swag tbh. Pitchfork edison bulb offal tacos helvetica bushwick, kogi farm-to-table kickstarter. Subway tile freegan coloring book organic fam. Neutra synth literally taxidermy, cray mixtape ennui waistcoat ugh master cleanse cronut. Stumptown mumblecore heirloom, chicharrones cloud bread knausgaard normcore sriracha chia hella crucifix letterpress.`,
+        price: 39.99,
+        imageUrl: 'https://img1.etsystatic.com/012/1/7507736/il_570xN.454663495_dygp.jpg',
+        qoh: 10
+    },
+    {
+        name: 'turtle-yoda',
+        description: `Normcore tousled deep v 90's palo santo, wayfarers DIY bicycle rights. Seitan cardigan enamel pin, pug 3 wolf moon gochujang PBR&B bushwick +1 hashtag iPhone fixie quinoa woke. Sartorial small batch four loko craft beer tumeric. Stumptown keffiyeh meggings cardigan next level, helvetica authentic polaroid glossier YOLO occupy yr cliche direct trade. Chambray affogato shoreditch, letterpress fashion axe yuccie succulents pok pok banjo viral offal everyday carry pitchfork slow-carb. PBR&B everyday carry aesthetic, kombucha edison bulb brunch portland flexitarian etsy`,
+        price: 49.99,
+        imageUrl: 'https://i.etsystatic.com/14574419/r/il/e3955e/1137803150/il_fullxfull.1137803150_3du1.jpg',
+        qoh: 10
+    },
+    {
+        name: 'turtle-bunny',
+        description: `Kombucha art party copper mug, glossier brooklyn green juice everyday carry bitters blue bottle hexagon ennui etsy subway tile chartreuse. Activated charcoal keffiyeh craft beer authentic man braid copper mug actually meditation. Retro live-edge iceland fam adaptogen street art man braid palo santo affogato kale chips authentic typewriter messenger bag. Squid disrupt drinking vinegar iPhone man braid mumblecore. Green juice chillwave YOLO, +1 vaporware etsy street art lumbersexual listicle seitan banh mi woke kickstarter freegan brooklyn. Iceland enamel pin cloud bread pug.`,
+        price: 29.99,
+        imageUrl: 'http://inotternews.com/wp-content/uploads/2013/10/DSC_2317-Copy.jpg',
+        qoh: 20
+    },
+    {
+        name: 'turtle-candle',
+        description: `Etsy bicycle rights actually, hella post-ironic raclette portland. Fam lo-fi messenger bag cred umami. Humblebrag before they sold out jianbing, food truck tofu migas tbh helvetica viral salvia keytar. Kogi forage vexillologist bicycle rights unicorn, stumptown ennui.`,
+        price: 59.99,
+        imageUrl: 'https://static.boredpanda.com/blog/wp-content/org_uploads/2014/05/cute-crochet-tortoise-cozy-katie-bradley-12__700.jpg',
+        qoh: 10
+    },
+    {
+        name: 'ferret-pumpkin',
+        description: `Hoodie photo booth seitan, succulents meditation pour-over portland actually wayfarers crucifix taxidermy. Literally bicycle rights plaid, lo-fi typewriter brunch small batch migas authentic shaman snackwave forage. Squid shaman austin scenester slow-carb green juice thundercats unicorn actually taiyaki mustache hexagon poke af iPhone. Tumeric organic flannel jianbing wolf.`,
+        price: 29.99,
+        imageUrl: 'https://i.ytimg.com/vi/gRolQBKYZxo/hqdefault.jpg',
+        qoh: 10
+    },
+    {
+        name: 'ferret-aviator',
+        description: `Salvia biodiesel truffaut franzen. Copper mug authentic la croix fam gluten-free tacos man bun pour-over blue bottle raw denim subway tile tofu whatever hot chicken. Activated charcoal chia copper mug, meditation chicharrones sustainable leggings art party man braid cold-pressed. Slow-carb yuccie man braid, cardigan etsy schlitz leggings ennui chambray organic disrupt put a bird on it meditation. Brooklyn shabby chic raclette wayfarers. Heirloom synth salvia retro dreamcatcher aesthetic.`,
+        price: 69.99,
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmedia-cache-ak0.pinimg.com%2F236x%2Fa9%2F63%2Ff8%2Fa963f8d2eaf19d535c7e051f805c1d9d.jpg&f=1&nofb=1',
+        qoh: 10
+    },
+    {
+        name: 'snow-ferret',
+        description: `PBR&B umami pour-over paleo cronut keffiyeh. Chicharrones edison bulb ugh street art. 8-bit chicharrones tilde poke squid, pinterest tousled. Tumeric swag squid, plaid photo booth af tofu.`,
+        price: 49.99,
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.themodernferret.com%2Fwp-content%2Fuploads%2F2019%2F10%2F2019-Ferret-Halloween-Lumberjack-e1572021909365-1024x782.png&f=1&nofb=1',
+        qoh: 20
+    },
+    {
+        name: 'le-ferret',
+        description: `Distillery listicle skateboard bicycle rights activated charcoal messenger bag readymade succulents single-origin coffee venmo. Skateboard tousled pickled, XOXO flexitarian hashtag plaid meh kitsch brooklyn squid venmo literally jean shorts. Biodiesel narwhal cold-pressed sustainable mumblecore fashion axe truffaut etsy salvia hoodie. Franzen stumptown kale chips, jean shorts actually put a bird on it gentrify lomo. Shabby chic polaroid selvage PBR&B everyday carry single-origin coffee. Pabst tofu aesthetic cold-pressed hexagon selvage. Meggings cliche wayfarers franzen roof party palo santo yr mixtape fam beard.`,
+        price: 39.99,
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ebayimg.com%2Fimages%2Fg%2FvBMAAOSwgaVe-Zpy%2Fs-l640.jpg&f=1&nofb=1',
+        qoh: 10
+    },
+    {
+        name: 'donut-ferret',
+        description: `Vice flexitarian fanny pack, DIY farm-to-table af dreamcatcher tilde pabst wayfarers chicharrones banjo shabby chic polaroid. Pabst squid crucifix, chicharrones waistcoat hella organic you probably haven't heard of them tacos vape intelligentsia locavore keytar knausgaard. Tote bag fingerstache yuccie hella meditation, pinterest la croix thundercats mumblecore artisan. Leggings helvetica cold-pressed mixtape brooklyn ethical, iPhone organic vegan stumptown enamel pin bicycle rights. Microdosing asymmetrical XOXO poutine before they sold out chambray fingerstache hella brooklyn tumeric. Health goth single-origin coffee mlkshk vape put a bird on it. Dreamcatcher next level la croix, cliche meggings lyft butcher.`,
+        price: 29.99,
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F23%2F56%2F29%2F23562962c470c38da8382ba87e204a41--animals-in-costumes-pet-costumes.jpg&f=1&nofb=1',
+        qoh: 15
+    },
+
 
     
 ]
