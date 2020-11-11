@@ -2,8 +2,6 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-// How do we handle admin users?
-// add another column, be careful with the default value
 const User = db.define('user', {
   firstName: {
     type: Sequelize.STRING,
@@ -83,6 +81,10 @@ const User = db.define('user', {
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  admin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 })
 
