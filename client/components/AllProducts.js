@@ -33,7 +33,9 @@ export class AllProducts extends React.Component {
                   <h3>{product.name}</h3>
                   <img src={product.imageUrl} />
                   <h4>{product.price}</h4>
-                  <Link to={`/${product.id}`}>View Product Details</Link>
+                  <Link to={`/products/${product.id}`}>
+                    View Product Details
+                  </Link>
                 </div>
               )
             })
