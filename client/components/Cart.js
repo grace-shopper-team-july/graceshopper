@@ -14,12 +14,12 @@ export class Cart extends React.Component {
 
   render() {
     const testProduct = {
-      id: 1,
-      name: 'pup-ceratops',
-      price: '39.99',
+      id: 3,
+      name: 'puppy-buffet',
+      price: 29.99,
       imageUrl:
-        'https://ideastand.com/wp-content/uploads/2017/09/dog-halloween-costumes/4-dog-halloween-costume-diy-ideas.jpg',
-      qty: 4
+        'https://img1.etsystatic.com/076/0/6915430/isla_fullxfull.15935439_rny2xj9r.jpg',
+      qty: 2
     }
     return (
       <div>
