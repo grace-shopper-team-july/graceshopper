@@ -27,6 +27,9 @@ function addProductToCart(product) {
 }
 
 export class Cart extends React.Component {
+  componentDidMount() {
+    getShoppingCart()
+  }
   render() {
     return (
       <div>
@@ -42,19 +45,7 @@ export class Cart extends React.Component {
             <p>Total Price</p>
             <hr />
           </div>
-          <div id="cart-item">
-            <div id="cart-item-left">
-              <div id="cart-item-image">image here</div>
-            </div>
-            <div id="cart-item-right">
-              <div id="cart-item-attributes">attributes here</div>
-              <div id="cart-item-price">$10.00</div>
-              <div id="cart-item-quantity">dropdown here</div>
-              <div id="cart-item-total-price">$20.00</div>
-              <div id="cart-item-remove">Remove</div>
-            </div>
-            <hr />
-          </div>
+          {this.renderShoppingCart()}
         </div>
         <div id="shopping-cart-right">
           <div id="shopping-cart-order-summary-title">
@@ -69,6 +60,27 @@ export class Cart extends React.Component {
             </ul>
           </div>
         </div>
+        <button type="button" onClick={addProductToCart}>
+          Add To Cart
+        </button>
+      </div>
+    )
+  }
+
+  renderShoppingCart() {
+    return (
+      <div id="cart-item">
+        <div id="cart-item-left">
+          <div id="cart-item-image">image here</div>
+        </div>
+        <div id="cart-item-right">
+          <div id="cart-item-attributes">attributes here</div>
+          <div id="cart-item-price">$10.00</div>
+          <div id="cart-item-quantity">dropdown here</div>
+          <div id="cart-item-total-price">$20.00</div>
+          <div id="cart-item-remove">Remove</div>
+        </div>
+        <hr />
       </div>
     )
   }
