@@ -317,7 +317,7 @@ const seedProducts = [
     description: `salvia banjo disrupt etsy diy tbh. bicycle rights wolf post-ironic copper mug. vaporware taiyaki normcore hella drinking vinegar adaptogen palo santo snackwave pug green juice edison bulb vegan church-key butcher. portland gluten-free humblebrag hell of snackwave +1 iceland air plant mustache vape hoodie pbr&b put a bird on it crucifix ethical. plaid post-ironic squid, vhs cardigan xoxo tumeric master cleanse next level wayfarers swag succulents tattooed ethical aesthetic. aesthetic flexitarian freegan, jean shorts tattooed blog authentic.`,
     price: 29.99,
     imageurl:
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2Foriginals%2Fc0%2Fc0%2Fb2%2Fc0c0b21de847b6a493794fabc2d393ac.jpg&f=1&nofb=1 ',
+      'https://i.pinimg.com/originals/c2/d1/cd/c2d1cd15d057ce092513b972187dfbae.jpg',
     qoh: 20,
     species: 'cat'
   },
