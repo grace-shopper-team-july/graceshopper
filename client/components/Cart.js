@@ -2,10 +2,16 @@ import React from 'react'
 import {
   getShoppingCart,
   addProductToCart,
-  removeProductFromCart
+  removeProductFromCart,
+  updateProductQty
 } from './shopping-cart-functions'
 
 export class Cart extends React.Component {
+  constructor() {
+    super()
+    this.handleQtyChange = this.handleQtyChange.bind(this)
+  }
+
   render() {
     const testProduct = {
       id: 1,
@@ -86,7 +92,12 @@ export class Cart extends React.Component {
   renderQtyDropdown(item) {
     const qtyVal = Array.from({length: 10}, (x, i) => i + 1)
     return (
-      <select name="qty" id="qty" value={item.qty}>
+      <select
+        name="qty"
+        id="qty"
+        value={item.qty}
+        onChange={evt => this.handleQtyChange(evt, item.id)}
+      >
         {qtyVal.map((val, idx) => {
           return (
             <option value={val} key={idx}>
@@ -112,5 +123,9 @@ export class Cart extends React.Component {
         </ul>
       </div>
     )
+  }
+
+  handleQtyChange(evt, productId) {
+    updateProductQty(productId, evt.target.value)
   }
 }
