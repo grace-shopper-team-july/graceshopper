@@ -36,6 +36,7 @@ class SingleProduct extends React.Component {
                 <div />
               )}
             </select>
+            <button>ADD TO CART</button>
           </div>
         ) : (
           <div />
