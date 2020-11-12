@@ -15,9 +15,7 @@ const getSingleProduct = product => {
 export const fetchSingleProduct = id => {
   return async dispatch => {
     try {
-      console.log('hit')
       const {data} = await axios.get(`/api/products/${id}`)
-      //console.log('this is the fetch data', res)
       dispatch(getSingleProduct(data))
     } catch (err) {
       console.error(err.message)
