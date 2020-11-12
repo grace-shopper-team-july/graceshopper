@@ -31,3 +31,14 @@ export function removeProductFromCart(productId) {
     })
   })
 }
+
+export function updateProductQty(productId, qty) {
+  updateShoppingCart(cart => {
+    return cart.map(item => {
+      if (item.id === productId) {
+        item.qty = qty
+      }
+      return item
+    })
+  })
+}
