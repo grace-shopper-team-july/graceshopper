@@ -4,6 +4,7 @@ import {
   addProductToCart,
   removeProductFromCart
 } from './shopping-cart-functions'
+
 export class Cart extends React.Component {
   render() {
     const testProduct = {
@@ -11,8 +12,8 @@ export class Cart extends React.Component {
       name: 'pup-ceratops',
       price: '39.99',
       imageUrl:
-        'https://www.awesomeinventions.com/wp-content/uploads/2015/05/dog-dino.jpg',
-      qty: 3
+        'https://ideastand.com/wp-content/uploads/2017/09/dog-halloween-costumes/4-dog-halloween-costume-diy-ideas.jpg',
+      qty: 4
     }
     return (
       <div>
@@ -36,14 +37,7 @@ export class Cart extends React.Component {
           <div id="shopping-cart-order-summary-title">
             <h4>Order Summary</h4>
           </div>
-          <div id="shopping-cart-order-summary-list">
-            <ul>
-              <li>Subtotal: $50.00</li>
-              <li>Shipping: $5.00</li>
-              <li>Tax: $0.00</li>
-              <li>Total: $55.00</li>
-            </ul>
-          </div>
+          {this.renderOrderSummaryList()}
         </div>
         <button type="button" onClick={() => addProductToCart(testProduct)}>
           Add To Cart
@@ -101,6 +95,22 @@ export class Cart extends React.Component {
           )
         })}
       </select>
+    )
+  }
+
+  renderOrderSummaryList() {
+    let subTotal = 0
+    let shipping = 5.0
+    getShoppingCart().forEach(item => (subTotal += item.price * item.qty))
+    return (
+      <div id="shopping-cart-order-summary-list">
+        <ul>
+          <li>Subtotal: ${subTotal}</li>
+          <li>Shipping: ${shipping}</li>
+          <li>Tax: $0.00</li>
+          <li>Total: ${subTotal + shipping}</li>
+        </ul>
+      </div>
     )
   }
 }
