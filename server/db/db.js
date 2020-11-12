@@ -3,21 +3,21 @@ const pkg = require('../../package.json')
 
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
-const db = new Sequelize(
-  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
-  {
-    logging: false
-  }
-)
-// ^^comment this back in when not on Anna's computer
-
 // const db = new Sequelize(
-//   process.env.DATABASE_URL ||
-//     `postgres://ania:newPassword@localhost/${databaseName}`,
+//   process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
 //   {
 //     logging: false
 //   }
 // )
+// ^^comment this back in when not on Anna's computer
+
+const db = new Sequelize(
+  process.env.DATABASE_URL ||
+    `postgres://ania:newPassword@localhost/${databaseName}`,
+  {
+    logging: false
+  }
+)
 // ^^comment this out when not on Anna's computer
 
 module.exports = db

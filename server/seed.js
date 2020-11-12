@@ -38,6 +38,75 @@ const seedCategory = [
         name: 'Everyday'
     }
 ] */
+
+const seedUsers = [
+  {
+    firstName: 'Admin',
+    lastName: 'Boss',
+    email: 'admin@admin.com',
+    addressLine1: '1234 Main St',
+    addressLine2: null,
+    city: 'Bossville',
+    state: 'Maryland',
+    zip: '12233',
+    phone: '1234567890',
+    password: 'iamtheboss',
+    admin: true
+  },
+  {
+    firstName: 'Penny',
+    lastName: 'Lane',
+    email: 'penny@gmail.com',
+    addressLine1: '335 Pine St',
+    addressLine2: 'Apt 2C',
+    city: 'Boston',
+    state: 'Massachussets',
+    zip: '00123',
+    phone: '2647902345',
+    password: 'monkeyclown',
+    admin: false
+  },
+  {
+    firstName: 'Johnny',
+    lastName: 'Pickles',
+    email: 'johnnyp@gmail.com',
+    addressLine1: '264 Willow Drive',
+    addressLine2: '3rd floor',
+    city: 'Little Rock',
+    state: 'Arkansas',
+    zip: '62315',
+    phone: '8651243367',
+    password: 'picklesauseisoffensive',
+    admin: false
+  },
+  {
+    firstName: 'Wanda',
+    lastName: 'Gelato',
+    email: 'gelato@gmail.com',
+    addressLine1: '623 Oak Lane',
+    addressLine2: null,
+    city: 'Atlanta',
+    state: 'Georgia',
+    zip: '23581',
+    phone: '7268185624',
+    password: 'hazelnut',
+    admin: false
+  },
+  {
+    firstName: 'Lucy',
+    lastName: 'Chicken',
+    email: 'chickenisgud@gmail.com',
+    addressLine1: '563 Parker Ave',
+    addressLine2: 'Apt 16B',
+    city: 'Denver',
+    state: 'Colorado',
+    zip: '43651',
+    phone: '6732641122',
+    password: 'eatmorechicken',
+    admin: false
+  }
+]
+
 const seedProducts = [
   {
     name: 'pup-ceratops',
@@ -248,7 +317,7 @@ const seedProducts = [
     description: `salvia banjo disrupt etsy diy tbh. bicycle rights wolf post-ironic copper mug. vaporware taiyaki normcore hella drinking vinegar adaptogen palo santo snackwave pug green juice edison bulb vegan church-key butcher. portland gluten-free humblebrag hell of snackwave +1 iceland air plant mustache vape hoodie pbr&b put a bird on it crucifix ethical. plaid post-ironic squid, vhs cardigan xoxo tumeric master cleanse next level wayfarers swag succulents tattooed ethical aesthetic. aesthetic flexitarian freegan, jean shorts tattooed blog authentic.`,
     price: 29.99,
     imageurl:
-      'https://www.outfittrends.com/wp-content/uploads/2018/03/funny-cat-outfits10.jpg',
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2Foriginals%2Fc0%2Fc0%2Fb2%2Fc0c0b21de847b6a493794fabc2d393ac.jpg&f=1&nofb=1 ',
     qoh: 20,
     species: 'cat'
   },
@@ -853,7 +922,7 @@ const seedProducts = [
       'Ius id prima tibique voluptua, ne vivendo elaboraret his. Eum ut ridens quaestio. Wisi iisque sit ut, ius cetero equidem accusamus an. Nec esse movet menandri cu, ex quo debet offendit consulatu, nam cu equidem accusamus.',
     price: 12.99,
     imageUrl:
-      'https://lh3.googleusercontent.com/proxy/RKd5wGeddHx-7KAa6JpnP2YCTEkYISelK0huSB94WcqpdgpfHcBVcM3AT-KkJ9d45PDPprWwc74K-IrFrYEhg8Rtk9i1vdJiG9TBFZMMQlgpb8uXyKAzJ1N68dCG965IrU1pIyCp8b_ZUDWq',
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.trbimg.com%2Fimg-59824141%2Fturbine%2Fla-1501708606-v1v8yvedt0-snap-image&f=1&nofb=1',
     qoh: 22,
     species: 'ferret'
   }
@@ -862,6 +931,11 @@ const seedProducts = [
 const seed = async () => {
   try {
     await db.sync({force: true})
+    await Promise.all(
+      seedUsers.map(user => {
+        return User.create(user)
+      })
+    )
     await Promise.all(
       seedProducts.map(product => {
         return Product.create(product)
