@@ -9,7 +9,7 @@ router.get('/:productId', async (req, res, next) => {
         id: req.params.productId
       }
     })
-    res.send(singleProduct)
+    res.json(singleProduct)
   } catch (err) {
     next(err)
   }
