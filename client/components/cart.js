@@ -30,6 +30,7 @@ export class Cart extends React.Component {
   componentDidMount() {
     getShoppingCart()
   }
+
   render() {
     return (
       <div>
