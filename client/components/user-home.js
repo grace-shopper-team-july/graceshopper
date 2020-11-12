@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import AllProducts from './index'
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 
 /**
  * COMPONENT
