@@ -12,7 +12,7 @@ export class Cart extends React.Component {
       price: '39.99',
       imageUrl:
         'https://www.awesomeinventions.com/wp-content/uploads/2015/05/dog-dino.jpg',
-      qty: 1
+      qty: 3
     }
     return (
       <div>
@@ -64,12 +64,8 @@ export class Cart extends React.Component {
           <div id="cart-item-right">
             <div id="cart-item-attributes">{item.name}</div>
             <div id="cart-item-price">{item.price}</div>
-            <div id="cart-item-quantity">
-              <select name="qty" id="qty">
-                <option value="1">1</option>
-              </select>
-            </div>
-            <div id="cart-item-total-price">{item.price}</div>
+            <div id="cart-item-quantity">{this.renderQtyDropdown(item)}</div>
+            <div id="cart-item-total-price">{item.price * item.qty}</div>
             <div id="cart-item-remove">
               <button
                 type="button"
@@ -90,6 +86,21 @@ export class Cart extends React.Component {
       <div id="cart-empty">
         <h2>Your shopping cart is empty.</h2>
       </div>
+    )
+  }
+
+  renderQtyDropdown(item) {
+    const qtyVal = Array.from({length: 10}, (x, i) => i + 1)
+    return (
+      <select name="qty" id="qty" value={item.qty}>
+        {qtyVal.map((val, idx) => {
+          return (
+            <option value={val} key={idx}>
+              {val}
+            </option>
+          )
+        })}
+      </select>
     )
   }
 }
