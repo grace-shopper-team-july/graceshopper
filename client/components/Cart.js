@@ -1,4 +1,6 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {fetchCart} from '../store/singleProduct'
 import {
   getShoppingCart,
   addProductToCart,
@@ -11,6 +13,8 @@ export class Cart extends React.Component {
     super()
     this.handleQtyChange = this.handleQtyChange.bind(this)
   }
+
+  componentDidMount() {}
 
   render() {
     const testProduct = {
@@ -129,3 +133,17 @@ export class Cart extends React.Component {
     updateProductQty(productId, evt.target.value)
   }
 }
+
+/*const mapStateToProps = state => {
+  return {
+    cart: state.cart
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCart: () => dispatch(fetchCart())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart); */
