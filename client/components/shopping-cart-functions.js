@@ -17,8 +17,14 @@ export function updateShoppingCart(cartUpdateFunction) {
   return newCart
 }
 
-export function addProductToCart(product) {
+export function addProductToCart(product, qty) {
   updateShoppingCart(cart => {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id === product.id) {
+        cart[i].qty += qty
+        return cart
+      }
+    }
     cart.push(product)
     return cart
   })

@@ -45,7 +45,7 @@ export class Cart extends React.Component {
           </div>
           {this.renderOrderSummaryList()}
         </div>
-        <button type="button" onClick={() => addProductToCart(testProduct)}>
+        <button type="button" onClick={() => addProductToCart(testProduct, 2)}>
           Add To Cart
         </button>
       </div>
