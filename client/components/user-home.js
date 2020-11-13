@@ -32,18 +32,22 @@ export class UserHome extends React.Component {
         </div>
         <div>
           <h2>Orders</h2>
-          {thisUsersOrder ? (
+          {thisUsersOrder && thisUsersOrder.length > 0 ? (
             thisUsersOrder.map(order => {
               return (
                 <div key={order.id}>
-                  <h4>Order Number: {order.id}</h4>
+                  <Link to={`/home/orders/${order.id}`}>
+                    <h4>Order Number: {order.id}</h4>
+                  </Link>
                   <h4>Payment Type: {order.payment}</h4>
                   <h4>Order Total:{order.total}</h4>
                 </div>
               )
             })
           ) : (
-            <div>...No Orders Placed Yet...</div>
+            <div>
+              <h4>...No Orders Placed Yet...</h4>
+            </div>
           )}
         </div>
       </div>

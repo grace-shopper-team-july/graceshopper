@@ -49,7 +49,7 @@ const ordersReducer = (state = initalState, action) => {
     case GET_ALL_ORDERS:
       return {...state, orders: action.orders}
     case GET_SINGLE_ORDER:
-      return {...state, singleOrder: action.singleOrder}
+      return {...state, singleOrder: action.order}
     default:
       return state
   }

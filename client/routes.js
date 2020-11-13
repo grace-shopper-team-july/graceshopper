@@ -7,6 +7,7 @@ import {me} from './store'
 import SinglePage from './components/SingleProduct'
 import {Signup} from './components/SignUp'
 import {Cart} from './components/Cart'
+import OrderDetails from './components/OrderDetails'
 
 /**
  * COMPONENT
@@ -18,7 +19,7 @@ class Routes extends Component {
 
   render() {
     const {isLoggedIn} = this.props
-
+    console.log('poop', isLoggedIn)
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
@@ -27,10 +28,16 @@ class Routes extends Component {
         <Route path="/products/:productId" component={SinglePage} />
         <Route path="/products" component={AllProducts} />
         <Route path="/cart" component={Cart} />
+
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={UserHome} />
+            <Route exact path="/home" component={UserHome} />
+            <Route
+              exact
+              path="/home/orders/:orderId"
+              component={OrderDetails}
+            />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
