@@ -22,6 +22,7 @@ class Routes extends Component {
     const {isLoggedIn} = this.props
     const {isAdmin} = this.props
     console.log('isadmin', this.props.isAdmin)
+    console.log('islogged', this.props.isLoggedIn)
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
@@ -33,6 +34,7 @@ class Routes extends Component {
         {isAdmin && (
           <Switch>
             <Route path="/home/admin" component={AdminHome} />
+            <Route path="/home/orders/:orderId" component={OrderDetails} />
           </Switch>
         )}
         {isLoggedIn && (
