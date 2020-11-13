@@ -12,8 +12,7 @@ const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 // ^^comment this back in when not on Anna's computer
 
 const db = new Sequelize(
-  process.env.DATABASE_URL ||
-    `postgres://ania:newPassword@localhost/${databaseName}`,
+  process.env.DATABASE_URL || `postgres://localhost/${databaseName}`,
   {
     logging: false
   }
