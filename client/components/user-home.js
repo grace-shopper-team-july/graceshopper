@@ -28,6 +28,9 @@ export class UserHome extends React.Component {
         </div>
         <div>
           <h3>User Portal Options</h3>
+          <Link to="/home/edit_account">
+            <button>Edit Your Account</button>
+          </Link>
           <Link to="home/orders">
             <button>Order History</button>
           </Link>

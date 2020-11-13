@@ -28,6 +28,9 @@ export class AdminHome extends React.Component {
 
         <div>
           <h2>Admin Portal Options</h2>
+          <Link to="/home/edit_account">
+            <button>Edit Your Account</button>
+          </Link>
           <Link to="/home/manageusers">
             <button>Manage Users</button>
           </Link>
