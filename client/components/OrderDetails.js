@@ -12,7 +12,7 @@ class OrderDetails extends React.Component {
   }
 
   render() {
-    console.log(this.props.order.products)
+    console.log(this.props.order)
     const order = this.props.order
     const productsArr = this.props.order.products
     return (
@@ -20,6 +20,7 @@ class OrderDetails extends React.Component {
         <div>
           <h1>Order Details </h1>
           <p>Order#: {order.id}</p>
+          <p>Date Purchased: {order.date}</p>
           <p>Payment Type: {order.payment}</p>
           <p>Order Total: {order.total}</p>
         </div>
