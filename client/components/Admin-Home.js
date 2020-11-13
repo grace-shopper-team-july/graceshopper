@@ -4,27 +4,31 @@ import {connect} from 'react-redux'
 import AllProducts from './index'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {fetchAllOrders, fetchSingleOrders} from '../store/orders'
+import {fetchAllUsers} from '../store/user'
 
 /**
  * COMPONENT
  */
-export class UserHome extends React.Component {
+export class AdminHome extends React.Component {
   constructor(props) {
     super(props)
   }
 
   componentDidMount() {
     this.props.fetchAllOrders()
+    this.props.fetchAllUsers()
   }
 
   render() {
-    console.log(this.props.admin)
-    const user = this.props.user
+    console.log(this.props)
+    const user = this.props.user.user
     const orderArr = this.props.order.orders
     const thisUsersOrder = orderArr.filter(order => {
       return order.userId === user.id
     })
-    console.log(thisUsersOrder[0])
+    const userArr = this.props.user.allUsers
+    console.log(userArr)
+    // console.log(thisUsersOrder[0])
     return (
       <div>
         <div>
@@ -51,6 +55,25 @@ export class UserHome extends React.Component {
             </div>
           )}
         </div>
+        <div>
+          <h2>Manage Users</h2>
+
+          {userArr && userArr.length > 0 ? (
+            userArr.map(user => {
+              return (
+                <div key={user.id}>
+                  <p>User Id:{user.id}</p>
+                  <p>User First Name:{user.firstName}</p>
+                  <p>User Last Name:{user.lastName}</p>
+                  <p>User Email:{user.email}</p>
+                  <p>Admin Status:{user.admin}</p>
+                </div>
+              )
+            })
+          ) : (
+            <div />
+          )}
+        </div>
       </div>
     )
   }
@@ -61,23 +84,23 @@ export class UserHome extends React.Component {
  */
 const mapState = state => {
   return {
-    user: state.user.user,
-    order: state.ordersReducer,
-    isAdmin: state.user.admin
+    user: state.user,
+    order: state.ordersReducer
   }
 }
 
 const mapDispatch = dispatch => {
   return {
     fetchAllOrders: () => dispatch(fetchAllOrders()),
-    fetchSingleOrders: id => dispatch(fetchSingleOrders(id))
+    fetchSingleOrders: id => dispatch(fetchSingleOrders(id)),
+    fetchAllUsers: () => dispatch(fetchAllUsers())
   }
 }
-export default connect(mapState, mapDispatch)(UserHome)
+export default connect(mapState, mapDispatch)(AdminHome)
 
 /**
  * PROP TYPES
  */
-UserHome.propTypes = {
+AdminHome.propTypes = {
   email: PropTypes.string
 }
