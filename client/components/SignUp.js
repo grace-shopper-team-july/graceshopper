@@ -7,80 +7,95 @@ import {signup} from '../store/user'
 /**
  * COMPONENT
  */
-export const SignupForm = props => {
-  const {name, displayName, handleSubmit, error} = props
-  console.log('in signupForm')
-  return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="firstName">
-            <small>First Name</small>
-          </label>
-          <input name="firstName" type="text" />
-        </div>
-        <div>
-          <label htmlFor="lastName">
-            <small>Last Name</small>
-          </label>
-          <input name="lastName" type="text" />
-        </div>
-        <div>
-          <label htmlFor="addressLine1">
-            <small>Address Line 1</small>
-          </label>
-          <input name="addressLine1" type="text" />
-        </div>
-        <div>
-          <label htmlFor="addressLine2">
-            <small>Address Line 2</small>
-          </label>
-          <input name="addressLine2" type="text" />
-        </div>
-        <div>
-          <label htmlFor="city">
-            <small>City</small>
-          </label>
-          <input name="city" type="text" />
-        </div>
-        <div>
-          <label htmlFor="state">
-            <small>State</small>
-          </label>
-          <input name="state" type="text" />
-        </div>
-        <div>
-          <label htmlFor="zip">
-            <small>Zip Code</small>
-          </label>
-          <input name="zip" type="text" />
-        </div>
-        <div>
-          <label htmlFor="phone">
-            <small>Phone</small>
-          </label>
-          <input name="phone" type="text" />
-        </div>
-        <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
-          <input name="email" type="text" />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
-        {error && error.response && <div> {error.response.data} </div>}
-      </form>
-      <a href="/auth/google">{displayName} with Google</a>
-    </div>
-  )
+export class SignupForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      firstName: ''
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(evt) {
+    this.setState({[evt.target.name]: evt.target.value})
+  }
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.props.handleSubmit} name={this.props.name}>
+          <div>
+            <label htmlFor="firstName">
+              <small>First Name</small>
+            </label>
+            <input name="firstName" type="text" />
+          </div>
+          <div>
+            <label htmlFor="lastName">
+              <small>Last Name</small>
+            </label>
+            <input name="lastName" type="text" />
+          </div>
+          <div>
+            <label htmlFor="addressLine1">
+              <small>Address Line 1</small>
+            </label>
+            <input name="addressLine1" type="text" />
+          </div>
+          <div>
+            <label htmlFor="addressLine2">
+              <small>Address Line 2</small>
+            </label>
+            <input name="addressLine2" type="text" />
+          </div>
+          <div>
+            <label htmlFor="city">
+              <small>City</small>
+            </label>
+            <input name="city" type="text" />
+          </div>
+          <div>
+            <label htmlFor="state">
+              <small>State</small>
+            </label>
+            <input name="state" type="text" />
+          </div>
+          <div>
+            <label htmlFor="zip">
+              <small>Zip Code</small>
+            </label>
+            <input name="zip" type="text" />
+          </div>
+          <div>
+            <label htmlFor="phone">
+              <small>Phone</small>
+            </label>
+            <input name="phone" type="text" />
+          </div>
+          <div>
+            <label htmlFor="email">
+              <small>Email</small>
+            </label>
+            <input name="email" type="text" />
+          </div>
+          <div>
+            <label htmlFor="password">
+              <small>Password</small>
+            </label>
+            <input name="password" type="password" />
+          </div>
+          <div>
+            <button type="submit">{this.props.displayName}</button>
+          </div>
+          {this.props.error &&
+            this.props.error.response && (
+              <div> {this.props.error.response.data} </div>
+            )}
+        </form>
+        <a href="/auth/google">{this.props.displayName} with Google</a>
+      </div>
+    )
+  }
 }
 
 /**
@@ -108,6 +123,7 @@ const mapSignup = state => {
 
 const mapDispatch = dispatch => {
   return {
+    signup: user => dispatch(signup(user)),
     handleSubmit(evt) {
       evt.preventDefault()
       const formName = evt.target.name
@@ -135,11 +151,11 @@ const mapDispatch = dispatch => {
           password
         })
       )
+      evt.target.reset()
     }
   }
 }
 
-// export const Login = connect(mapLogin, mapDispatch)(AuthForm)
 export const Signup = connect(mapSignup, mapDispatch)(SignupForm)
 
 /**
