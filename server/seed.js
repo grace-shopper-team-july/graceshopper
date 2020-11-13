@@ -26,7 +26,7 @@ const seedCategory = [
         name: 'Holiday'
     },
     {
-        name: 'Rainwear'
+        name: 'Weatherwear'
     },
     {
         name: 'Costume'
@@ -116,7 +116,8 @@ const seedProducts = [
     imageUrl:
       'https://www.awesomeinventions.com/wp-content/uploads/2015/05/dog-dino.jpg',
     qoh: 30,
-    species: 'dog'
+    species: 'dog',
+    category: 'costume'
   },
   {
     name: 'pup-achu',
@@ -125,7 +126,8 @@ const seedProducts = [
     imageUrl:
       'https://ideastand.com/wp-content/uploads/2017/09/dog-halloween-costumes/4-dog-halloween-costume-diy-ideas.jpg',
     qoh: 20,
-    species: 'dog'
+    species: 'dog',
+    category: 'costume'
   },
   {
     name: 'puppy-buffett',
@@ -134,7 +136,8 @@ const seedProducts = [
     imageUrl:
       'https://img1.etsystatic.com/076/0/6915430/isla_fullxfull.15935439_rny2xj9r.jpg',
     qoh: 15,
-    species: 'dog'
+    species: 'dog',
+    category: 'everyday'
   },
   {
     name: 'puppy-potter',
@@ -143,7 +146,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/236x/57/8c/20/578c2098b742646476b11839c616772d.jpg',
     qoh: 15,
-    species: 'dog'
+    species: 'dog',
+    category: 'costume'
   },
   {
     name: 'hard-working-pup',
@@ -152,7 +156,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F78.media.tumblr.com%2F610745f556248572741b336689b256b1%2Ftumblr_oxtcakdf7Q1vuhuy0o1_500.jpg&f=1&nofb=1',
     qoh: 20,
-    species: 'dog'
+    species: 'dog',
+    category: 'everyday'
   },
   {
     name: 'cowboy-pup',
@@ -161,7 +166,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fae01.alicdn.com%2Fkf%2FHTB13K1BNVXXXXbDXpXXq6xXFXXXr%2FFunny-Dog-Costume-Pet-Dog-Clothes-Puppy-Coats-Jackets-for-Halloween-Dressing-Up-Party-Apparel-for.jpg&f=1&nofb=1',
     qoh: 10,
-    species: 'dog'
+    species: 'dog',
+    category: 'costume'
   },
   {
     name: 'cozy-lil-sweater',
@@ -170,7 +176,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdogcostumenetwork.files.wordpress.com%2F2015%2F07%2Fdachshund-clothing-1.jpg&f=1&nofb=1',
     qoh: 15,
-    species: 'dog'
+    species: 'dog',
+    category: 'everyday'
   },
   {
     name: 'pup-on-the-town',
@@ -179,7 +186,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.glamour.com%2Fphotos%2F56964c4016d0dc3747ef9b95%2Fmaster%2Fw_1600%252Cc_limit%2Ffashion-2015-08-ruby-rufus-dog-insweater-4-main.jpg&f=1&nofb=1',
     qoh: 15,
-    species: 'dog'
+    species: 'dog',
+    category: 'everyday'
   },
   {
     name: 'le-pup',
@@ -188,7 +196,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgoodtoknow.media.ipcdigital.co.uk%2F111%2F00001008a%2F5e06_orh100000w614%2Finstagram-dapper-dog.jpeg&f=1&nofb=1',
     qoh: 15,
-    species: 'dog'
+    species: 'dog',
+    category: 'formal'
   },
   {
     name: 'snow-pup',
@@ -197,7 +206,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpetsnurturing.com%2Fwp-content%2Fuploads%2F2019%2F01%2FDog-Winter-Clothes-7.jpg&f=1&nofb=1',
     qoh: 20,
-    species: 'dog'
+    species: 'dog',
+    category: 'weatherwear'
   },
   {
     name: 'pup-tux',
@@ -206,7 +216,9 @@ const seedProducts = [
     price: 20.8,
     imageUrl:
       'https://i.pinimg.com/originals/9e/be/13/9ebe136ca3998581e13eae146714d2d6.jpg ',
-    qoh: 35
+    qoh: 35,
+    species: 'dog',
+    category: 'formal'
   },
   {
     name: 'santas-lil-pupper',
@@ -216,7 +228,8 @@ const seedProducts = [
     imageUrl:
       'https://cdn11.bigcommerce.com/s-dppmv5/images/stencil/608x608/products/42578/59648/Elf_Pet-Dog_costume_PupRwear.550__74279.1537995369.jpg?c=2',
     qoh: 47,
-    species: 'dog'
+    species: 'dog',
+    category: 'holiday'
   },
   {
     name: 'spider-pup',
@@ -226,7 +239,8 @@ const seedProducts = [
     imageUrl:
       'https://images.halloweencostumes.com/products/39940/1-1/spider-pup-costume.jpg',
     qoh: 7,
-    species: 'dog'
+    species: 'dog',
+    category: 'costume'
   },
   {
     name: 'pj-pup',
@@ -236,7 +250,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/71Xf-s%2BdHHL._AC_SL1500_.jpg',
     qoh: 21,
-    species: 'dog'
+    species: 'dog',
+    category: 'everyday'
   },
   {
     name: 'puppy-bow',
@@ -246,7 +261,8 @@ const seedProducts = [
     imageUrl:
       'https://i.etsystatic.com/20527859/r/il/3fdaad/2005158613/il_794xN.2005158613_p7zq.jpg',
     qoh: 3,
-    species: 'dog'
+    species: 'dog',
+    category: 'accessories'
   },
   {
     name: 'puppy-dog',
@@ -255,7 +271,8 @@ const seedProducts = [
     imageUrl:
       'https://lia-griffith-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2018/10/Hot_Dog_Halloween_Costume_2.jpg',
     qoh: 10,
-    species: 'dog'
+    species: 'dog',
+    category: 'costume'
   },
   {
     name: 'puppy-taco',
@@ -264,7 +281,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/originals/ee/1b/e4/ee1be4ceb63a559b0987231bea4b9aaa.jpg',
     qoh: 9,
-    species: 'dog'
+    species: 'dog',
+    category: 'costume'
   },
   {
     name: 'puppy-gingerbread',
@@ -273,7 +291,8 @@ const seedProducts = [
     imageUrl:
       'https://img.chewy.com/is/image/catalog/132212_MAIN._AC_SL1500_V1540326487_.jpg',
     qoh: 4,
-    species: 'dog'
+    species: 'dog',
+    category: 'holiday'
   },
   {
     name: 'doggy-wellies',
@@ -282,7 +301,8 @@ const seedProducts = [
     imageUrl:
       'https://cdn.shopify.com/s/files/1/1811/2867/products/36_cf404a44-8451-4fff-81cc-11c25db0645c_1800x1800.png?v=1581350346',
     qoh: 15,
-    species: 'dog'
+    species: 'dog',
+    category: 'weatherwear'
   },
   {
     name: 'canada-woof',
@@ -291,7 +311,8 @@ const seedProducts = [
     imageUrl:
       'https://www.supremepawsupply.com/wp-content/uploads/2020/01/products-e40931e2.jpg',
     qoh: 5,
-    species: 'dog'
+    species: 'dog',
+    category: 'weatherwear'
   },
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   {
@@ -301,7 +322,8 @@ const seedProducts = [
     imageUrl:
       'https://ae01.alicdn.com/kf/HTB1mFWabKLM8KJjSZFqq6y7.FXaz/Cute-Cat-Clothes-Easter-Rabbit-Animals-Clothing-Costume-Fleece-Warm-Cat-Clothes-Coat-Jackets-Outfit-for.jpg',
     qoh: 30,
-    species: 'cat'
+    species: 'cat',
+    category: 'everyday'
   },
   {
     name: 'pizza-kitty',
@@ -310,7 +332,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg0.etsystatic.com%2F125%2F1%2F10706456%2Fil_570xN.1022817008_31jv.jpg&f=1&nofb=1',
     qoh: 10,
-    species: 'cat'
+    species: 'cat',
+    category: 'costume'
   },
   {
     name: 'tuxedo-cat',
@@ -319,7 +342,8 @@ const seedProducts = [
     imageurl:
       'https://i.pinimg.com/originals/c2/d1/cd/c2d1cd15d057ce092513b972187dfbae.jpg',
     qoh: 20,
-    species: 'cat'
+    species: 'cat',
+    category: 'formal'
   },
   {
     name: 'mario-cat-hat',
@@ -328,7 +352,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.top13.net%2Fwp-content%2Fuploads%2F2016%2F10%2Fhalloween-costumes-kittens-3.jpg&f=1&nofb=1',
     qoh: 10,
-    species: 'cat'
+    species: 'cat',
+    category: 'costume'
   },
   {
     name: 'cat-burger',
@@ -337,7 +362,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F3.bp.blogspot.com%2F-oPUUI0YqsdQ%2FUpShG9uyTUI%2FAAAAAAAAFVs%2FSPEwflew-GQ%2Fs1600%2FFunny-Halloween-Costumes-for-Cats.jpg&f=1&nofb=1',
     qoh: 15,
-    species: 'cat'
+    species: 'cat',
+    category: 'costume'
   },
   {
     name: 'lion-kitty',
@@ -346,7 +372,8 @@ const seedProducts = [
     imageUrl:
       'https://imgix.bustle.com/uploads/image/2017/10/3/42baa108-aaf5-488b-a60a-aaed5a66f5e9-cat_lion_costume.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format&q=70',
     qoh: 15,
-    species: 'cat'
+    species: 'cat',
+    category: 'costume'
   },
   {
     name: 'kitty-witch',
@@ -355,7 +382,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.popsugar-assets.com%2Ffiles%2Fthumbor%2FdWnmOHAx4Wo10ahRwzxBH-3kBHg%2Ffit-in%2F1024x1024%2Ffilters%3Aformat_auto-!!-%3Astrip_icc-!!-%2F2019%2F08%2F16%2F735%2Fn%2F1922243%2Fca9f2c965d56dc3a0c2bb6.16163769_2%2Fi%2FVampire-Cape-Hat-Cat-Costume.jpg&f=1&nofb=1',
     qoh: 15,
-    species: 'cat'
+    species: 'cat',
+    category: 'costume'
   },
   {
     name: 'le-kitty',
@@ -364,7 +392,8 @@ const seedProducts = [
     imageUrl:
       'https://cdn.costumewall.com/wp-content/uploads/2015/09/cute-cat-costumes-29.jpg',
     qoh: 25,
-    species: 'cat'
+    species: 'cat',
+    category: 'formal'
   },
   {
     name: 'bad-kitty',
@@ -373,7 +402,8 @@ const seedProducts = [
     imageUrl:
       'http://www.wishforpets.com/wp-content/uploads/2014/12/Cat-devil-costumes8.jpg',
     qoh: 15,
-    species: 'cat'
+    species: 'cat',
+    category: 'accessories'
   },
   {
     name: 'kitty-taco',
@@ -381,7 +411,8 @@ const seedProducts = [
     price: 49.99,
     imageUrl: 'http://www.hepper.com/wp-content/uploads/2017/10/tacocat.jpg',
     qoh: 20,
-    species: 'cat'
+    species: 'cat',
+    category: 'costume'
   },
   {
     name: 'cat-coveralls',
@@ -391,7 +422,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/originals/99/32/21/9932215264fd7afa45b499acdb92aa4c.jpg',
     qoh: 52,
-    species: 'cat'
+    species: 'cat',
+    category: 'everyday'
   },
   {
     name: 'christmas-cat',
@@ -401,7 +433,8 @@ const seedProducts = [
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQrmFuBLmxYsr0MNYcErxOwVVZvESiPzLXf0Q&usqp=CAU',
     qoh: 78,
-    species: 'cat'
+    species: 'cat',
+    category: 'holiday'
   },
   {
     name: 'kitty-collar',
@@ -411,17 +444,19 @@ const seedProducts = [
     imageUrl:
       'https://ae01.alicdn.com/kf/H44ef5e09863c4d5c8e5d63f1387dc8a4A/Pet-ID-Collar-Shining-Diamond-Rhinestone-Cat-Collar-Puppy-Baby-Dog-Cat-Collar-Paw-Pattern-Strap.jpg',
     qoh: 23,
-    species: 'cat'
+    species: 'cat',
+    category: 'accessories'
   },
   {
-    name: 'pizza-cat',
+    name: 'cat-socks',
     description:
       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     price: 24.77,
     imageUrl:
-      'https://i.pinimg.com/originals/c5/cd/ed/c5cdedae6551f9124241e886dfebdc7a.jpg',
+      'https://ae01.alicdn.com/kf/HTB1c85BacrrK1RjSspaq6AREXXaC/Size-L-M-S-Pet-Cat-Socks-Dog-Socks-Traction-Control-For-Indoor-Wear-Cat-Clothing.jpg',
     qoh: 4,
-    species: 'cat'
+    species: 'cat',
+    category: 'accessories'
   },
   {
     name: 'rainy-cat-coat',
@@ -431,7 +466,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/originals/a4/3c/cf/a43ccfe4145b1e12480fc0b04e2624c8.jpg',
     qoh: 18,
-    species: 'cat'
+    species: 'cat',
+    category: 'weatherwear'
   },
   {
     name: 'cat-bonnet',
@@ -440,7 +476,8 @@ const seedProducts = [
     imageUrl:
       'https://odditymall.com/includes/content/cat-bonnet-cat-hat-thumb.jpg',
     qoh: 25,
-    species: 'cat'
+    species: 'cat',
+    category: 'accessories'
   },
   {
     name: 'cat-gucci',
@@ -449,7 +486,8 @@ const seedProducts = [
     imageUrl:
       'https://media.karousell.com/media/photos/products/2020/8/18/gucci_and_lv_pet_bowtie_collar_1597775954_3afb9338_progressive.jpg',
     qoh: 3,
-    species: 'cat'
+    species: 'cat',
+    category: 'accessories'
   },
   {
     name: 'cat-uniform',
@@ -458,7 +496,8 @@ const seedProducts = [
     imageUrl:
       'https://cdn.idntimes.com/content-images/community/2019/12/funny-dog-cat-costumes-high-school-uniform-cosplay-suit-pet-apparel-halloween-christmas-clothes-for-puppy-ec6faea02ac12265d1b2bb4111a6c1db.jpg',
     qoh: 5,
-    species: 'cat'
+    species: 'cat',
+    category: 'costume'
   },
   {
     name: 'cat-jogger',
@@ -468,7 +507,8 @@ const seedProducts = [
     imageUrl:
       'https://i2.wp.com/ae01.alicdn.com/kf/HTB1vAZ2atfvK1RjSspoq6zfNpXaq/Fashion-Cat-Clothes-For-Cats-Winter-Warm-Cotton-Cat-Clothing-For-Pets-Kitten-Outfit-Kedi-Gatto.jpg?fit=600%2C600&ssl=1',
     qoh: 5,
-    species: 'cat'
+    species: 'cat',
+    category: 'everyday'
   },
   {
     name: 'cat-geometric-sweater',
@@ -478,7 +518,8 @@ const seedProducts = [
     imageUrl:
       'https://ae01.alicdn.com/kf/Hb1b399fae8554199abadf6396a332264m/Summer-New-Fashion-Cat-Costume-Cat-Vest-Hoodie-Cozy-Mascoats-Clothes-For-Cats-Coat-Disfraz-Perro.jpg_q50.jpg',
     qoh: 7,
-    species: 'cat'
+    species: 'cat',
+    category: 'everyday'
   },
   {
     name: 'cat-flamingo-hat',
@@ -488,7 +529,8 @@ const seedProducts = [
     imageUrl:
       'https://instagifts.co/wp-content/uploads/2019/09/flamingo-cat-costume-640x602.jpg',
     qoh: 7,
-    species: 'cat'
+    species: 'cat',
+    category: 'accessories'
   },
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   {
@@ -498,7 +540,8 @@ const seedProducts = [
     imageUrl:
       'http://uploads.neatorama.com/images/posts/997/56/56997/1357192949-0.jpg',
     qoh: 15,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'costume'
   },
   {
     name: 'dracula-hog',
@@ -507,7 +550,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/originals/ff/a0/bd/ffa0bde20582aedb16cc9638b60eba14.jpg',
     qoh: 20,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'costume'
   },
   {
     name: 'harry-pot-hog',
@@ -516,7 +560,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F0d%2F47%2F03%2F0d4703e43351c68f6895acb867be5372.jpg&f=1&nofb=1',
     qoh: 10,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'costume'
   },
   {
     name: 'sweater-hog',
@@ -525,7 +570,8 @@ const seedProducts = [
     imageUrl:
       'https://s-media-cache-ak0.pinimg.com/564x/45/cc/57/45cc573d687f10535a97f5a9ed192a5e.jpg',
     qoh: 15,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'everyday'
   },
   {
     name: 'beanie-hog',
@@ -534,7 +580,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2F6MV9E0cRXrEnMV2k8tUBgMWK6P6YGBE2Vgn-fRVAQS4.jpg%3Fauto%3Dwebp%26s%3Dc4961ed477c9a7d7c207c58f768bbf6de026a736&f=1&nofb=1',
     qoh: 10,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'weatherwear'
   },
   {
     name: 'hedgy-raincoat',
@@ -544,7 +591,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/474x/9d/7d/c7/9d7dc74a47d562ce3ff819419bb4f208--raincoat-hedgehogs.jpg',
     qoh: 88,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'weatherwear'
   },
   {
     name: 'hedgy-hat',
@@ -554,7 +602,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/originals/32/70/5d/32705dc6753be644f4bdc831d659c7ce.jpg',
     qoh: 55,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'accessories'
   },
   {
     name: 'bumble-hog',
@@ -564,7 +613,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/51JOjHNMNPL._AC_SY450_.jpg',
     qoh: 43,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'costume'
   },
   {
     name: 'hedgehog-socks',
@@ -573,7 +623,8 @@ const seedProducts = [
     price: 0,
     imageUrl: 'https://i.redd.it/503deuckunl01.jpg',
     qoh: 12,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'accessories'
   },
   {
     name: 'hedge-tux',
@@ -583,7 +634,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/originals/2c/93/d7/2c93d763d2efe2a04bb50ce6cab71945.jpg',
     qoh: 4,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'formal'
   },
   {
     name: 'hedge-shark',
@@ -592,7 +644,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/610vVO93AbL._AC_SL1000_.jpg',
     qoh: 5,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'costume'
   },
   {
     name: 'hedgehog-glasses',
@@ -601,7 +654,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/71IpAL8t1iL._AC_SL1001_.jpg',
     qoh: 6,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'accessories'
   },
   {
     name: 'hedgehog-sweater',
@@ -609,7 +663,8 @@ const seedProducts = [
     price: 14.23,
     imageUrl: 'https://i.redd.it/ydoe9el0k5n41.jpg',
     qoh: 7,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'everyday'
   },
   {
     name: 'hedge-tutu',
@@ -618,7 +673,8 @@ const seedProducts = [
     imageUrl:
       'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2018%2F01%2Fpet-outfit-1.jpg&q=85',
     qoh: 6,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'formal'
   },
   {
     name: 'hedge-pig',
@@ -627,7 +683,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/51N%2Bxy9bjDL._AC_SL1000_.jpg',
     qoh: 3,
-    species: 'hedgehog'
+    species: 'hedgehog',
+    category: 'costume'
   },
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   {
@@ -637,7 +694,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eHhTQy43ouUkf6yuY9GveQHaFj%26pid%3DApi&f=1',
     qoh: 15,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'holiday'
   },
   {
     name: 'turtle-tree',
@@ -646,7 +704,8 @@ const seedProducts = [
     imageUrl:
       'http://uploads.neatorama.com/images/posts/457/70/70457/1395441984-1.jpg',
     qoh: 5,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'holiday'
   },
   {
     name: 'turtle-shark',
@@ -655,7 +714,8 @@ const seedProducts = [
     imageUrl:
       'https://img1.etsystatic.com/012/1/7507736/il_570xN.454663495_dygp.jpg',
     qoh: 10,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'costume'
   },
   {
     name: 'turtle-yoda',
@@ -664,7 +724,8 @@ const seedProducts = [
     imageUrl:
       'https://i.etsystatic.com/14574419/r/il/e3955e/1137803150/il_fullxfull.1137803150_3du1.jpg',
     qoh: 10,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'costume'
   },
   {
     name: 'turtle-bunny',
@@ -673,7 +734,8 @@ const seedProducts = [
     imageUrl:
       'http://inotternews.com/wp-content/uploads/2013/10/DSC_2317-Copy.jpg',
     qoh: 20,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'costume'
   },
   {
     name: 'turtle-candle',
@@ -682,17 +744,19 @@ const seedProducts = [
     imageUrl:
       'https://static.boredpanda.com/blog/wp-content/org_uploads/2014/05/cute-crochet-tortoise-cozy-katie-bradley-12__700.jpg',
     qoh: 10,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'costume'
   },
   {
-    name: 'ssstylish-hat',
+    name: 'sssophisticated-hat',
     description:
       'quod intellegat reformidans cum an. Sed solet cetero graecis at, corrumpit argumentum ne vim. Sit ex nibh sententiae, nam te dolorum fierent vituperata, audiam veritus philosophia pri ex',
     price: 7.98,
     imageUrl:
       'https://www.thesun.co.uk/wp-content/uploads/2019/08/NINTCHDBPICT000516641595-e1567035622726.jpg',
     qoh: 42,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'formal'
   },
   {
     name: 'viking-snake',
@@ -702,7 +766,8 @@ const seedProducts = [
     imageUrl:
       'https://i.pinimg.com/originals/72/cd/13/72cd1337c035cf95e9151a6b76397965.jpg',
     qoh: 89,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'costume'
   },
   {
     name: 'party-snake',
@@ -712,7 +777,8 @@ const seedProducts = [
     imageUrl:
       'https://metro.co.uk/wp-content/uploads/2015/11/party-snake.jpg?quality=90&strip=all&w=1200&h=630&crop=1',
     qoh: 1,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'holiday'
   },
   {
     name: 'santa-snake',
@@ -722,7 +788,8 @@ const seedProducts = [
     imageUrl:
       'https://ball-pythons.net/forums/cache2.php?img=https://images.tapatalk-cdn.com/15/04/18/3e3275637baf7a67bedd62a85170ab9a.jpg',
     qoh: 122,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'holiday'
   },
   {
     name: 'sweater-snake',
@@ -732,7 +799,8 @@ const seedProducts = [
     imageUrl:
       'https://64.media.tumblr.com/0cbbf1a898ab8b666b3e48ad930bbe4e/tumblr_mxuzcr51Vd1rbiizto1_1280.jpg',
     qoh: 96,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'everyday'
   },
   {
     name: 'lizard-backpack',
@@ -741,7 +809,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/61G-04pn50L._AC_SL1001_.jpg',
     qoh: 70,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'accessories'
   },
   {
     name: 'dragon-bow',
@@ -751,7 +820,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/51eGV4guQnL._AC_SL1000_.jpg',
     qoh: 53,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'accessories'
   },
   {
     name: 'iguana-crown',
@@ -761,7 +831,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/61f0yVrq5cL._AC_SL1001_.jpg',
     qoh: 23,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'formal'
   },
   {
     name: 'lizard-hoodie',
@@ -770,7 +841,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/61GCPgjW1JL._AC_SL1200_.jpg',
     qoh: 15,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'everyday'
   },
   {
     name: 'lizard-witch-bat',
@@ -780,7 +852,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/71c8HBzjoWL._AC_SL1500_.jpg',
     qoh: 10,
-    species: 'reptile'
+    species: 'reptile',
+    category: 'costume'
   },
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   {
@@ -789,7 +862,8 @@ const seedProducts = [
     price: 29.99,
     imageUrl: 'https://i.ytimg.com/vi/gRolQBKYZxo/hqdefault.jpg',
     qoh: 10,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'costume'
   },
   {
     name: 'ferret-aviator',
@@ -798,7 +872,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmedia-cache-ak0.pinimg.com%2F236x%2Fa9%2F63%2Ff8%2Fa963f8d2eaf19d535c7e051f805c1d9d.jpg&f=1&nofb=1',
     qoh: 10,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'costume'
   },
   {
     name: 'snow-ferret',
@@ -807,7 +882,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.themodernferret.com%2Fwp-content%2Fuploads%2F2019%2F10%2F2019-Ferret-Halloween-Lumberjack-e1572021909365-1024x782.png&f=1&nofb=1',
     qoh: 20,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'weatherwear'
   },
   {
     name: 'le-ferret',
@@ -816,7 +892,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ebayimg.com%2Fimages%2Fg%2FvBMAAOSwgaVe-Zpy%2Fs-l640.jpg&f=1&nofb=1',
     qoh: 10,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'formal'
   },
   {
     name: 'donut-ferret',
@@ -825,7 +902,8 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F23%2F56%2F29%2F23562962c470c38da8382ba87e204a41--animals-in-costumes-pet-costumes.jpg&f=1&nofb=1',
     qoh: 15,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'costume'
   },
   {
     name: 'jester-ferret',
@@ -835,7 +913,8 @@ const seedProducts = [
     imageUrl:
       'https://s7d5.scene7.com/is/image/PetsUnited/T651160?wid=328&hei=328',
     qoh: 83,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'costume'
   },
   {
     name: 'frenchie-ferret',
@@ -844,7 +923,8 @@ const seedProducts = [
     price: 5.25,
     imageUrl: 'https://i.redd.it/e1irn17a0w821.jpg',
     qoh: 44,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'accessories'
   },
   {
     name: 'fourth-of-july-ferret',
@@ -854,7 +934,8 @@ const seedProducts = [
     imageUrl:
       'https://s7d5.scene7.com/is/image/PetsUnited/T650838?wid=328&hei=328',
     qoh: 10,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'holiday'
   },
   {
     name: 'sweater-ferret',
@@ -864,7 +945,8 @@ const seedProducts = [
     imageUrl:
       'https://www.pikpng.com/pngl/m/153-1531264_free-png-images-cute-ferrets-in-clothes-clipart.png',
     qoh: 31,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'everyday'
   },
   {
     name: 'ferret-hoodie',
@@ -874,7 +956,8 @@ const seedProducts = [
     imageUrl:
       'https://allpetnews.com/wp-content/uploads/2011/08/Ferret-Clothes.jpg',
     qoh: 67,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'everyday'
   },
   {
     name: 'ferret-bear',
@@ -884,7 +967,8 @@ const seedProducts = [
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/61mtVEQx4RL._AC_SL1000_.jpg',
     qoh: 14,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'costume'
   },
   {
     name: 'ferret-cop',
@@ -894,7 +978,8 @@ const seedProducts = [
     imageUrl:
       'https://thumbs.dreamstime.com/b/ferret-portrait-studio-police-style-hat-handcuffs-ferret-portrait-studio-little-sofa-police-style-112155038.jpg',
     qoh: 8,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'costume'
   },
   {
     name: 'ferret-red-hoodie',
@@ -904,7 +989,8 @@ const seedProducts = [
     imageUrl:
       'https://en.bcdn.biz/Images/2019/11/20/3188376e-2db9-4663-a4e8-8b70c5f5866b.jpg',
     qoh: 14,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'everyday'
   },
   {
     name: 'ferret-sailor',
@@ -914,7 +1000,8 @@ const seedProducts = [
     imageUrl:
       'https://cdn.shopify.com/s/files/1/0248/4522/1987/files/ferret_costumes_5.jpg?247',
     qoh: 65,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'costume'
   },
   {
     name: 'ferret-plaid-dress',
@@ -924,7 +1011,18 @@ const seedProducts = [
     imageUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.trbimg.com%2Fimg-59824141%2Fturbine%2Fla-1501708606-v1v8yvedt0-snap-image&f=1&nofb=1',
     qoh: 22,
-    species: 'ferret'
+    species: 'ferret',
+    category: 'everyday'
+  },
+  {
+    name: 'ferret-dress',
+    description:
+      'Ius id prima tibique voluptua, ne vivendo elaboraret his. Et Tum prima bienvenido viernes amarillo. Nec esse movet menandri cu, ex quo debet offendit consulatu, nam cu equidem accusamus.',
+    price: 32.99,
+    imageUrl: 'https://cozypetz.com/OPFerretinPinkstripdressharness.jpg',
+    qoh: 72,
+    species: 'ferret',
+    category: 'formal'
   }
 ]
 
