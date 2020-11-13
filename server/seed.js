@@ -570,7 +570,7 @@ const seedProducts = [
     name: 'hedgehog-socks',
     description:
       'Bonorum detracto mei et, mei justo ornatus ancillae ex, cu eam nihil perfecto hendrerit. At solum omnes salutatus nam. Et quidam graeco pro, vix ex repudiare expetendis. Cu mentitum suscipit iudicabit eam, ei cum decore iudicabit reformidans. ',
-    price: 0,
+    price: 12.0,
     imageUrl: 'https://i.redd.it/503deuckunl01.jpg',
     qoh: 12,
     species: 'hedgehog'
@@ -941,6 +941,119 @@ const seed = async () => {
         return Product.create(product)
       })
     )
+
+    const order1 = await Order.create({
+      userId: 1,
+      payment: 'credit card',
+      total: 59.98,
+      active: false
+    })
+    const order2 = await Order.create({
+      userId: 2,
+      payment: 'apple pay',
+      total: 79.98,
+      active: false
+    })
+    const order3 = await Order.create({
+      userId: 4,
+      payment: 'paypal',
+      total: 93.95,
+      active: false
+    })
+    const order4 = await Order.create({
+      userId: 5,
+      payment: 'credit card',
+      total: 41.99,
+      active: false
+    })
+    const order5 = await Order.create({
+      userId: 2,
+      payment: 'apple pay',
+      total: 119.97,
+      active: false
+    })
+    const order6 = await Order.create({
+      userId: 1,
+      payment: 'paypal',
+      total: 59.98,
+      active: false
+    })
+
+    const orderItem1 = await OrderLineItem.create({
+      productId: 1,
+      orderId: order1.id,
+      price: 39.99,
+      quantity: 1
+    })
+
+    const orderItem2 = await OrderLineItem.create({
+      productId: 2,
+      orderId: order1.id,
+      price: 19.99,
+      quantity: 1
+    })
+
+    const orderItem3 = await OrderLineItem.create({
+      productId: 6,
+      orderId: order2.id,
+      price: 39.99,
+      quantity: 2
+    })
+    const orderItem4 = await OrderLineItem.create({
+      productId: 22,
+      orderId: order3.id,
+      price: 19.99,
+      quantity: 1
+    })
+    const orderItem5 = await OrderLineItem.create({
+      productId: 32,
+      orderId: order3.id,
+      price: 73.96,
+      quantity: 2
+    })
+    const orderItem6 = await OrderLineItem.create({
+      productId: 46,
+      orderId: order4.id,
+      price: 29.99,
+      quantity: 1
+    })
+    const orderItem7 = await OrderLineItem.create({
+      productId: 50,
+      orderId: order4.id,
+      price: 12.0,
+      quantity: 1
+    })
+    const orderItem8 = await OrderLineItem.create({
+      productId: 58,
+      orderId: order5.id,
+      price: 29.99,
+      quantity: 1
+    })
+    const orderItem9 = await OrderLineItem.create({
+      productId: 62,
+      orderId: order5.id,
+      price: 59.99,
+      quantity: 1
+    })
+    const orderItem10 = await OrderLineItem.create({
+      productId: 57,
+      orderId: order5.id,
+      price: 29.99,
+      quantity: 1
+    })
+    const orderItem11 = await OrderLineItem.create({
+      productId: 73,
+      orderId: order6.id,
+      price: 29.99,
+      quantity: 1
+    })
+    const orderItem12 = await OrderLineItem.create({
+      productId: 77,
+      orderId: order6.id,
+      price: 29.99,
+      quantity: 1
+    })
+
     console.log('Database for Grace Shopper seeded!')
   } catch (err) {
     console.log(err)

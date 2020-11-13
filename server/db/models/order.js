@@ -15,7 +15,9 @@ const Order = db.define('order', {
     defaultValue: 0
   },
   date: {
-    type: Sequelize.DATE
+    type: Sequelize.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW
   },
   active: {
     type: Sequelize.BOOLEAN,
