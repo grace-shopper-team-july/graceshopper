@@ -4,7 +4,7 @@ import {
   addProductToCart,
   removeProductFromCart,
   updateProductQty
-} from './shopping-cart-functions'
+} from '../shopping-cart-functions'
 
 export class Cart extends React.Component {
   constructor() {
