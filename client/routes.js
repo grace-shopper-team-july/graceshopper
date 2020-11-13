@@ -6,7 +6,7 @@ import {Login, UserHome, AllProducts} from './components/'
 import {me} from './store'
 import SinglePage from './components/SingleProduct'
 import {Signup} from './components/SignUp'
-import {Cart} from './components/Cart'
+import Cart from './components/Cart'
 import OrderDetails from './components/OrderDetails'
 import AdminHome from './components/Admin-Home'
 
