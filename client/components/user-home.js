@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import AllProducts from './index'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
-import {fetchAllOrders, fetchSingleOrders} from '../store/orders'
+import {fetchAllOrders} from '../store/orders'
 
 /**
  * COMPONENT
@@ -18,13 +18,8 @@ export class UserHome extends React.Component {
   }
 
   render() {
-    console.log(this.props.admin)
     const user = this.props.user
-    const orderArr = this.props.order.orders
-    const thisUsersOrder = orderArr.filter(order => {
-      return order.userId === user.id
-    })
-    console.log(thisUsersOrder[0])
+
     return (
       <div>
         <div>
@@ -32,24 +27,10 @@ export class UserHome extends React.Component {
           <h4>{user.email}</h4>
         </div>
         <div>
-          <h2>Orders</h2>
-          {thisUsersOrder && thisUsersOrder.length > 0 ? (
-            thisUsersOrder.map(order => {
-              return (
-                <div key={order.id}>
-                  <Link to={`/home/orders/${order.id}`}>
-                    <h4>Order Number: {order.id}</h4>
-                  </Link>
-                  <h4>Payment Type: {order.payment}</h4>
-                  <h4>Order Total:{order.total}</h4>
-                </div>
-              )
-            })
-          ) : (
-            <div>
-              <h4>...No Orders Placed Yet...</h4>
-            </div>
-          )}
+          <h3>User Portal Options</h3>
+          <Link to="home/orders">
+            <button>Order History</button>
+          </Link>
         </div>
       </div>
     )
@@ -61,16 +42,13 @@ export class UserHome extends React.Component {
  */
 const mapState = state => {
   return {
-    user: state.user.user,
-    order: state.ordersReducer,
-    isAdmin: state.user.admin
+    user: state.user.user
   }
 }
 
 const mapDispatch = dispatch => {
   return {
-    fetchAllOrders: () => dispatch(fetchAllOrders()),
-    fetchSingleOrders: id => dispatch(fetchSingleOrders(id))
+    fetchAllOrders: () => dispatch(fetchAllOrders())
   }
 }
 export default connect(mapState, mapDispatch)(UserHome)

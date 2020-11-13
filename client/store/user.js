@@ -60,7 +60,7 @@ export const auth = (email, password, method) => async dispatch => {
     } else {
       history.push('/home')
     }
-    console.log('this is on user reducer', res.data)
+    //console.log('this is on user reducer', res.data)
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }
@@ -88,7 +88,7 @@ export const fetchAllUsers = () => {
   return async dispatch => {
     try {
       const {data} = await axios.get('/api/users')
-      console.log('users', data)
+      //console.log('users', data)
       dispatch(getAllUsers(data))
     } catch (err) {
       console.error(err)
