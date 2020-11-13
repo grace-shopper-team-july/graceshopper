@@ -62,11 +62,18 @@ export class AdminHome extends React.Component {
             userArr.map(user => {
               return (
                 <div key={user.id}>
-                  <p>User Id:{user.id}</p>
-                  <p>User First Name:{user.firstName}</p>
-                  <p>User Last Name:{user.lastName}</p>
-                  <p>User Email:{user.email}</p>
-                  <p>Admin Status:{user.admin}</p>
+                  <p>User Id: {user.id}</p>
+                  <p>User First Name: {user.firstName}</p>
+                  <p>User Last Name: {user.lastName}</p>
+                  <p>User Email: {user.email}</p>
+                  <p>Admin Status: {user.admin.toString()}</p>
+                  <label>
+                    <small>Toggle Admin Status:</small>
+                  </label>
+                  <select>
+                    <option>True</option>
+                    <option>False</option>
+                  </select>
                 </div>
               )
             })
