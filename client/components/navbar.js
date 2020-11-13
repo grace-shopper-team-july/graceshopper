@@ -4,15 +4,31 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
+const Navbar = ({handleClick, isLoggedIn, isAdmin}) => (
   <div>
     <h1>PETHREADZ</h1>
     <nav>
       <Link to="/products">Products</Link>
-      {isLoggedIn ? (
+      {isAdmin ? (
+        <div>
+          {/* The navbar will show these links after you log in */}
+          <Link to="/home/admin">Admin Home</Link>
+        </div>
+      ) : (
+        <div />
+      )}
+      {!isAdmin && isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
           <Link to="/home">Home</Link>
+        </div>
+      ) : (
+        <div />
+      )}
+      {isLoggedIn ? (
+        <div>
+          {/* The navbar will show these links after you log in */}
+          {/* <Link to="/home">Home</Link> */}
           <a href="#" onClick={handleClick}>
             Logout
           </a>
@@ -34,7 +50,8 @@ const Navbar = ({handleClick, isLoggedIn}) => (
  */
 const mapState = state => {
   return {
-    isLoggedIn: !!state.user.user.id
+    isLoggedIn: !!state.user.user.id,
+    isAdmin: !!state.user.user.admin
   }
 }
 

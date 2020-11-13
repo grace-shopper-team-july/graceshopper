@@ -55,7 +55,12 @@ export const auth = (email, password, method) => async dispatch => {
 
   try {
     dispatch(getUser(res.data))
-    history.push('/home')
+    if (res.data.admin) {
+      history.push('/home/admin')
+    } else {
+      history.push('/home')
+    }
+    console.log('this is on user reducer', res.data)
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }
