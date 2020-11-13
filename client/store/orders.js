@@ -17,11 +17,11 @@ const getSingleOrder = order => {
   }
 }
 
-export const fetchAllOrders = orders => {
+export const fetchAllOrders = () => {
   return async dispatch => {
     try {
-      let allOrders = await axios.get('/api/orders')
-      dispatch(getAllOrders(allOrders))
+      let {data} = await axios.get('/api/orders')
+      dispatch(getAllOrders(data))
     } catch (err) {
       console.error(err)
     }
@@ -31,8 +31,8 @@ export const fetchAllOrders = orders => {
 export const fetchSingleOrders = orderId => {
   return async dispatch => {
     try {
-      let singleOrder = await axios.get(`/api/orders/${orderId}`)
-      dispatch(getSingleOrder(singleOrder))
+      let {data} = await axios.get(`/api/orders/${orderId}`)
+      dispatch(getSingleOrder(data))
     } catch (err) {
       console.error(err)
     }

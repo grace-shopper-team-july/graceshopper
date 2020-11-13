@@ -20,7 +20,7 @@ router.get('/:orderId', async (req, res, next) => {
       where: {
         id: req.params.orderId
       },
-      include: [{model: Product}]
+      include: [{model: Product}, {model: User}]
     })
     res.json(singleOrder)
   } catch (err) {
