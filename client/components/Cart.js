@@ -131,7 +131,8 @@ export class Cart extends React.Component {
   }
 
   handleQtyChange(evt, productId) {
-    return this.props.updateItemQty(productId, evt.target.value)
+    let qtyNum = parseInt(evt.target.value)
+    return this.props.updateItemQty(productId, qtyNum)
   }
 }
 
