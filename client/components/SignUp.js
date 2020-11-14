@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
 import {signup} from '../store/user'
+import {Redirect, Route, NavLink} from 'react-router-dom'
 
 /**
  * COMPONENT
@@ -11,19 +12,44 @@ export class SignupForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      firstName: ''
+      redirectToLogin: false
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-
-  handleChange(evt) {
-    this.setState({[evt.target.name]: evt.target.value})
+  handleSubmit(evt) {
+    evt.preventDefault()
+    const formName = evt.target.name
+    const firstName = evt.target.firstName.value
+    const lastName = evt.target.lastName.value
+    const addressLine1 = evt.target.addressLine1.value
+    const addressLine2 = evt.target.addressLine2.value
+    const city = evt.target.city.value
+    const state = evt.target.state.value
+    const zip = evt.target.zip.value
+    const phone = evt.target.phone.value
+    const email = evt.target.email.value
+    const password = evt.target.password.value
+    this.props.signup({
+      firstName,
+      lastName,
+      addressLine1,
+      addressLine2,
+      city,
+      state,
+      zip,
+      phone,
+      email,
+      password
+    })
+    evt.target.reset()
+    this.setState({redirectToLogin: true})
   }
 
   render() {
+    const redirectToLogin = this.state.redirectToLogin
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit} name={this.props.name}>
+        <form onSubmit={this.handleSubmit} name={this.props.name}>
           <div>
             <label htmlFor="firstName">
               <small>First Name</small>
@@ -92,6 +118,7 @@ export class SignupForm extends React.Component {
               <div> {this.props.error.response.data} </div>
             )}
         </form>
+        {redirectToLogin && <Redirect to="/login" />}
         <a href="/auth/google">{this.props.displayName} with Google</a>
       </div>
     )
@@ -123,36 +150,7 @@ const mapSignup = state => {
 
 const mapDispatch = dispatch => {
   return {
-    signup: user => dispatch(signup(user)),
-    handleSubmit(evt) {
-      evt.preventDefault()
-      const formName = evt.target.name
-      const firstName = evt.target.firstName.value
-      const lastName = evt.target.lastName.value
-      const addressLine1 = evt.target.addressLine1.value
-      const addressLine2 = evt.target.addressLine2.value
-      const city = evt.target.city.value
-      const state = evt.target.state.value
-      const zip = evt.target.zip.value
-      const phone = evt.target.phone.value
-      const email = evt.target.email.value
-      const password = evt.target.password.value
-      dispatch(
-        signup({
-          firstName,
-          lastName,
-          addressLine1,
-          addressLine2,
-          city,
-          state,
-          zip,
-          phone,
-          email,
-          password
-        })
-      )
-      evt.target.reset()
-    }
+    signup: user => dispatch(signup(user))
   }
 }
 
@@ -164,6 +162,6 @@ export const Signup = connect(mapSignup, mapDispatch)(SignupForm)
 SignupForm.propTypes = {
   name: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  // handleSubmit: PropTypes.func.isRequired,
   error: PropTypes.object
 }
