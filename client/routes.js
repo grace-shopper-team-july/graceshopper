@@ -14,6 +14,7 @@ import OrderHistory from './components/OrderHistory'
 import EditUser from './components/EditUser'
 import ManageProducts from './components/Admin_ManageProducts'
 import EditProduct from './components/Admin_EditProduct'
+import Checkout from './components/Checkout'
 /**
  * COMPONENT
  */
@@ -35,6 +36,7 @@ class Routes extends Component {
         <Route path="/products/:productId" component={SinglePage} />
         <Route path="/products" component={AllProducts} />
         <Route path="/cart" component={Cart} />
+        <Route path="/checkout" component={Checkout} />
         {isAdmin && (
           <Switch>
             <Route exact path="/home/admin" component={AdminHome} />
@@ -57,6 +59,7 @@ class Routes extends Component {
             />
             <Route exact path="/home/edit/:productId" component={EditProduct} />
             <Route exact path="/cart" component={Cart} />
+            <Route path="/checkout" component={Checkout} />
           </Switch>
         )}
         {isLoggedIn && (
@@ -71,6 +74,7 @@ class Routes extends Component {
             <Route exact path="/home/orders" component={OrderHistory} />
             <Route exact path="/home/edit_account" component={EditUser} />
             <Route exact path="/cart" component={Cart} />
+            <Route path="/checkout" component={Checkout} />
           </Switch>
         )}
 
