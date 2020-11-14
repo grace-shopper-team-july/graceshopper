@@ -49,6 +49,7 @@ export class SignupForm extends React.Component {
     const redirectToLogin = this.state.redirectToLogin
     return (
       <div>
+        <h1>Hi There, Create Your Account Here! </h1>
         <form onSubmit={this.handleSubmit} name={this.props.name}>
           <div>
             <label htmlFor="firstName">

@@ -11,6 +11,7 @@ const AuthForm = props => {
 
   return (
     <div>
+      <h1>Welcome Back Friend! Sign Into Your Account </h1>
       <form onSubmit={handleSubmit} name={name}>
         <div>
           <label htmlFor="email">
