@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchCart, removeItem, updateItemQty, addItem} from '../store/cart'
 import {getShoppingCart} from '../shopping-cart-functions'
+import currency from 'currency.js'
 
 export class Cart extends React.Component {
   constructor() {
@@ -113,18 +114,19 @@ export class Cart extends React.Component {
   }
 
   renderOrderSummaryList() {
-    let subTotal = 0
-    let shipping = 5.0
+    let subTotal = currency(0)
+    let shipping = currency(5)
     getShoppingCart().forEach(item => {
-      subTotal += item.price * item.qty
+      subTotal = subTotal.add(currency(item.price).multiply(item.qty))
+      console.log(subTotal)
     })
     return (
       <div id="shopping-cart-order-summary-list">
         <ul>
-          <li>Subtotal: ${subTotal}</li>
-          <li>Shipping: ${shipping}</li>
+          <li>Subtotal: {subTotal.format()}</li>
+          <li>Shipping: {shipping.format()}</li>
           <li>Tax: $0.00</li>
-          <li>Total: ${subTotal + shipping}</li>
+          <li>Total: {subTotal.add(shipping).format()}</li>
         </ul>
       </div>
     )
