@@ -122,7 +122,6 @@ export class Cart extends React.Component {
     let shipping = getShoppingCart().length === 0 ? currency(0) : currency(5)
     getShoppingCart().forEach(item => {
       subTotal = subTotal.add(currency(item.price).multiply(item.qty))
-      console.log(subTotal)
     })
     return (
       <div id="shopping-cart-order-summary-list">
