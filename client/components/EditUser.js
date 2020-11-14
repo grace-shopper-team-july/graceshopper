@@ -12,16 +12,43 @@ class EditUser extends React.Component {
   handleSubmit(id) {
     return evt => {
       evt.preventDefault()
-      const firstName = evt.target.firstName.value
-      const lastName = evt.target.lastName.value
-      const addressLine1 = evt.target.addressLine1.value
-      const addressLine2 = evt.target.addressLine2.value
-      const city = evt.target.city.value
-      const state = evt.target.state.value
-      const zip = evt.target.zip.value
-      const phone = evt.target.phone.value
-      const email = evt.target.email.value
-      const password = evt.target.password.value
+      const firstName =
+        evt.target.firstName.value === ''
+          ? this.props.user.user.firstName
+          : evt.target.firstName.value
+      const lastName =
+        evt.target.lastName.value === ''
+          ? this.props.user.user.lastName
+          : evt.target.lastName.value
+      const addressLine1 =
+        evt.target.addressLine1.value === ''
+          ? this.props.user.user.addressLine1
+          : evt.target.addressLine1.value
+      const addressLine2 =
+        evt.target.addressLine2.value === ''
+          ? this.props.user.user.addressLine2
+          : evt.target.addressLine2.value
+      const city =
+        evt.target.city.value === ''
+          ? this.props.user.user.city
+          : evt.target.city.value
+      const state =
+        evt.target.state.value === ''
+          ? this.props.user.user.state
+          : evt.target.state.value
+      const zip =
+        evt.target.zip.value === ''
+          ? this.props.user.user.zip
+          : evt.target.zip.value
+      const phone =
+        evt.target.phone.value === ''
+          ? this.props.user.user.phone
+          : evt.target.phone.value
+      const email =
+        evt.target.email.value === ''
+          ? this.props.user.user.email
+          : evt.target.email.value
+      //const password = evt.target.password.value === '' ? this.props.user.user.password : evt.target.password.value
       this.props.editUser(id, {
         firstName,
         lastName,
@@ -31,8 +58,7 @@ class EditUser extends React.Component {
         state,
         zip,
         phone,
-        email,
-        password
+        email
       })
       evt.target.reset()
     }
@@ -113,12 +139,12 @@ class EditUser extends React.Component {
             </label>
             <input name="email" type="text" />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="password">
-              <small>Password:</small>
-            </label>
-            <input name="password" type="password" />
-          </div>
+                <small>Password:</small>
+                </label>
+            <input name='password' type='password' />
+          </div> */}
           <button>Submit</button>
         </form>
       </div>
