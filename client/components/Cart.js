@@ -2,7 +2,9 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchCart, removeItem, updateItemQty, addItem} from '../store/cart'
 import {getShoppingCart} from '../shopping-cart-functions'
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import currency from 'currency.js'
+
 
 export class Cart extends React.Component {
   constructor() {
@@ -52,6 +54,9 @@ export class Cart extends React.Component {
         >
           Add To Cart
         </button>
+        <Link to="/checkout">
+          <button>CHECKOUT</button>
+        </Link>
       </div>
     )
   }
