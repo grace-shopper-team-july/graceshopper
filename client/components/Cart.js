@@ -67,9 +67,13 @@ export class Cart extends React.Component {
           </div>
           <div id="cart-item-right">
             <div id="cart-item-attributes">{item.name}</div>
-            <div id="cart-item-price">{item.price}</div>
+            <div id="cart-item-price">{currency(item.price).format()}</div>
             <div id="cart-item-quantity">{this.renderQtyDropdown(item)}</div>
-            <div id="cart-item-total-price">{item.price * item.qty}</div>
+            <div id="cart-item-total-price">
+              {currency(item.price)
+                .multiply(item.qty)
+                .format()}
+            </div>
             <div id="cart-item-remove">
               <button
                 type="button"
