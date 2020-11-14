@@ -125,7 +125,20 @@ export default function(state = defaultUser, action) {
     case GET_ALL_USERS:
       return {...state, allUsers: action.users}
     case UPDATE_USER:
-      return {...state, user: action.user}
+      if (state.user.id === action.user.id) {
+        return {...state, user: action.user}
+      } else {
+        return {
+          ...state,
+          allUsers: [
+            ...state.allUsers.filter(user => {
+              return user.id !== action.user.id
+            }),
+            action.user
+          ]
+        }
+      }
+
     case REMOVE_USER:
       return defaultUser
     default:
