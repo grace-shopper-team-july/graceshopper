@@ -1,6 +1,8 @@
 import {
   getShoppingCart,
-  removeProductFromCart
+  removeProductFromCart,
+  addProductToCart,
+  updateProductQty
 } from '../shopping-cart-functions'
 
 //Action Types
@@ -17,25 +19,46 @@ const setCart = cart => {
 //Thunk
 export const fetchCart = () => {
   return dispatch => {
-    try {
-      const cart = getShoppingCart()
-      dispatch(setCart(cart))
-    } catch (err) {
-      console.error(err)
-    }
+    const cart = getShoppingCart()
+    dispatch(setCart(cart))
   }
 }
 
 export const removeItem = id => {
   return dispatch => {
-    try {
-      const cart = removeProductFromCart(id)
+    const cart = removeProductFromCart(id)
+    dispatch(setCart(cart))
+  }
+}
+
+export const addItem = (item, qty) => {
+  return dispatch => {
+    const cart = addProductToCart(item, qty)
+    dispatch(setCart(cart))
+  }
+}
+
+export const updateItemQty = (item, qty) => {
+  return dispatch => {
+    const cart = updateProductQty(item, qty)
+    dispatch(setCart(cart))
+  }
+}
+
+// Experiment with this later?
+/*export const setThunkFactory = (cartFunction) => {
+  return (...params) => {
+    return dispatch => {
+      const cart = cartFunction.apply(null, params)
       dispatch(setCart(cart))
-    } catch (err) {
-      console.error(err)
     }
   }
 }
+
+export const newAddItem = setThunkFactory(addProductToCart)
+export const newRemoveItem = setThunkFactory(removeProductFromCart)
+export const newFetchCart = setThunkFactory(getShoppingCart)
+*/
 
 //Initial State
 const initialState = {
