@@ -13,6 +13,7 @@ import AdminManageUsers from './components/Admin_ManageUsers'
 import OrderHistory from './components/OrderHistory'
 import EditUser from './components/EditUser'
 import ManageProducts from './components/Admin_ManageProducts'
+import EditProduct from './components/Admin_EditProduct'
 /**
  * COMPONENT
  */
@@ -54,6 +55,7 @@ class Routes extends Component {
               path="/home/manageproducts"
               component={ManageProducts}
             />
+            <Route exact path="/home/edit/:productId" component={EditProduct} />
           </Switch>
         )}
         {isLoggedIn && (

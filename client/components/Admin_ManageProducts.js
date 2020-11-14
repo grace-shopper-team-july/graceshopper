@@ -1,14 +1,20 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchProducts} from '../store/products'
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
+import {fetchProducts, removeProduct} from '../store/products'
 
 class ManageProducts extends React.Component {
   constructor(props) {
     super(props)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchProducts()
+  }
+
+  handleClick(id) {
+    this.props.removeProduct(id)
   }
 
   render() {
@@ -23,8 +29,12 @@ class ManageProducts extends React.Component {
               <div key={product.id}>
                 <h4>Product Id: {product.id}</h4>
                 <h4>Product Name: {product.name}</h4>
-                <button>Edit</button>
-                <button>Remove</button>
+                <Link to={`/home/edit/${product.id}`}>
+                  <button>Edit</button>
+                </Link>
+                <button onClick={() => this.handleClick(product.id)}>
+                  Remove
+                </button>
               </div>
             )
           })
@@ -44,7 +54,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    fetchProducts: () => dispatch(fetchProducts())
+    fetchProducts: () => dispatch(fetchProducts()),
+    removeProduct: id => dispatch(removeProduct(id))
   }
 }
 
