@@ -11,6 +11,7 @@ import OrderDetails from './components/OrderDetails'
 import AdminHome from './components/Admin-Home'
 import AdminManageUsers from './components/Admin_ManageUsers'
 import OrderHistory from './components/OrderHistory'
+import EditUser from './components/EditUser'
 /**
  * COMPONENT
  */
@@ -46,6 +47,7 @@ class Routes extends Component {
               component={AdminManageUsers}
             />
             <Route exact path="/home/orders" component={OrderHistory} />
+            <Route exact path="/home/edit_account" component={EditUser} />
           </Switch>
         )}
         {isLoggedIn && (
@@ -58,6 +60,7 @@ class Routes extends Component {
               component={OrderDetails}
             />
             <Route exact path="/home/orders" component={OrderHistory} />
+            <Route exact path="/home/edit_account" component={EditUser} />
           </Switch>
         )}
 
