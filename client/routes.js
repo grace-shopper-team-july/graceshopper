@@ -9,7 +9,11 @@ import {Signup} from './components/SignUp'
 import Cart from './components/Cart'
 import OrderDetails from './components/OrderDetails'
 import AdminHome from './components/Admin-Home'
-
+import AdminManageUsers from './components/Admin_ManageUsers'
+import OrderHistory from './components/OrderHistory'
+import EditUser from './components/EditUser'
+import ManageProducts from './components/Admin_ManageProducts'
+import EditProduct from './components/Admin_EditProduct'
 /**
  * COMPONENT
  */
@@ -21,7 +25,8 @@ class Routes extends Component {
   render() {
     const {isLoggedIn} = this.props
     const {isAdmin} = this.props
-    console.log('isadmin', this.props.isAdmin)
+    // console.log('isadmin', this.props.isAdmin)
+    // console.log('islogged', this.props.isLoggedIn)
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
@@ -32,7 +37,25 @@ class Routes extends Component {
         <Route path="/cart" component={Cart} />
         {isAdmin && (
           <Switch>
-            <Route path="/home/admin" component={AdminHome} />
+            <Route exact path="/home/admin" component={AdminHome} />
+            <Route
+              exact
+              path="/home/orders/:orderId"
+              component={OrderDetails}
+            />
+            <Route
+              exact
+              path="/home/manageusers"
+              component={AdminManageUsers}
+            />
+            <Route exact path="/home/orders" component={OrderHistory} />
+            <Route exact path="/home/edit_account" component={EditUser} />
+            <Route
+              exact
+              path="/home/manageproducts"
+              component={ManageProducts}
+            />
+            <Route exact path="/home/edit/:productId" component={EditProduct} />
           </Switch>
         )}
         {isLoggedIn && (
@@ -44,6 +67,8 @@ class Routes extends Component {
               path="/home/orders/:orderId"
               component={OrderDetails}
             />
+            <Route exact path="/home/orders" component={OrderHistory} />
+            <Route exact path="/home/edit_account" component={EditUser} />
           </Switch>
         )}
 

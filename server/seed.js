@@ -336,16 +336,6 @@ const seedProducts = [
     category: 'costume'
   },
   {
-    name: 'tuxedo-cat',
-    description: `salvia banjo disrupt etsy diy tbh. bicycle rights wolf post-ironic copper mug. vaporware taiyaki normcore hella drinking vinegar adaptogen palo santo snackwave pug green juice edison bulb vegan church-key butcher. portland gluten-free humblebrag hell of snackwave +1 iceland air plant mustache vape hoodie pbr&b put a bird on it crucifix ethical. plaid post-ironic squid, vhs cardigan xoxo tumeric master cleanse next level wayfarers swag succulents tattooed ethical aesthetic. aesthetic flexitarian freegan, jean shorts tattooed blog authentic.`,
-    price: 29.99,
-    imageurl:
-      'https://i.pinimg.com/originals/c2/d1/cd/c2d1cd15d057ce092513b972187dfbae.jpg',
-    qoh: 20,
-    species: 'cat',
-    category: 'formal'
-  },
-  {
     name: 'mario-cat-hat',
     description: `Portland jean shorts fingerstache knausgaard, thundercats tumblr taxidermy hella sriracha whatever cornhole yuccie chia jianbing. Succulents fixie portland intelligentsia deep v brunch ethical forage, gastropub chartreuse swag vexillologist tumeric stumptown selfies. Poutine etsy man braid cred roof party slow-carb. Food truck adaptogen brooklyn air plant ethical kale chips flannel chicharrones. Put a bird on it raclette kinfolk pickled.`,
     price: 19.99,
@@ -1022,6 +1012,17 @@ const seedProducts = [
     imageUrl: 'https://cozypetz.com/OPFerretinPinkstripdressharness.jpg',
     qoh: 72,
     species: 'ferret',
+    category: 'formal'
+  },
+  {
+    name: 'tuxedo-cat',
+    description:
+      'Ius id prima tibique voluptua, ne vivendo elaboraret his. Et Tum prima bienvenido viernes amarillo. Nec esse movet menandri cu, ex quo debet offendit consulatu, nam cu equidem accusamus.',
+    price: 29.99,
+    imageUrl:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.petfriendlyhouse.com%2Fwp-content%2Fuploads%2F2020%2F01%2Ftrivia-about-tuxedo-cats.jpg&f=1&nofb=1',
+    qoh: 72,
+    species: 'cat',
     category: 'formal'
   }
 ]

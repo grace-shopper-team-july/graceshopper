@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {act} from 'react-test-renderer'
 import history from '../history'
 
 /**
@@ -8,14 +9,7 @@ const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
 const ADD_USER = 'ADD_USER'
 const GET_ALL_USERS = 'GET_ALL_USERS'
-
-/**
- * INITIAL STATE
- */
-const defaultUser = {
-  user: {},
-  allUsers: []
-}
+const UPDATE_USER = 'UPDATE_USER'
 
 /**
  * ACTION CREATORS
@@ -30,6 +24,13 @@ const getAllUsers = users => {
   return {
     type: GET_ALL_USERS,
     users
+  }
+}
+
+const updateUser = user => {
+  return {
+    type: UPDATE_USER,
+    user
   }
 }
 
@@ -60,7 +61,7 @@ export const auth = (email, password, method) => async dispatch => {
     } else {
       history.push('/home')
     }
-    console.log('this is on user reducer', res.data)
+    //console.log('this is on user reducer', res.data)
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }
@@ -88,12 +89,30 @@ export const fetchAllUsers = () => {
   return async dispatch => {
     try {
       const {data} = await axios.get('/api/users')
-      console.log('users', data)
+      //console.log('users', data)
       dispatch(getAllUsers(data))
     } catch (err) {
       console.error(err)
     }
   }
+}
+
+export const editUser = (id, userInfo) => {
+  return async dispatch => {
+    try {
+      const {data} = await axios.put(`/api/users/${id}`, userInfo)
+      dispatch(updateUser(data))
+    } catch (err) {
+      console.error(err)
+    }
+  }
+}
+/**
+ * INITIAL STATE
+ */
+const defaultUser = {
+  user: {},
+  allUsers: []
 }
 
 /**
@@ -105,6 +124,8 @@ export default function(state = defaultUser, action) {
       return {...state, user: action.user}
     case GET_ALL_USERS:
       return {...state, allUsers: action.users}
+    case UPDATE_USER:
+      return {...state, user: action.user}
     case REMOVE_USER:
       return defaultUser
     default:

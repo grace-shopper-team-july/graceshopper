@@ -15,3 +15,23 @@ router.get('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.put('/:userId', async (req, res, next) => {
+  try {
+    console.log('put', req.body)
+    console.log('params', req.params.userId)
+    const user = await User.update(req.body, {
+      where: {
+        id: req.params.userId
+      }
+    })
+    const updatedUser = await User.findOne({
+      where: {
+        id: req.params.userId
+      }
+    })
+    res.json(updatedUser)
+  } catch (err) {
+    next(err)
+  }
+})
