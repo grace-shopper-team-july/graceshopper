@@ -32,8 +32,8 @@ class SingleProduct extends React.Component {
             <label htmlFor="quantity">Quantity</label>
             <select onChange={evt => this.handleChange(evt)}>
               {quantityArray ? (
-                quantityArray.map(num => {
-                  return <option>{num}</option>
+                quantityArray.map((num, idx) => {
+                  return <option key={idx}>{num}</option>
                 })
               ) : (
                 <div />
