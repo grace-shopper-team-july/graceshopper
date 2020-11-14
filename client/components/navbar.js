@@ -8,7 +8,6 @@ const Navbar = ({handleClick, isLoggedIn, isAdmin}) => (
   <div>
     <h1>PETHREADZ</h1>
     <nav>
-      <Link to="/products">Products</Link>
       {isAdmin ? (
         <div>
           {/* The navbar will show these links after you log in */}
@@ -36,8 +35,10 @@ const Navbar = ({handleClick, isLoggedIn, isAdmin}) => (
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
+          <Link to="/products">Products</Link>
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
+          <Link to="/cart">Cart</Link>
         </div>
       )}
     </nav>

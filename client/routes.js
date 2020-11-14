@@ -56,6 +56,7 @@ class Routes extends Component {
               component={ManageProducts}
             />
             <Route exact path="/home/edit/:productId" component={EditProduct} />
+            <Route exact path="/cart" component={Cart} />
           </Switch>
         )}
         {isLoggedIn && (
@@ -69,6 +70,7 @@ class Routes extends Component {
             />
             <Route exact path="/home/orders" component={OrderHistory} />
             <Route exact path="/home/edit_account" component={EditUser} />
+            <Route exact path="/cart" component={Cart} />
           </Switch>
         )}
 
