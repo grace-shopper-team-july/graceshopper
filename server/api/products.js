@@ -27,3 +27,37 @@ router.get('/:productId', async (req, res, next) => {
   }
 })
 
+router.put('/:productId', async (req, res, next) => {
+  try {
+    const change = await Product.update(req.body, {
+      where: {
+        id: req.params.productId
+      }
+    })
+    const updatedProduct = await Product.findOne({
+      where: {
+        id: req.params.productId
+      }
+    })
+    res.json(updatedProduct)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.delete('/:productId', async (req, res, next) => {
+  try {
+    const deletedProduct = await Product.destroy({
+      where: {
+        id: req.params.productId
+      }
+    })
+    if (deletedProduct === 0) {
+      res.status(404).send('404 Error')
+    } else {
+      res.status(204).send()
+    }
+  } catch (err) {
+    next(err)
+  }
+})
