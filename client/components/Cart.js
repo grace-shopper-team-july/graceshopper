@@ -1,12 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchCart} from '../store/singleProduct'
-import {
-  getShoppingCart,
-  addProductToCart,
-  removeProductFromCart,
-  updateProductQty
-} from '../shopping-cart-functions'
+import {fetchCart, removeItem, updateItemQty, addItem} from '../store/cart'
+import {getShoppingCart} from '../shopping-cart-functions'
 
 export class Cart extends React.Component {
   constructor() {
@@ -14,16 +9,17 @@ export class Cart extends React.Component {
     this.handleQtyChange = this.handleQtyChange.bind(this)
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.fetchCart()
+  }
 
   render() {
     const testProduct = {
-      id: 3,
-      name: 'puppy-buffet',
-      price: 29.99,
-      imageUrl:
-        'https://img1.etsystatic.com/076/0/6915430/isla_fullxfull.15935439_rny2xj9r.jpg',
-      qty: 2
+      id: 5,
+      name: 'ferret-dress',
+      price: 32.99,
+      imageUrl: 'https://cozypetz.com/OPFerretinPinkstripdressharness.jpg',
+      qty: 1
     }
     return (
       <div>
@@ -49,7 +45,10 @@ export class Cart extends React.Component {
           </div>
           {this.renderOrderSummaryList()}
         </div>
-        <button type="button" onClick={() => addProductToCart(testProduct, 2)}>
+        <button
+          type="button"
+          onClick={() => this.props.addItem(testProduct, 2)}
+        >
           Add To Cart
         </button>
       </div>
@@ -73,7 +72,7 @@ export class Cart extends React.Component {
             <div id="cart-item-remove">
               <button
                 type="button"
-                onClick={() => removeProductFromCart(item.id)}
+                onClick={() => this.props.removeItem(item.id)}
               >
                 Remove
               </button>
@@ -94,7 +93,7 @@ export class Cart extends React.Component {
   }
 
   renderQtyDropdown(item) {
-    const qtyVal = Array.from({length: 10}, (x, i) => i + 1)
+    const qtyVal = Array.from({length: 10}, (_, i) => i + 1)
     return (
       <select
         name="qty"
@@ -116,7 +115,9 @@ export class Cart extends React.Component {
   renderOrderSummaryList() {
     let subTotal = 0
     let shipping = 5.0
-    getShoppingCart().forEach(item => (subTotal += item.price * item.qty))
+    getShoppingCart().forEach(item => {
+      subTotal += item.price * item.qty
+    })
     return (
       <div id="shopping-cart-order-summary-list">
         <ul>
@@ -130,20 +131,24 @@ export class Cart extends React.Component {
   }
 
   handleQtyChange(evt, productId) {
-    updateProductQty(productId, evt.target.value)
+    let qtyNum = parseInt(evt.target.value)
+    return this.props.updateItemQty(productId, qtyNum)
   }
 }
 
-/*const mapStateToProps = state => {
+const mapState = state => {
   return {
-    cart: state.cart
+    cart: state.cartReducer.cart
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatch = dispatch => {
   return {
-    fetchCart: () => dispatch(fetchCart())
+    fetchCart: () => dispatch(fetchCart()),
+    removeItem: id => dispatch(removeItem(id)),
+    addItem: (product, qty) => dispatch(addItem(product, qty)),
+    updateItemQty: (productId, qty) => dispatch(updateItemQty(productId, qty))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart); */
+export default connect(mapState, mapDispatch)(Cart)

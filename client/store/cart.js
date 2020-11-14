@@ -1,12 +1,17 @@
-import {getShoppingCart} from '../shopping-cart-functions'
+import {
+  getShoppingCart,
+  removeProductFromCart,
+  addProductToCart,
+  updateProductQty
+} from '../shopping-cart-functions'
 
 //Action Types
-const GET_CART = 'GET_CART'
+const SET_CART = 'SET_CART'
 
 //Action Creators
-const getCart = cart => {
+const setCart = cart => {
   return {
-    type: GET_CART,
+    type: SET_CART,
     cart
   }
 }
@@ -14,14 +19,46 @@ const getCart = cart => {
 //Thunk
 export const fetchCart = () => {
   return dispatch => {
-    try {
-      const cart = getShoppingCart()
-      dispatch(getCart(cart))
-    } catch (err) {
-      console.error(err)
+    const cart = getShoppingCart()
+    dispatch(setCart(cart))
+  }
+}
+
+export const removeItem = id => {
+  return dispatch => {
+    const cart = removeProductFromCart(id)
+    dispatch(setCart(cart))
+  }
+}
+
+export const addItem = (item, qty) => {
+  return dispatch => {
+    const cart = addProductToCart(item, qty)
+    dispatch(setCart(cart))
+  }
+}
+
+export const updateItemQty = (item, qty) => {
+  return dispatch => {
+    const cart = updateProductQty(item, qty)
+    dispatch(setCart(cart))
+  }
+}
+
+// Experiment with this later?
+/*export const setThunkFactory = (cartFunction) => {
+  return (...params) => {
+    return dispatch => {
+      const cart = cartFunction.apply(null, params)
+      dispatch(setCart(cart))
     }
   }
 }
+
+export const newAddItem = setThunkFactory(addProductToCart)
+export const newRemoveItem = setThunkFactory(removeProductFromCart)
+export const newFetchCart = setThunkFactory(getShoppingCart)
+*/
 
 //Initial State
 const initialState = {
@@ -31,7 +68,7 @@ const initialState = {
 //Reducer
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_CART:
+    case SET_CART:
       return {...state, cart: action.cart}
     default:
       return state
