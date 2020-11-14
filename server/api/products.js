@@ -62,3 +62,12 @@ router.delete('/:productId', async (req, res, next) => {
     next(err)
   }
 })
+
+router.post('/', async (req, res, next) => {
+  try {
+    const newProduct = await Product.create(req.body)
+    res.json(newProduct)
+  } catch (err) {
+    next(err)
+  }
+})

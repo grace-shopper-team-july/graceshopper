@@ -3,6 +3,7 @@ import {act} from 'react-test-renderer'
 
 const SET_PRODUCTS = 'SET_PRODUCTS'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
+const ADD_PRODUCT = 'ADD_PRODUCT'
 
 export const setProducts = products => ({
   type: SET_PRODUCTS,
@@ -13,6 +14,13 @@ const deleteProduct = id => {
   return {
     type: DELETE_PRODUCT,
     id
+  }
+}
+
+const addProduct = product => {
+  return {
+    type: ADD_PRODUCT,
+    product
   }
 }
 
@@ -38,6 +46,17 @@ export const removeProduct = id => {
   }
 }
 
+export const postProduct = product => {
+  return async dispatch => {
+    try {
+      const {data} = await axios.post('/api/products', product)
+      dispatch(addProduct(data))
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+}
+
 const initialState = {
   products: []
 }
@@ -55,6 +74,8 @@ export default function productsReducer(state = initialState, action) {
           })
         ]
       }
+    case ADD_PRODUCT:
+      return {...state, products: [...state.products, action.product]}
     default:
       return state
   }
