@@ -32,11 +32,16 @@ class EditSingleProduct extends React.Component {
         evt.target.qoh.value === ''
           ? this.props.singleProduct.qoh
           : evt.target.qoh.value
+      const price =
+        evt.target.price.value === ''
+          ? this.props.singleProduct.price
+          : evt.target.price.value
       this.props.editSingleProduct(id, {
         name,
         imageUrl,
         description,
-        qoh
+        qoh,
+        price
       })
       evt.target.reset()
     }
@@ -50,10 +55,11 @@ class EditSingleProduct extends React.Component {
         <div>
           {product ? (
             <div>
-              <h1>{product.name}</h1>
+              <h1>Product: {product.name}</h1>
               <img src={product.imageUrl} />
-              <p>{product.description}</p>
-              <p>{product.qoh}</p>
+              <p>Description: {product.description}</p>
+              <p>Quantity On Hand: {product.qoh}</p>
+              <p>Price: {product.price}</p>
             </div>
           ) : (
             <div />
@@ -84,6 +90,12 @@ class EditSingleProduct extends React.Component {
                   <small> Product Quantity:</small>
                 </label>
                 <input name="qoh" type="text" />
+              </div>
+              <div>
+                <label htmlFor="price">
+                  <small> Price:</small>
+                </label>
+                <input name="price" type="text" />
               </div>
               <button>Submit</button>
             </form>

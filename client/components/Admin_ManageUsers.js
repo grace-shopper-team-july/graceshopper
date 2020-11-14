@@ -1,22 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {fetchAllUsers} from '../store/user'
+import {fetchAllUsers, editUser} from '../store/user'
 
 export class AdminManageUsers extends React.Component {
   constructor(props) {
     super(props)
+    this.toggleStatus = this.toggleStatus.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchAllUsers()
   }
 
-  toggleStatus() {}
+  toggleStatus(user) {
+    console.log('userObj in toggle', user)
+    let admin = false
+    if (user.admin === true) {
+      this.props.updateAdmin(user.id, {admin})
+    } else {
+      admin = true
+      this.props.updateAdmin(user.id, {admin})
+    }
+    //this.props.fetchAllUsers()
+  }
 
   render() {
-    console.log(this.props)
+    console.log('this is the user', this.props.user.user)
     const userArr = this.props.user.allUsers
+    userArr.sort((a, b) => a.id - b.id)
     //   console.log(userArr)
     // console.log(thisUsersOrder[0])
     return (
@@ -25,6 +37,7 @@ export class AdminManageUsers extends React.Component {
 
         {userArr && userArr.length > 0 ? (
           userArr.map(user => {
+            console.log(user.id)
             return (
               <div key={user.id}>
                 <p>User Id: {user.id}</p>
@@ -32,13 +45,10 @@ export class AdminManageUsers extends React.Component {
                 <p>User Last Name: {user.lastName}</p>
                 <p>User Email: {user.email}</p>
                 <p>Admin Status: {user.admin.toString()}</p>
-                <label>
-                  <small>Toggle Admin Status:</small>
-                </label>
-                <select>
-                  <option>True</option>
-                  <option>False</option>
-                </select>
+
+                <button onClick={() => this.toggleStatus(user)}>
+                  Toggle Admin Status
+                </button>
               </div>
             )
           })
@@ -62,7 +72,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    fetchAllUsers: () => dispatch(fetchAllUsers())
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
+    updateAdmin: (id, adminStatus) => dispatch(editUser(id, adminStatus))
   }
 }
 

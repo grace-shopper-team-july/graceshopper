@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {fetchProducts, removeProduct} from '../store/products'
+import AddProduct from './Admin_PostProduct'
 
 class ManageProducts extends React.Component {
   constructor(props) {
@@ -23,24 +24,28 @@ class ManageProducts extends React.Component {
     productsArr.sort((a, b) => a.id - b.id)
     return (
       <div>
-        {productsArr && productsArr.length > 0 ? (
-          productsArr.map(product => {
-            return (
-              <div key={product.id}>
-                <h4>Product Id: {product.id}</h4>
-                <h4>Product Name: {product.name}</h4>
-                <Link to={`/home/edit/${product.id}`}>
-                  <button>Edit</button>
-                </Link>
-                <button onClick={() => this.handleClick(product.id)}>
-                  Remove
-                </button>
-              </div>
-            )
-          })
-        ) : (
-          <div>...Loading...</div>
-        )}
+        <AddProduct />
+        <div>
+          <h3>Manage Existing Products</h3>
+          {productsArr && productsArr.length > 0 ? (
+            productsArr.map(product => {
+              return (
+                <div key={product.id}>
+                  <h4>Product Id: {product.id}</h4>
+                  <h4>Product Name: {product.name}</h4>
+                  <Link to={`/home/edit/${product.id}`}>
+                    <button>Edit</button>
+                  </Link>
+                  <button onClick={() => this.handleClick(product.id)}>
+                    Remove
+                  </button>
+                </div>
+              )
+            })
+          ) : (
+            <div>...Loading...</div>
+          )}
+        </div>
       </div>
     )
   }
