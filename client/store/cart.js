@@ -31,9 +31,9 @@ export const removeItem = id => {
   }
 }
 
-export const addItem = (item, qty) => {
+export const addItem = item => {
   return dispatch => {
-    const cart = addProductToCart(item, qty)
+    const cart = addProductToCart(item, item.qty)
     dispatch(setCart(cart))
   }
 }
