@@ -67,7 +67,7 @@ class SingleProduct extends React.Component {
 
   handleClick(product) {
     let qty = this.props.productQtySelected
-    this.props.addItem(this.generateCartItemObj(product, qty), qty)
+    this.props.addItem(this.generateCartItemObj(product, qty))
   }
 }
 
@@ -84,7 +84,7 @@ const mapDispatchToProps = dispatch => {
     fetchSingleProduct: id => dispatch(fetchSingleProduct(id)),
     fetchCart: () => dispatch(fetchCart()),
     selectProductQty: qty => dispatch(selectProductQty(qty)),
-    addItem: (product, qty) => dispatch(addItem(product, qty))
+    addItem: product => dispatch(addItem(product))
   }
 }
 
