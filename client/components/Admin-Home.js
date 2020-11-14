@@ -37,6 +37,9 @@ export class AdminHome extends React.Component {
           <Link to="/home/orders">
             <button>Order History</button>
           </Link>
+          <Link to="/home/manageproducts">
+            <button>Manage Products</button>
+          </Link>
         </div>
       </div>
     )
