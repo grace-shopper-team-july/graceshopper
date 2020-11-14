@@ -1,12 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchCart, removeItem} from '../store/cart'
-import {
-  getShoppingCart,
-  addProductToCart,
-  removeProductFromCart,
-  updateProductQty
-} from '../shopping-cart-functions'
+import {fetchCart, removeItem, updateItemQty, addItem} from '../store/cart'
+import {getShoppingCart} from '../shopping-cart-functions'
 
 export class Cart extends React.Component {
   constructor() {
@@ -20,12 +15,11 @@ export class Cart extends React.Component {
 
   render() {
     const testProduct = {
-      id: 3,
-      name: 'puppy-buffet',
-      price: 29.99,
-      imageUrl:
-        'https://img1.etsystatic.com/076/0/6915430/isla_fullxfull.15935439_rny2xj9r.jpg',
-      qty: 2
+      id: 5,
+      name: 'ferret-dress',
+      price: 32.99,
+      imageUrl: 'https://cozypetz.com/OPFerretinPinkstripdressharness.jpg',
+      qty: 1
     }
     return (
       <div>
@@ -51,7 +45,10 @@ export class Cart extends React.Component {
           </div>
           {this.renderOrderSummaryList()}
         </div>
-        <button type="button" onClick={() => addProductToCart(testProduct, 2)}>
+        <button
+          type="button"
+          onClick={() => this.props.addItem(testProduct, 2)}
+        >
           Add To Cart
         </button>
       </div>
@@ -134,7 +131,7 @@ export class Cart extends React.Component {
   }
 
   handleQtyChange(evt, productId) {
-    updateProductQty(productId, evt.target.value)
+    return this.props.updateItemQty(productId, evt.target.value)
   }
 }
 
@@ -147,7 +144,9 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     fetchCart: () => dispatch(fetchCart()),
-    removeItem: id => dispatch(removeItem(id))
+    removeItem: id => dispatch(removeItem(id)),
+    addItem: (product, qty) => dispatch(addItem(product, qty)),
+    updateItemQty: (productId, qty) => dispatch(updateItemQty(productId, qty))
   }
 }
 
