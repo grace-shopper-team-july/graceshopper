@@ -1,6 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchSingleProduct, selectProductQty} from '../store/singleProduct'
+import {
+  fetchSingleProduct,
+  selectProductQty,
+  displayAddedItem
+} from '../store/singleProduct'
 import {fetchCart, addItem} from '../store/cart'
 
 class SingleProduct extends React.Component {
@@ -41,6 +45,7 @@ class SingleProduct extends React.Component {
             <button type="button" onClick={() => this.handleClick(product)}>
               ADD TO CART
             </button>
+            {this.props.displayAddedToCart ? <p>Added to cart!</p> : <div />}
           </div>
         ) : (
           <div />
@@ -66,6 +71,8 @@ class SingleProduct extends React.Component {
 
   handleClick(product) {
     let qty = this.props.productQtySelected
+    this.props.displayAddedItem()
+    setTimeout(this.props.displayAddedItem, 6000)
     this.props.addItem(
       this.generateCartItemObj(product, qty),
       this.props.orderId
@@ -78,6 +85,7 @@ const mapStateToProps = state => {
     singleProduct: state.singleProduct.singleProduct,
     cart: state.cartReducer.cart,
     productQtySelected: state.singleProduct.productQtySelected,
+    displayAddedToCart: state.singleProduct.displayAddedToCart
     orderId: state.cartReducer.orderId
   }
 }
@@ -87,7 +95,9 @@ const mapDispatchToProps = dispatch => {
     fetchSingleProduct: id => dispatch(fetchSingleProduct(id)),
     fetchCart: () => dispatch(fetchCart()),
     selectProductQty: qty => dispatch(selectProductQty(qty)),
+    displayAddedItem: () => dispatch(displayAddedItem())
     addItem: (product, orderId) => dispatch(addItem(product, orderId))
+
   }
 }
 
