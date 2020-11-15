@@ -137,7 +137,8 @@ const seedProducts = [
     price: 20.8,
     imageUrl:
       'https://i.pinimg.com/originals/9e/be/13/9ebe136ca3998581e13eae146714d2d6.jpg ',
-    qoh: 35
+    qoh: 35,
+    species: 'dog'
   },
   {
     name: 'santas-lil-pupper',
