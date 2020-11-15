@@ -11,14 +11,10 @@ export class AllProducts extends React.Component {
   }
 
   componentDidMount() {
-    console.log('in compDidMount')
-    console.log(this.props.fetchProdFunc())
     this.props.fetchProdFunc()
   }
 
   render() {
-    console.log(this.props.products)
-    console.log(this.props.products.products)
     let products = this.props.products.products
     return (
       <div>
@@ -27,7 +23,6 @@ export class AllProducts extends React.Component {
         <div id="productsBox">
           {products ? (
             products.map(product => {
-              console.log(product)
               return (
                 <div key={product.id}>
                   <h3>{product.name}</h3>

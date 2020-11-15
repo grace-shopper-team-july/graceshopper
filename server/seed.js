@@ -1077,18 +1077,6 @@ const seed = async () => {
       total: 59.98,
       active: false
     })
-    const order7 = await Order.create({
-      userId: 2,
-      payment: 'paypal',
-      total: 12.44,
-      active: true
-    })
-    const order8 = await Order.create({
-      userId: 1,
-      payment: 'paypal',
-      total: 29.99,
-      active: true
-    })
 
     const orderItem1 = await OrderLineItem.create({
       productId: 1,
@@ -1161,24 +1149,6 @@ const seed = async () => {
     const orderItem12 = await OrderLineItem.create({
       productId: 77,
       orderId: order6.id,
-      price: 29.99,
-      quantity: 1
-    })
-    const orderItem13 = await OrderLineItem.create({
-      productId: 47,
-      orderId: order7.id,
-      price: 3.45,
-      quantity: 1
-    })
-    const orderItem14 = await OrderLineItem.create({
-      productId: 46,
-      orderId: order7.id,
-      price: 8.99,
-      quantity: 1
-    })
-    const orderItem15 = await OrderLineItem.create({
-      productId: 28,
-      orderId: order8.id,
       price: 29.99,
       quantity: 1
     })

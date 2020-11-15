@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import AllProducts from './index'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {fetchAllOrders} from '../store/orders'
+import {fetchActiveCartOrder} from '../store/cart'
 
 /**
  * COMPONENT
@@ -14,12 +15,13 @@ export class UserHome extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchActiveCartOrder(this.props.user.id)
     this.props.fetchAllOrders()
   }
 
   render() {
     const user = this.props.user
-
+    console.log('ppppo', user)
     return (
       <div>
         <div>
@@ -51,7 +53,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    fetchAllOrders: () => dispatch(fetchAllOrders())
+    fetchAllOrders: () => dispatch(fetchAllOrders()),
+    fetchActiveCartOrder: userId => dispatch(fetchActiveCartOrder(userId))
   }
 }
 export default connect(mapState, mapDispatch)(UserHome)
