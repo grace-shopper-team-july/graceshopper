@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchUserCart} from '../store/checkout'
+
 import {fetchAllUsers} from '../store/user'
 
 class Checkout extends React.Component {
@@ -8,27 +8,27 @@ class Checkout extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
-    this.props.fetchUserCart(this.props.user.user.id)
-  }
-
   render() {
-    console.log(this.props.user.user.id)
-    return <div>This is the Checkout Page</div>
+    return (
+      <div>
+        <h1>Your Order Has Been Confirmed!</h1>
+        <h5>Thank you for your purchase :)</h5>
+      </div>
+    )
   }
 }
 
 const mapState = state => {
   return {
     user: state.user,
-    currentCart: state.checkoutReducer
+    orderId: state.cartReducer.orderId,
+    cart: state.cartReducer.cart
   }
 }
 
 const mapDispatch = dispatch => {
   return {
-    fetchAllUsers: () => dispatch(fetchAllUsers()),
-    fetchUserCart: id => dispatch(fetchUserCart(id))
+    fetchAllUsers: () => dispatch(fetchAllUsers())
   }
 }
 
