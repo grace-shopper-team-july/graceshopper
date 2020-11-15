@@ -7,48 +7,188 @@ import {fetchProducts} from '../store/products'
 export class AllProducts extends React.Component {
   constructor(props) {
     super(props)
-    //bind function to this?
+    this.state = {
+      currFilters: [],
+      filterList: [
+        //species
+        {
+          name: 'dog',
+          value: 'DOG'
+        },
+        {
+          name: 'cat',
+          value: 'CAT'
+        },
+        {
+          name: 'hedgehog',
+          value: 'HEDGEHOG'
+        },
+        {
+          name: 'reptile',
+          value: 'REPTILE'
+        },
+        {
+          name: 'ferret',
+          value: 'FERRET'
+        },
+        //clothing category
+        {
+          name: 'formal',
+          value: 'FORMAL'
+        },
+        {
+          name: 'holiday',
+          value: 'HOLIDAY'
+        },
+        {
+          name: 'rainwear',
+          value: 'RAINWEAR'
+        },
+        {
+          name: 'costume',
+          value: 'COSTUME'
+        },
+        {
+          name: 'accessories',
+          value: 'ACCESSORIES'
+        },
+        {
+          name: 'everyday',
+          value: 'EVERYDAY'
+        }
+      ],
+      itemList: []
+    }
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.products.products !== state.itemList) {
+      return {
+        ...state,
+        itemList: props.products.products
+      }
+    }
+    return null
   }
 
   componentDidMount() {
     this.props.fetchProdFunc()
   }
 
-  render() {
-    let products = this.props.products.products
-    return (
-      <div>
-        <h1>All Products View</h1>
+  onFilterChange(filter) {
+    if (filter === 'ALL') {
+      if (this.state.currFilters.length === this.state.filterList.length) {
+        this.setState({currFilters: []})
+      } else {
+        let newCurrFilters = this.state.filterList.map(filt => filt.value)
+        this.setState({currFilters: newCurrFilters})
+      }
+    } else if (this.state.currFilters.includes(filter)) {
+      const filtIdx = this.state.currFilters.indexOf(filter)
+      const newFilt = [...this.state.currFilters]
+      newFilt.splice(filtIdx, 1)
+      this.setState({currFilters: newFilt})
+    } else {
+      this.setState({currFilters: [...this.state.currFilters, filter]})
+    }
+  }
 
-        <div id="productsBox">
-          {products ? (
-            products.map(product => {
-              return (
-                <div key={product.id}>
-                  <h3>{product.name}</h3>
-                  <img src={product.imageUrl} />
-                  <h4>{product.price}</h4>
-                  <Link to={`/products/${product.id}`}>
-                    View Product Details
-                  </Link>
-                </div>
-              )
-            })
-          ) : (
-            <div>Loading...</div>
-          )}
-        </div>
+  render() {
+    let filteredProducts = []
+    if (
+      this.state.currFilters.length === 0 ||
+      this.state.currFilters.length === this.state.filterList
+    ) {
+      filteredProducts = this.state.itemList
+    } else {
+      let lowCurrFilters = this.state.currFilters.map(currFilt => {
+        if (currFilt === 'DOG') {
+          return 'dog'
+        }
+        if (currFilt === 'CAT') {
+          return 'cat'
+        }
+        if (currFilt === 'HEDGEHOG') {
+          return 'hedgehog'
+        }
+        if (currFilt === 'REPTILE') {
+          return 'reptile'
+        }
+        if (currFilt === 'FERRET') {
+          return 'ferret'
+        }
+      })
+      let products = [...this.state.itemList]
+      for (let i = 0; i < products.length; i++) {
+        if (lowCurrFilters.includes(this.state.itemList[i].species)) {
+          filteredProducts.push(this.state.itemList[i])
+        }
+      }
+    }
+    let species = this.state.filterList.slice(0, 5)
+    let categories = this.state.filterList.slice(5)
+    return (
+      <div className="searchContainer">
+        <form>
+          <div id="allFilter">
+            <label htmlFor="myInput">All</label>
+            <input
+              id="myInput"
+              type="checkbox"
+              onClick={() => this.onFilterChange('ALL')}
+              checked={
+                this.state.currFilters.length === this.state.filterList.length
+              }
+            />
+          </div>
+          {species.map(filt => (
+            <div id="speciesFilters">
+              <React.Fragment>
+                <label htmlFor={filt.id}>{filt.name}</label>
+                <input
+                  id={filt.id}
+                  type="checkbox"
+                  checked={this.state.currFilters.includes(filt.value)}
+                  onClick={() => this.onFilterChange(filt.value)}
+                />
+              </React.Fragment>
+            </div>
+          ))}
+          {categories.map(filt => (
+            <div id="categoriesFilters">
+              <React.Fragment>
+                <label htmlFor={filt.id}>{filt.name}</label>
+                <input
+                  id={filt.id}
+                  type="checkbox"
+                  checked={this.state.currFilters.includes(filt.value)}
+                  onClick={() => this.onFilterChange(filt.value)}
+                />
+              </React.Fragment>
+            </div>
+          ))}
+        </form>
+        <ul style={{marginLeft: '70px'}}>
+          {filteredProducts.map(item => (
+            <div key={item.id}>
+              <li>
+                {/* {item.name} -- {item.species} */}
+                <h3>{item.name}</h3>
+                <img src={item.imageUrl} />
+                <h4>{`$${item.price}`}</h4>
+                <Link to={`/${item.id}`}>View Product Details</Link>
+              </li>
+            </div>
+          ))}
+        </ul>
       </div>
     )
   }
 }
 
-const mapState = state => (
-  console.log(state),
-  {
-    products: state.productsReducer
-  }
-)
+const mapState = state => ({
+  products: state.productsReducer
+})
 
 const mapDispatch = {
   fetchProdFunc: fetchProducts
