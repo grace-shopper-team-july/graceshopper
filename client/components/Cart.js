@@ -5,7 +5,6 @@ import {getShoppingCart} from '../shopping-cart-functions'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import currency from 'currency.js'
 
-
 export class Cart extends React.Component {
   constructor() {
     super()
@@ -17,6 +16,7 @@ export class Cart extends React.Component {
   }
 
   render() {
+    //console.log(this.renderShoppingCart())
     const testProduct = {
       id: 5,
       name: 'ferret-dress',
@@ -24,6 +24,7 @@ export class Cart extends React.Component {
       imageUrl: 'https://cozypetz.com/OPFerretinPinkstripdressharness.jpg',
       qty: 1
     }
+    console.log('getshoppin', getShoppingCart())
     return (
       <div>
         <div id="shopping-cart-left">
@@ -31,13 +32,13 @@ export class Cart extends React.Component {
             <h3>Shopping Cart</h3>
             <hr />
           </div>
-          <div id="shopping-cart-table-header">
+          {/* <div id="shopping-cart-table-header">
             <p>Item</p>
             <p>Item Price</p>
             <p>Quantity</p>
             <p>Total Price</p>
             <hr />
-          </div>
+          </div> */}
           {getShoppingCart().length === 0
             ? this.renderShoppingCartEmpty()
             : this.renderShoppingCart()}
@@ -71,10 +72,15 @@ export class Cart extends React.Component {
             </div>
           </div>
           <div id="cart-item-right">
-            <div id="cart-item-attributes">{item.name}</div>
-            <div id="cart-item-price">{currency(item.price).format()}</div>
-            <div id="cart-item-quantity">{this.renderQtyDropdown(item)}</div>
+            <div id="cart-item-attributes">Name: {item.name}</div>
+            <div id="cart-item-price">
+              Price: {currency(item.price).format()}
+            </div>
+            <div id="cart-item-quantity">
+              Quantity: {this.renderQtyDropdown(item)}
+            </div>
             <div id="cart-item-total-price">
+              Total:
               {currency(item.price)
                 .multiply(item.qty)
                 .format()}

@@ -37,9 +37,9 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-router.put('/orderId', async (req, res, next) => {
+router.put('/:orderId', async (req, res, next) => {
   try {
-    const changeOrder = await Order.update({
+    const changeOrder = await Order.update(req.body, {
       where: {
         id: req.params.orderId
       }
@@ -47,11 +47,61 @@ router.put('/orderId', async (req, res, next) => {
 
     const updatedOrder = await Order.findOne({
       where: {
-        id: req.body.orderId
+        id: req.params.orderId
       },
       include: [{model: Product}, {model: User}]
     })
     res.json(updatedOrder)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.post('/orderItem', async (req, res, next) => {
+  try {
+    const newOrderItem = await OrderLineItem.create(req.body)
+    res.json(newOrderItem)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.put('/orderItem/:orderId/:productId', async (req, res, next) => {
+  console.log(req.body)
+  try {
+    const updateOrderItem = await OrderLineItem.update(req.body, {
+      where: {
+        productId: req.params.productId,
+        orderId: req.params.orderId
+      }
+    })
+
+    const updatedItem = await OrderLineItem.findOne({
+      where: {
+        productId: req.params.productId,
+        orderId: req.params.orderId
+      }
+    })
+
+    res.json(updatedItem)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.delete('/orderItem/:orderId/:productId', async (req, res, next) => {
+  try {
+    const deleted = await OrderLineItem.destroy({
+      where: {
+        productId: req.params.productId,
+        orderId: req.params.orderId
+      }
+    })
+    if (deleted === 0) {
+      res.status(404).send('404 Error')
+    } else {
+      res.status(204).send()
+    }
   } catch (err) {
     next(err)
   }
