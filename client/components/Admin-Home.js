@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {fetchAllUsers} from '../store/user'
-
+import {fetchActiveCartOrder} from '../store/cart'
 /**
  * COMPONENT
  */
@@ -14,6 +14,7 @@ export class AdminHome extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllUsers()
+    this.props.fetchActiveCartOrder(this.props.user.user.id)
   }
 
   render() {
@@ -57,7 +58,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    fetchAllUsers: () => dispatch(fetchAllUsers())
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
+    fetchActiveCartOrder: userId => dispatch(fetchActiveCartOrder(userId))
   }
 }
 export default connect(mapState, mapDispatch)(AdminHome)

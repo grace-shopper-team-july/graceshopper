@@ -19,7 +19,6 @@ class SingleProduct extends React.Component {
   }
 
   render() {
-    //console.log(this.props)
     const product = this.props.singleProduct
     const quantityArray = []
     for (let i = 1; i <= product.qoh; i++) {
@@ -72,9 +71,12 @@ class SingleProduct extends React.Component {
 
   handleClick(product) {
     let qty = this.props.productQtySelected
-    this.props.addItem(this.generateCartItemObj(product, qty))
     this.props.displayAddedItem()
     setTimeout(this.props.displayAddedItem, 6000)
+    this.props.addItem(
+      this.generateCartItemObj(product, qty),
+      this.props.orderId
+    )
   }
 }
 
@@ -84,6 +86,7 @@ const mapStateToProps = state => {
     cart: state.cartReducer.cart,
     productQtySelected: state.singleProduct.productQtySelected,
     displayAddedToCart: state.singleProduct.displayAddedToCart
+    orderId: state.cartReducer.orderId
   }
 }
 
@@ -92,8 +95,9 @@ const mapDispatchToProps = dispatch => {
     fetchSingleProduct: id => dispatch(fetchSingleProduct(id)),
     fetchCart: () => dispatch(fetchCart()),
     selectProductQty: qty => dispatch(selectProductQty(qty)),
-    addItem: product => dispatch(addItem(product)),
     displayAddedItem: () => dispatch(displayAddedItem())
+    addItem: (product, orderId) => dispatch(addItem(product, orderId))
+
   }
 }
 
