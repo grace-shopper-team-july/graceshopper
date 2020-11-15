@@ -4,6 +4,7 @@ import axios from 'axios'
 const GET_SINGLE_PRODUCT = 'GET_SINGLE_PRODUCT'
 const UPDATE_SINGLE_PRODUCT = 'UPDATE_SINGLE_PRODUCT'
 const UPDATE_PRODUCT_QTY = 'UPDATE_PRODUCT_QTY'
+const ADDED_PRODUCT_TO_CART = 'ADDED_PRODUCT_TO_CART'
 
 //Action Creators
 const getSingleProduct = product => {
@@ -24,6 +25,12 @@ const updateProductQty = qty => {
   return {
     type: UPDATE_PRODUCT_QTY,
     qty
+  }
+}
+
+const displayAddedToCart = () => {
+  return {
+    type: ADDED_PRODUCT_TO_CART
   }
 }
 
@@ -56,10 +63,17 @@ export const selectProductQty = qty => {
   }
 }
 
+export const displayAddedItem = () => {
+  return dispatch => {
+    dispatch(displayAddedToCart())
+  }
+}
+
 //Initial State
 const initialState = {
   singleProduct: {},
-  productQtySelected: 1
+  productQtySelected: 1,
+  displayAddedToCart: false
 }
 
 //Reducer
@@ -71,6 +85,9 @@ const singleProductReducer = (state = initialState, action) => {
       return {...state, singleProduct: action.product}
     case UPDATE_PRODUCT_QTY:
       return {...state, productQtySelected: action.qty}
+    case ADDED_PRODUCT_TO_CART:
+      console.log(displayAddedToCart)
+      return {...state, displayAddedToCart: !state.displayAddedToCart}
     default:
       return state
   }
