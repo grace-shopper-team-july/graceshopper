@@ -106,3 +106,17 @@ router.delete('/orderItem/:orderId/:productId', async (req, res, next) => {
     next(err)
   }
 })
+
+router.delete('/orderItem/:orderId', async (req, res, next) => {
+  console.log('hit delete')
+  try {
+    const deleted = await OrderLineItem.destroy({
+      where: {
+        orderId: req.params.orderId
+      }
+    })
+    res.status(204).send()
+  } catch (err) {
+    next(err)
+  }
+})

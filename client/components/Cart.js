@@ -2,21 +2,42 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchCart, removeItem, updateItemQty, addItem} from '../store/cart'
 import {getShoppingCart} from '../shopping-cart-functions'
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom'
 import currency from 'currency.js'
+import {editOrderStatus} from '../store/cart'
+import {fetchActiveCartOrder} from '../store/cart'
 
 export class Cart extends React.Component {
   constructor() {
     super()
+
+    this.state = {
+      redirectToCheckout: false
+    }
     this.handleQtyChange = this.handleQtyChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchCart()
   }
 
+  handleClick() {
+    console.log('hanlesubmitx')
+    this.props
+      .editOrderStatus(this.props.orderId)
+      .then(this.props.fetchActiveCartOrder(this.props.user.user.id))
+    this.setState({redirectToCheckout: true})
+  }
+
   render() {
-    //console.log(this.renderShoppingCart())
+    const redirectToCheckout = this.state.redirectToCheckout
     const testProduct = {
       id: 5,
       name: 'ferret-dress',
@@ -49,15 +70,8 @@ export class Cart extends React.Component {
           </div>
           {this.renderOrderSummaryList()}
         </div>
-        <button
-          type="button"
-          onClick={() => this.props.addItem(testProduct, 2)}
-        >
-          Add To Cart
-        </button>
-        <Link to="/checkout">
-          <button>CHECKOUT</button>
-        </Link>
+        <button onClick={() => this.handleClick()}>CHECKOUT</button>
+        {redirectToCheckout && <Redirect to="/checkout" />}
       </div>
     )
   }
@@ -88,7 +102,9 @@ export class Cart extends React.Component {
             <div id="cart-item-remove">
               <button
                 type="button"
-                onClick={() => this.props.removeItem(item.id)}
+                onClick={() =>
+                  this.props.removeItem(item.id, this.props.orderId)
+                }
               >
                 Remove
               </button>
@@ -148,22 +164,28 @@ export class Cart extends React.Component {
 
   handleQtyChange(evt, productId) {
     let qtyNum = parseInt(evt.target.value)
-    return this.props.updateItemQty(productId, qtyNum)
+    return this.props.updateItemQty(productId, qtyNum, this.props.orderId)
   }
 }
 
 const mapState = state => {
   return {
-    cart: state.cartReducer.cart
+    cart: state.cartReducer.cart,
+    orderId: state.cartReducer.orderId,
+    user: state.user
   }
 }
 
 const mapDispatch = dispatch => {
   return {
     fetchCart: () => dispatch(fetchCart()),
-    removeItem: id => dispatch(removeItem(id)),
-    addItem: (product, qty) => dispatch(addItem(product, qty)),
-    updateItemQty: (productId, qty) => dispatch(updateItemQty(productId, qty))
+    removeItem: (id, orderId) => dispatch(removeItem(id, orderId)),
+    addItem: (product, qty, orderId) =>
+      dispatch(addItem(product, qty, orderId)),
+    updateItemQty: (productId, qty, orderId) =>
+      dispatch(updateItemQty(productId, qty, orderId)),
+    editOrderStatus: id => dispatch(editOrderStatus(id)),
+    fetchActiveCartOrder: userId => dispatch(fetchActiveCartOrder(userId))
   }
 }
 
