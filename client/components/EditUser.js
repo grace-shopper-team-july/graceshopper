@@ -6,49 +6,38 @@ import {editUser} from '../store/user'
 class EditUser extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      firstName: undefined,
+      lastName: undefined,
+      addressLine1: undefined,
+      addressLine2: undefined,
+      city: undefined,
+      state: undefined,
+      zip: undefined,
+      phone: undefined,
+      email: undefined
+    }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(evt) {
+    this.setState({[evt.target.name]: evt.target.value})
   }
 
   handleSubmit(id) {
     return evt => {
       evt.preventDefault()
-      const firstName =
-        evt.target.firstName.value === ''
-          ? this.props.user.user.firstName
-          : evt.target.firstName.value
-      const lastName =
-        evt.target.lastName.value === ''
-          ? this.props.user.user.lastName
-          : evt.target.lastName.value
-      const addressLine1 =
-        evt.target.addressLine1.value === ''
-          ? this.props.user.user.addressLine1
-          : evt.target.addressLine1.value
-      const addressLine2 =
-        evt.target.addressLine2.value === ''
-          ? this.props.user.user.addressLine2
-          : evt.target.addressLine2.value
-      const city =
-        evt.target.city.value === ''
-          ? this.props.user.user.city
-          : evt.target.city.value
-      const state =
-        evt.target.state.value === ''
-          ? this.props.user.user.state
-          : evt.target.state.value
-      const zip =
-        evt.target.zip.value === ''
-          ? this.props.user.user.zip
-          : evt.target.zip.value
-      const phone =
-        evt.target.phone.value === ''
-          ? this.props.user.user.phone
-          : evt.target.phone.value
-      const email =
-        evt.target.email.value === ''
-          ? this.props.user.user.email
-          : evt.target.email.value
-      //const password = evt.target.password.value === '' ? this.props.user.user.password : evt.target.password.value
+      const firstName = this.state.firstName
+      const lastName = this.state.lastName
+      const addressLine1 = this.state.addressLine1
+      const addressLine2 = this.state.addressLine2
+      const city = this.state.city
+      const zip = this.state.zip
+      const phone = this.state.phone
+      const email = this.state.email
+      const state = this.state.state
+
       this.props.editUser(id, {
         firstName,
         lastName,
@@ -89,62 +78,105 @@ class EditUser extends React.Component {
             <label htmlFor="firstName">
               <small>First Name:</small>
             </label>
-            <input name="firstName" type="text" />
+            <input
+              name="firstName"
+              type="text"
+              value={this.state.firstName || this.props.user.user.firstName}
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="lastName">
               <small>Last Name:</small>
             </label>
-            <input name="lastName" type="text" />
+            <input
+              name="lastName"
+              type="text"
+              value={this.state.lastName || this.props.user.user.lastName}
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="addressLine1">
               <small>Address Line 1:</small>
             </label>
-            <input name="addressLine1" type="text" />
+            <input
+              name="addressLine1"
+              type="text"
+              value={
+                this.state.addressLine1 || this.props.user.user.addressLine1
+              }
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="addressLine2">
               <small>Address Line 2:</small>
             </label>
-            <input name="addressLine2" type="text" />
+            <input
+              name="addressLine2"
+              type="text"
+              value={
+                this.state.addressLine2 || this.props.user.user.addressLine2
+              }
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="city">
               <small>City:</small>
             </label>
-            <input name="city" type="text" />
+            <input
+              name="city"
+              type="text"
+              value={this.state.city || this.props.user.user.city}
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="state">
               <small>State:</small>
             </label>
-            <input name="state" type="text" />
+            <input
+              name="state"
+              type="text"
+              value={this.state.state || this.props.user.user.state}
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="zip">
               <small>Zip:</small>
             </label>
-            <input name="zip" type="text" />
+            <input
+              name="zip"
+              type="text"
+              value={this.state.zip || this.props.user.user.zip}
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="phone">
               <small>Phone:</small>
             </label>
-            <input name="phone" type="text" />
+            <input
+              name="phone"
+              type="text"
+              value={this.state.phone || this.props.user.user.phone}
+              onChange={this.handleChange}
+            />
           </div>
           <div>
             <label htmlFor="email">
               <small>Email:</small>
             </label>
-            <input name="email" type="text" />
+            <input
+              name="email"
+              type="text"
+              value={this.state.email || this.props.user.user.email}
+              onChange={this.handleChange}
+            />
           </div>
-          {/* <div>
-            <label htmlFor="password">
-                <small>Password:</small>
-                </label>
-            <input name='password' type='password' />
-          </div> */}
           <button>Submit</button>
         </form>
       </div>
