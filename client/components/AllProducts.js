@@ -41,8 +41,8 @@ export class AllProducts extends React.Component {
           value: 'HOLIDAY'
         },
         {
-          name: 'rainwear',
-          value: 'RAINWEAR'
+          name: 'weatherwear',
+          value: 'WEATHERWEAR'
         },
         {
           name: 'costume',
@@ -117,11 +117,43 @@ export class AllProducts extends React.Component {
         if (currFilt === 'FERRET') {
           return 'ferret'
         }
+        if (currFilt === 'FORMAL') {
+          return 'formal'
+        }
+        if (currFilt === 'HOLIDAY') {
+          return 'holiday'
+        }
+        if (currFilt === 'WEATHERWEAR') {
+          return 'weatherwear'
+        }
+        if (currFilt === 'COSTUME') {
+          return 'costume'
+        }
+        if (currFilt === 'ACCESSORIES') {
+          return 'accessories'
+        }
+        if (currFilt === 'EVERYDAY') {
+          return 'everyday'
+        }
       })
       let products = [...this.state.itemList]
       for (let i = 0; i < products.length; i++) {
-        if (lowCurrFilters.includes(this.state.itemList[i].species)) {
-          filteredProducts.push(this.state.itemList[i])
+        if (lowCurrFilters.length === 1) {
+          if (lowCurrFilters.includes(this.state.itemList[i].species)) {
+            filteredProducts.push(this.state.itemList[i])
+          }
+          if (lowCurrFilters.includes(this.state.itemList[i].category)) {
+            filteredProducts.push(this.state.itemList[i])
+          }
+        } else if (lowCurrFilters.length > 1) {
+          if (
+            lowCurrFilters.includes(this.state.itemList[i].species) &&
+            lowCurrFilters.includes(this.state.itemList[i].category)
+          ) {
+            filteredProducts.push(this.state.itemList[i])
+          }
+        } else {
+          break
         }
       }
     }
@@ -176,7 +208,7 @@ export class AllProducts extends React.Component {
                 <h3>{item.name}</h3>
                 <img src={item.imageUrl} />
                 <h4>{`$${item.price}`}</h4>
-                <Link to={`/${item.id}`}>View Product Details</Link>
+                <Link to={`/products/${item.id}`}>View Product Details</Link>
               </li>
             </div>
           ))}

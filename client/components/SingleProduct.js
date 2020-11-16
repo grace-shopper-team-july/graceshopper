@@ -85,7 +85,7 @@ const mapStateToProps = state => {
     singleProduct: state.singleProduct.singleProduct,
     cart: state.cartReducer.cart,
     productQtySelected: state.singleProduct.productQtySelected,
-    displayAddedToCart: state.singleProduct.displayAddedToCart
+    displayAddedToCart: state.singleProduct.displayAddedToCart,
     orderId: state.cartReducer.orderId
   }
 }
@@ -95,9 +95,8 @@ const mapDispatchToProps = dispatch => {
     fetchSingleProduct: id => dispatch(fetchSingleProduct(id)),
     fetchCart: () => dispatch(fetchCart()),
     selectProductQty: qty => dispatch(selectProductQty(qty)),
-    displayAddedItem: () => dispatch(displayAddedItem())
+    displayAddedItem: () => dispatch(displayAddedItem()),
     addItem: (product, orderId) => dispatch(addItem(product, orderId))
-
   }
 }
 
