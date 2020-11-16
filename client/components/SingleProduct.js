@@ -25,26 +25,30 @@ class SingleProduct extends React.Component {
       quantityArray.push(i)
     }
     return (
-      <div>
+      <div className="main-content">
         {product ? (
-          <div>
-            <h1>{product.name}</h1>
-            <img src={product.imageUrl} />
-            <p>{product.description}</p>
-            <label htmlFor="quantity">Quantity</label>
-            <select onChange={evt => this.handleChange(evt)}>
-              {quantityArray ? (
-                quantityArray.map((num, idx) => {
-                  return <option key={idx}>{num}</option>
-                })
-              ) : (
-                <div />
-              )}
-            </select>
-            <button type="button" onClick={() => this.handleClick(product)}>
-              ADD TO CART
-            </button>
-            {this.props.displayAddedToCart ? <p>Added to cart!</p> : <div />}
+          <div className="product-detail">
+            <div className="product-detail-img">
+              <img src={product.imageUrl} />
+            </div>
+            <div className="product-detail-desc">
+              <h1>{product.name}</h1>
+              <p>{product.description}</p>
+              <label htmlFor="quantity">Quantity</label>
+              <select onChange={evt => this.handleChange(evt)}>
+                {quantityArray ? (
+                  quantityArray.map((num, idx) => {
+                    return <option key={idx}>{num}</option>
+                  })
+                ) : (
+                  <div />
+                )}
+              </select>
+              <button type="button" onClick={() => this.handleClick(product)}>
+                ADD TO CART
+              </button>
+              {this.props.displayAddedToCart ? <p>Added to cart!</p> : <div />}
+            </div>
           </div>
         ) : (
           <div />
