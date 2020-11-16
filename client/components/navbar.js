@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
 const Navbar = ({handleClick, isLoggedIn, isAdmin}) => (
-  <div>
-    <h1>PETHREADZ</h1>
+  <div id="navbar">
+    <h1 id="logo">PETHREADZ</h1>
     <nav>
       {isAdmin ? (
         <div>
@@ -46,7 +46,6 @@ const Navbar = ({handleClick, isLoggedIn, isAdmin}) => (
         </div>
       )}
     </nav>
-    <hr />
   </div>
 )
 

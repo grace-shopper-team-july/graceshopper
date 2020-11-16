@@ -1,5 +1,6 @@
 body {
-  font-family: sans-serif;
+  font-family: Roboto, sans-serif;
+  margin: 0px;
 }
 
 a {
@@ -8,6 +9,10 @@ a {
 
 label {
   display: block;
+}
+
+nav {
+  margin-top: 15px;
 }
 
 nav a {
@@ -19,7 +24,20 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
 img {
   width: 400px;
   height: 300px;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #a91010;
+  padding: 7px;
+}
+
+#logo {
+  display: inline-block;
 }
