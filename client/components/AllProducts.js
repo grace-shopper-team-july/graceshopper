@@ -101,7 +101,6 @@ export class AllProducts extends React.Component {
     ) {
       filteredProducts = this.state.itemList
     } else {
-      console.log('curr selected filters', this.state.currFilters)
       let lowCurrFilters = this.state.currFilters.map(currFilt => {
         if (currFilt === 'DOG') {
           return 'dog'
@@ -138,10 +137,7 @@ export class AllProducts extends React.Component {
         }
       })
       let products = [...this.state.itemList]
-      console.log('currFilter: ', lowCurrFilters)
       for (let i = 0; i < products.length; i++) {
-        console.log('species type: ', this.state.itemList[i].species)
-        console.log('category type: ', this.state.itemList[i].category)
         if (lowCurrFilters.length === 1) {
           if (lowCurrFilters.includes(this.state.itemList[i].species)) {
             filteredProducts.push(this.state.itemList[i])
@@ -157,7 +153,6 @@ export class AllProducts extends React.Component {
             filteredProducts.push(this.state.itemList[i])
           }
         } else {
-          console.log('reached ultimate else')
           break
         }
       }
