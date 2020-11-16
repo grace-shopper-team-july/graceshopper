@@ -41,8 +41,8 @@ export class AllProducts extends React.Component {
           value: 'HOLIDAY'
         },
         {
-          name: 'rainwear',
-          value: 'RAINWEAR'
+          name: 'weatherwear',
+          value: 'WEATHERWEAR'
         },
         {
           name: 'costume',
@@ -101,6 +101,7 @@ export class AllProducts extends React.Component {
     ) {
       filteredProducts = this.state.itemList
     } else {
+      console.log('curr selected filters', this.state.currFilters)
       let lowCurrFilters = this.state.currFilters.map(currFilt => {
         if (currFilt === 'DOG') {
           return 'dog'
@@ -117,11 +118,47 @@ export class AllProducts extends React.Component {
         if (currFilt === 'FERRET') {
           return 'ferret'
         }
+        if (currFilt === 'FORMAL') {
+          return 'formal'
+        }
+        if (currFilt === 'HOLIDAY') {
+          return 'holiday'
+        }
+        if (currFilt === 'WEATHERWEAR') {
+          return 'weatherwear'
+        }
+        if (currFilt === 'COSTUME') {
+          return 'costume'
+        }
+        if (currFilt === 'ACCESSORIES') {
+          return 'accessories'
+        }
+        if (currFilt === 'EVERYDAY') {
+          return 'everyday'
+        }
       })
       let products = [...this.state.itemList]
+      console.log('currFilter: ', lowCurrFilters)
       for (let i = 0; i < products.length; i++) {
-        if (lowCurrFilters.includes(this.state.itemList[i].species)) {
-          filteredProducts.push(this.state.itemList[i])
+        console.log('species type: ', this.state.itemList[i].species)
+        console.log('category type: ', this.state.itemList[i].category)
+        if (lowCurrFilters.length === 1) {
+          if (lowCurrFilters.includes(this.state.itemList[i].species)) {
+            filteredProducts.push(this.state.itemList[i])
+          }
+          if (lowCurrFilters.includes(this.state.itemList[i].category)) {
+            filteredProducts.push(this.state.itemList[i])
+          }
+        } else if (lowCurrFilters.length > 1) {
+          if (
+            lowCurrFilters.includes(this.state.itemList[i].species) &&
+            lowCurrFilters.includes(this.state.itemList[i].category)
+          ) {
+            filteredProducts.push(this.state.itemList[i])
+          }
+        } else {
+          console.log('reached ultimate else')
+          break
         }
       }
     }
