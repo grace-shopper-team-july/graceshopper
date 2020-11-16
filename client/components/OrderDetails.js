@@ -12,7 +12,6 @@ class OrderDetails extends React.Component {
   }
 
   render() {
-    console.log(this.props.order)
     const order = this.props.order
     const productsArr = this.props.order.products
     return (
@@ -28,7 +27,6 @@ class OrderDetails extends React.Component {
           <h3>Product Details</h3>
           {productsArr && productsArr.length > 0 ? (
             productsArr.map(product => {
-              console.log(product)
               return (
                 <div key={product.id}>
                   <h4>Product Name: {product.name}</h4>

@@ -29,7 +29,6 @@ export class Cart extends React.Component {
   }
 
   handleClick() {
-    console.log('hanlesubmitx')
     this.props
       .editOrderStatus(this.props.orderId)
       .then(this.props.fetchActiveCartOrder(this.props.user.user.id))
@@ -45,7 +44,6 @@ export class Cart extends React.Component {
       imageUrl: 'https://cozypetz.com/OPFerretinPinkstripdressharness.jpg',
       qty: 1
     }
-    console.log('getshoppin', getShoppingCart())
     return (
       <div>
         <div id="shopping-cart-left">

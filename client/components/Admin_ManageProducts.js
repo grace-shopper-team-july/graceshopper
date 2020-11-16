@@ -19,7 +19,6 @@ class ManageProducts extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     const productsArr = this.props.products
     productsArr.sort((a, b) => a.id - b.id)
     return (

@@ -86,7 +86,6 @@ const singleProductReducer = (state = initialState, action) => {
     case UPDATE_PRODUCT_QTY:
       return {...state, productQtySelected: action.qty}
     case ADDED_PRODUCT_TO_CART:
-      console.log(displayAddedToCart)
       return {...state, displayAddedToCart: !state.displayAddedToCart}
     default:
       return state

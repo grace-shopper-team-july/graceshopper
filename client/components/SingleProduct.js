@@ -24,7 +24,6 @@ class SingleProduct extends React.Component {
     for (let i = 1; i <= product.qoh; i++) {
       quantityArray.push(i)
     }
-    //console.log(product)
     return (
       <div>
         {product ? (

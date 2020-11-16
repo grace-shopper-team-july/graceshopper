@@ -83,7 +83,6 @@ export const fetchActiveCartOrder = userId => {
 export const saveCartToDB = async (cart, orderId) => {
   try {
     if (orderId > 0) {
-      console.log('SAVE CART TO DBBBBBBBBB!!!!!!')
       const deleted = await axios.delete(`/api/orders/orderItem/${orderId}`)
 
       for (let i = 0; i < cart.length; i++) {
@@ -110,7 +109,6 @@ export const saveCartToDB = async (cart, orderId) => {
 
 export const editOrderStatus = id => {
   return async dispatch => {
-    console.log('editOd')
     try {
       const {data} = await axios.put(`/api/orders/${id}`, {active: false})
       setShoppingCart([])

@@ -67,7 +67,6 @@ router.post('/orderItem', async (req, res, next) => {
 })
 
 router.put('/orderItem/:orderId/:productId', async (req, res, next) => {
-  console.log(req.body)
   try {
     const updateOrderItem = await OrderLineItem.update(req.body, {
       where: {
@@ -108,7 +107,6 @@ router.delete('/orderItem/:orderId/:productId', async (req, res, next) => {
 })
 
 router.delete('/orderItem/:orderId', async (req, res, next) => {
-  console.log('hit delete')
   try {
     const deleted = await OrderLineItem.destroy({
       where: {
