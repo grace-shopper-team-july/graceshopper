@@ -14,6 +14,34 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/cart/:userId', async (req, res, next) => {
+  try {
+    console.log('cart route')
+    let activeOrder = await Order.findOne({
+      where: {
+        userId: req.params.userId,
+        active: true
+      },
+      include: [{model: Product}, {model: User}]
+    })
+    if (!activeOrder) {
+      activeOrder = await Order.create({
+        userId: req.params.userId
+      })
+      activeOrder = await Order.findOne({
+        where: {
+          userId: req.params.userId,
+          active: true
+        },
+        include: [{model: Product}, {model: User}]
+      })
+    }
+    res.json(activeOrder)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/:orderId', async (req, res, next) => {
   try {
     const singleOrder = await Order.findOne({

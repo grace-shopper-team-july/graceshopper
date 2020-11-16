@@ -19,10 +19,11 @@ const setCart = cart => {
   }
 }
 
-const getActiveCartOrder = order => {
+const getActiveCartOrder = (order, orderId) => {
   return {
     type: GET_ACTIVE_CART_ORDER,
-    order
+    order,
+    orderId
   }
 }
 
@@ -61,19 +62,20 @@ export const updateItemQty = (item, qty, orderId) => {
 export const fetchActiveCartOrder = userId => {
   return async dispatch => {
     try {
-      let {data} = await axios.get('/api/orders')
-      let activeList = data.filter(order => {
-        return order.active === true && order.userId === userId
+      let {data} = await axios.get(`/api/orders/cart/${userId}`)
+      console.log('this isssssbejf j ve lv  ', data)
+      let lineItems = data.products.map(prd => {
+        return {
+          id: prd.id,
+          imageUrl: prd.imageUrl,
+          name: prd.name,
+          price: prd.orderLineItem.price,
+          qty: prd.orderLineItem.quantity
+        }
       })
-      let active
-      if (activeList.length === 0) {
-        const {data} = await axios.post(`/api/orders`, {userId: userId})
-        active = data
-      } else {
-        active = activeList[0]
-      }
-      const order = await axios.get(`/api/orders/${active.id}`)
-      dispatch(getActiveCartOrder(order.data))
+      console.log('lineItems', lineItems)
+      setShoppingCart(lineItems)
+      dispatch(getActiveCartOrder(lineItems, data.id))
     } catch (err) {
       console.error(err.message)
     }
@@ -149,17 +151,7 @@ export default function cartReducer(state = initialState, action) {
     case SET_CART:
       return {...state, cart: action.cart}
     case GET_ACTIVE_CART_ORDER:
-      let lineItems = action.order.products.map(prd => {
-        return {
-          id: prd.id,
-          imageUrl: prd.imageUrl,
-          name: prd.name,
-          price: prd.orderLineItem.price,
-          qty: prd.orderLineItem.quantity
-        }
-      })
-      setShoppingCart(lineItems)
-      return {...state, orderId: action.order.id, cart: lineItems}
+      return {...state, orderId: action.orderId, cart: action.order}
     default:
       return state
   }
