@@ -18,6 +18,7 @@ class SingleProduct extends React.Component {
     this.props.fetchCart()
   }
 
+// other dropdown place!
   render() {
     const product = this.props.singleProduct
     const quantityArray = []

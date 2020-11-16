@@ -13,6 +13,12 @@ class EditSingleProduct extends React.Component {
     this.props.fetchSingleProduct(this.props.match.params.productId)
   }
 
+  // try using the || for assignment to clean this up.
+  // pseudocode example:
+  // evt.target = evt.target || this.props
+
+  // better yet - what if we made this a controlled form and set values in the constructor?
+
   handleSubmit(id) {
     return evt => {
       evt.preventDefault()

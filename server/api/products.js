@@ -27,6 +27,7 @@ router.get('/:productId', async (req, res, next) => {
   }
 })
 
+// protect this route
 router.put('/:productId', async (req, res, next) => {
   console.log('put', req.body)
   try {
@@ -46,6 +47,7 @@ router.put('/:productId', async (req, res, next) => {
   }
 })
 
+// protect this route
 router.delete('/:productId', async (req, res, next) => {
   try {
     const deletedProduct = await Product.destroy({
@@ -63,6 +65,7 @@ router.delete('/:productId', async (req, res, next) => {
   }
 })
 
+// protect this route
 router.post('/', async (req, res, next) => {
   try {
     const newProduct = await Product.create(req.body)

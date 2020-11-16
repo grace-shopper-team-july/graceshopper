@@ -58,6 +58,7 @@ export const updateItemQty = (item, qty, orderId) => {
   }
 }
 
+// what if we moved this logic to the backend?
 export const fetchActiveCartOrder = userId => {
   return async dispatch => {
     try {
@@ -80,6 +81,7 @@ export const fetchActiveCartOrder = userId => {
   }
 }
 
+// How many calls to the backend does this create? Can we consolidate it into one?
 export const saveCartToDB = async (cart, orderId) => {
   try {
     if (orderId > 0) {
@@ -142,6 +144,8 @@ const initialState = {
   cart: [],
   orderId: 0
 }
+
+// Calling `setShoppingCart` makes this reducer have a side-effect. Where else can we call this function?
 
 //Reducer
 export default function cartReducer(state = initialState, action) {

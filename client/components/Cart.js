@@ -124,6 +124,7 @@ export class Cart extends React.Component {
     )
   }
 
+  // would an input type number simplify this? You can set a min and max right on the tag
   renderQtyDropdown(item) {
     const qtyVal = Array.from({length: 10}, (_, i) => i + 1)
     return (

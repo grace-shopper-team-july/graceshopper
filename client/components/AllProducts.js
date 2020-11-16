@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {fetchProducts} from '../store/products'
 //import SingleProduct component here after merge is done
 
+// filter list could be good to put in another file
+
 export class AllProducts extends React.Component {
   constructor(props) {
     super(props)
@@ -61,6 +63,7 @@ export class AllProducts extends React.Component {
     }
   }
 
+  // consider using a different approach here: https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization
   static getDerivedStateFromProps(props, state) {
     if (props.products.products !== state.itemList) {
       return {
@@ -93,6 +96,8 @@ export class AllProducts extends React.Component {
     }
   }
 
+
+  // in general, this is a lot of logic for a render. brainstorm ways to simplify this or pull some functions out into the class
   render() {
     let filteredProducts = []
     if (
@@ -101,6 +106,7 @@ export class AllProducts extends React.Component {
     ) {
       filteredProducts = this.state.itemList
     } else {
+      // would a toLowerCase() remove the need for this?
       let lowCurrFilters = this.state.currFilters.map(currFilt => {
         if (currFilt === 'DOG') {
           return 'dog'

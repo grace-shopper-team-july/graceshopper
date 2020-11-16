@@ -5,6 +5,8 @@ const User = require('../db/models/user')
 const Product = require('../db/models/products')
 module.exports = router
 
+// Which of these routes should be protected? Can I checkout some else's cart?
+
 router.get('/', async (req, res, next) => {
   try {
     const allOrders = await Order.findAll()
