@@ -120,21 +120,6 @@ export const editOrderStatus = id => {
   }
 }
 
-// Experiment with this later?
-/*export const setThunkFactory = (cartFunction) => {
-  return (...params) => {
-    return dispatch => {
-      const cart = cartFunction.apply(null, params)
-      dispatch(setCart(cart))
-    }
-  }
-}
-
-export const newAddItem = setThunkFactory(addProductToCart)
-export const newRemoveItem = setThunkFactory(removeProductFromCart)
-export const newFetchCart = setThunkFactory(getShoppingCart)
-*/
-
 //Initial State
 const initialState = {
   cart: [],
