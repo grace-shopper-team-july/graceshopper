@@ -16,10 +16,15 @@ const AuthForm = props => {
         <form onSubmit={handleSubmit} name={name}>
           <div className="form">
             <p>
-              <input name="email" placeholder="Email" type="text" />
+              <input name="email" placeholder="Email" type="email" required />
             </p>
             <p>
-              <input name="password" placeholder="Password" type="password" />
+              <input
+                name="password"
+                placeholder="Password"
+                type="password"
+                required
+              />
             </p>
             <button type="submit">{displayName}</button>
             {error && error.response && <div> {error.response.data} </div>}
