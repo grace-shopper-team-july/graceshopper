@@ -58,6 +58,9 @@ export const editSingleProduct = (id, productInfo) => {
 }
 
 export const selectProductQty = qty => {
+  if (qty <= 0) {
+    qty = 1
+  }
   return dispatch => {
     dispatch(updateProductQty(qty))
   }
