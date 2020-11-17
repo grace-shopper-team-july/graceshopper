@@ -35,11 +35,13 @@ class SingleProduct extends React.Component {
             <div className="product-detail-desc">
               <h1>{product.name}</h1>
               <p>{product.description}</p>
-              <label htmlFor="quantity">Quantity</label>
+              <label htmlFor="quantity">
+                <h4>Quantity:</h4>
+              </label>
               <input
                 type="number"
                 value={this.props.productQtySelected}
-                onInput={evt => this.handleChange(evt)}
+                onChange={evt => this.handleChange(evt)}
               />
               <button type="button" onClick={() => this.handleClick(product)}>
                 ADD TO CART
