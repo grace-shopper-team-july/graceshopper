@@ -55,19 +55,19 @@ export class SignupForm extends React.Component {
             <label htmlFor="firstName">
               <small>First Name</small>
             </label>
-            <input name="firstName" type="text" />
+            <input name="firstName" type="text" required />
           </div>
           <div>
             <label htmlFor="lastName">
               <small>Last Name</small>
             </label>
-            <input name="lastName" type="text" />
+            <input name="lastName" type="text" required />
           </div>
           <div>
             <label htmlFor="addressLine1">
               <small>Address Line 1</small>
             </label>
-            <input name="addressLine1" type="text" />
+            <input name="addressLine1" type="text" required />
           </div>
           <div>
             <label htmlFor="addressLine2">
@@ -79,37 +79,37 @@ export class SignupForm extends React.Component {
             <label htmlFor="city">
               <small>City</small>
             </label>
-            <input name="city" type="text" />
+            <input name="city" type="text" required />
           </div>
           <div>
             <label htmlFor="state">
               <small>State</small>
             </label>
-            <input name="state" type="text" />
+            <input name="state" type="text" required />
           </div>
           <div>
             <label htmlFor="zip">
               <small>Zip Code</small>
             </label>
-            <input name="zip" type="text" />
+            <input name="zip" type="text" required />
           </div>
           <div>
             <label htmlFor="phone">
               <small>Phone</small>
             </label>
-            <input name="phone" type="text" />
+            <input name="phone" type="text" required />
           </div>
           <div>
             <label htmlFor="email">
               <small>Email</small>
             </label>
-            <input name="email" type="text" />
+            <input name="email" type="text" required />
           </div>
           <div>
             <label htmlFor="password">
               <small>Password</small>
             </label>
-            <input name="password" type="password" />
+            <input name="password" type="password" required />
           </div>
           <div>
             <button type="submit">{this.props.displayName}</button>
