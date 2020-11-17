@@ -71,6 +71,7 @@ input {
   padding: 10px;
   border: 2px solid #6a0505;
   border-radius: 4px;
+  transition-duration: 0.4s;
 }
 
 .button:hover {
