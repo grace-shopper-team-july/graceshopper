@@ -80,6 +80,12 @@ input {
   border-radius: 4px;
 }
 
+input[type='number'] {
+  width: 45px;
+  text-align: center;
+  display: block;
+}
+
 .button {
   background-color: #a91010;
   color: #ffffff;
@@ -121,6 +127,7 @@ input {
 .form input {
   width: 400px;
 }
+
 .product-detail {
   display: flex;
   flex-direction: row;
@@ -133,6 +140,21 @@ input {
 .product-detail-desc {
   padding: 20px;
   width: 500px;
+}
+
+.product-quantity-and-notification {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.product-added-to-cart {
+  font-size: 15px;
+  font-weight: bold;
+  color: #a91010;
+  padding: 10px;
+  padding-left: 25px;
 }
 
 #navbar {
@@ -149,4 +171,3 @@ input {
   font-family: Roboto, sans-serif;
   color: #ffffff;
 }
-
