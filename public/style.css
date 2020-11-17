@@ -25,10 +25,23 @@ label {
   display: block;
 }
 
+a {
+  color: #000000;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #a91010;
+}
+
 nav a {
   display: inline-block;
   margin: 1em;
   margin-top: 10px;
+  color: #ffffff;
+}
+
+nav a:hover {
   color: #ffffff;
 }
 
