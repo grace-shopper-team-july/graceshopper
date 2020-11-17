@@ -19,6 +19,12 @@ nav a {
   display: inline-block;
   margin: 1em;
   margin-top: 10px;
+  color: #ffffff;
+}
+
+nav h4 {
+  display: inline-block;
+  margin: 0px;
 }
 
 form div {
@@ -63,4 +69,5 @@ img {
 
 #logo {
   display: inline-block;
+  color: #ffffff;
 }
