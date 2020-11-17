@@ -16,14 +16,15 @@ class SingleProduct extends React.Component {
   componentDidMount() {
     this.props.fetchSingleProduct(this.props.match.params.productId)
     this.props.fetchCart()
+    this.props.selectProductQty(1)
   }
 
   render() {
     const product = this.props.singleProduct
-    const quantityArray = []
-    for (let i = 1; i <= product.qoh; i++) {
-      quantityArray.push(i)
-    }
+    //const quantityArray = []
+    //for (let i = 1; i <= product.qoh; i++) {
+    //quantityArray.push(i)
+    //}
     return (
       <div className="main-content">
         {product ? (
@@ -35,15 +36,11 @@ class SingleProduct extends React.Component {
               <h1>{product.name}</h1>
               <p>{product.description}</p>
               <label htmlFor="quantity">Quantity</label>
-              <select onChange={evt => this.handleChange(evt)}>
-                {quantityArray ? (
-                  quantityArray.map((num, idx) => {
-                    return <option key={idx}>{num}</option>
-                  })
-                ) : (
-                  <div />
-                )}
-              </select>
+              <input
+                type="number"
+                value={this.props.productQtySelected}
+                onInput={evt => this.handleChange(evt)}
+              />
               <button type="button" onClick={() => this.handleClick(product)}>
                 ADD TO CART
               </button>
