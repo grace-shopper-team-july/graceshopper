@@ -2,7 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {fetchProducts} from '../store/products'
-//import SingleProduct component here after merge is done
 
 export class AllProducts extends React.Component {
   constructor(props) {
@@ -11,54 +10,22 @@ export class AllProducts extends React.Component {
       currFilters: [],
       filterList: [
         //species
-        {
-          name: 'dog',
-          value: 'DOG'
-        },
-        {
-          name: 'cat',
-          value: 'CAT'
-        },
-        {
-          name: 'hedgehog',
-          value: 'HEDGEHOG'
-        },
-        {
-          name: 'reptile',
-          value: 'REPTILE'
-        },
-        {
-          name: 'ferret',
-          value: 'FERRET'
-        },
+        {value: 'DOG'},
+        {value: 'CAT'},
+        {value: 'HEDGEHOG'},
+        {value: 'REPTILE'},
+        {value: 'FERRET'},
         //clothing category
-        {
-          name: 'formal',
-          value: 'FORMAL'
-        },
-        {
-          name: 'holiday',
-          value: 'HOLIDAY'
-        },
-        {
-          name: 'weatherwear',
-          value: 'WEATHERWEAR'
-        },
-        {
-          name: 'costume',
-          value: 'COSTUME'
-        },
-        {
-          name: 'accessories',
-          value: 'ACCESSORIES'
-        },
-        {
-          name: 'everyday',
-          value: 'EVERYDAY'
-        }
+        {value: 'FORMAL'},
+        {value: 'HOLIDAY'},
+        {value: 'WEATHERWEAR'},
+        {value: 'COSTUME'},
+        {value: 'ACCESSORIES'},
+        {value: 'EVERYDAY'}
       ],
       itemList: []
     }
+    this.filteringProd = this.filteringProd.bind(this)
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -93,76 +60,60 @@ export class AllProducts extends React.Component {
     }
   }
 
-  render() {
+  filteringProd(currFilters, filterList, itemList) {
     let filteredProducts = []
-    if (
-      this.state.currFilters.length === 0 ||
-      this.state.currFilters.length === this.state.filterList
-    ) {
-      filteredProducts = this.state.itemList
+    if (currFilters.length === 0 || currFilters.length === filterList) {
+      filteredProducts = itemList
     } else {
-      let lowCurrFilters = this.state.currFilters.map(currFilt => {
-        if (currFilt === 'DOG') {
-          return 'dog'
-        }
-        if (currFilt === 'CAT') {
-          return 'cat'
-        }
-        if (currFilt === 'HEDGEHOG') {
-          return 'hedgehog'
-        }
-        if (currFilt === 'REPTILE') {
-          return 'reptile'
-        }
-        if (currFilt === 'FERRET') {
-          return 'ferret'
-        }
-        if (currFilt === 'FORMAL') {
-          return 'formal'
-        }
-        if (currFilt === 'HOLIDAY') {
-          return 'holiday'
-        }
-        if (currFilt === 'WEATHERWEAR') {
-          return 'weatherwear'
-        }
-        if (currFilt === 'COSTUME') {
-          return 'costume'
-        }
-        if (currFilt === 'ACCESSORIES') {
-          return 'accessories'
-        }
-        if (currFilt === 'EVERYDAY') {
-          return 'everyday'
-        }
+      let lowCurrFilters = currFilters.map(currFilt => {
+        return currFilt.toLowerCase()
       })
-      let products = [...this.state.itemList]
+      let products = [...itemList]
       for (let i = 0; i < products.length; i++) {
         if (lowCurrFilters.length === 1) {
-          if (lowCurrFilters.includes(this.state.itemList[i].species)) {
-            filteredProducts.push(this.state.itemList[i])
+          if (lowCurrFilters.includes(itemList[i].species)) {
+            filteredProducts.push(itemList[i])
           }
-          if (lowCurrFilters.includes(this.state.itemList[i].category)) {
-            filteredProducts.push(this.state.itemList[i])
+          if (lowCurrFilters.includes(itemList[i].category)) {
+            filteredProducts.push(itemList[i])
           }
         } else if (lowCurrFilters.length > 1) {
           if (
-            lowCurrFilters.includes(this.state.itemList[i].species) &&
-            lowCurrFilters.includes(this.state.itemList[i].category)
+            lowCurrFilters.includes(itemList[i].species) &&
+            lowCurrFilters.includes(itemList[i].category)
           ) {
-            filteredProducts.push(this.state.itemList[i])
+            filteredProducts.push(itemList[i])
+          } else if (
+            !lowCurrFilters.includes(itemList[i].species) &&
+            lowCurrFilters.includes(itemList[i].category)
+          ) {
+            filteredProducts.push(itemList[i])
+          } else if (
+            lowCurrFilters.includes(itemList[i].species) &&
+            !lowCurrFilters.includes(itemList[i].category)
+          ) {
+            filteredProducts.push(itemList[i])
           }
         } else {
           break
         }
       }
     }
+    return filteredProducts
+  }
+
+  render() {
+    let productsToShow = this.filteringProd(
+      this.state.currFilters,
+      this.state.filterList,
+      this.state.itemList
+    )
     let species = this.state.filterList.slice(0, 5)
     let categories = this.state.filterList.slice(5)
     return (
       <div className="searchContainer">
         <form>
-          <div id="allFilter">
+          <div key="allCheck" id="allFilter">
             <label htmlFor="myInput">All</label>
             <input
               id="myInput"
@@ -173,10 +124,10 @@ export class AllProducts extends React.Component {
               }
             />
           </div>
-          {species.map(filt => (
-            <div id="speciesFilters">
+          {species.map((filt, idx) => (
+            <div key={idx} id="speciesFilters">
               <React.Fragment>
-                <label htmlFor={filt.id}>{filt.name}</label>
+                <label htmlFor={filt.id}>{filt.value.toLowerCase()}</label>
                 <input
                   id={filt.id}
                   type="checkbox"
@@ -186,10 +137,10 @@ export class AllProducts extends React.Component {
               </React.Fragment>
             </div>
           ))}
-          {categories.map(filt => (
-            <div id="categoriesFilters">
+          {categories.map((filt, idx) => (
+            <div key={idx} id="categoriesFilters">
               <React.Fragment>
-                <label htmlFor={filt.id}>{filt.name}</label>
+                <label htmlFor={filt.id}>{filt.value.toLowerCase()}</label>
                 <input
                   id={filt.id}
                   type="checkbox"
@@ -201,10 +152,9 @@ export class AllProducts extends React.Component {
           ))}
         </form>
         <ul style={{marginLeft: '70px'}}>
-          {filteredProducts.map(item => (
+          {productsToShow.map(item => (
             <div key={item.id}>
               <li>
-                {/* {item.name} -- {item.species} */}
                 <h3>{item.name}</h3>
                 <img src={item.imageUrl} />
                 <h4>{`$${item.price}`}</h4>
