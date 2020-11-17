@@ -84,26 +84,15 @@ export const fetchActiveCartOrder = userId => {
 
 export const saveCartToDB = async (cart, orderId) => {
   try {
+    console.log('postcart')
     if (orderId > 0) {
-      console.log('SAVE CART TO DBBBBBBBBB!!!!!!')
-      const deleted = await axios.delete(`/api/orders/orderItem/${orderId}`)
-
-      for (let i = 0; i < cart.length; i++) {
-        let prd = cart[i]
-        let orderItem = {
-          productId: prd.id,
-          orderId: orderId,
-          quantity: prd.qty,
-          price: prd.price
-        }
-        await axios.post(`/api/orders/orderItem`, orderItem)
-      }
-
       let total = cart.reduce((accum, product) => {
         return accum + product.qty * product.price
       }, 0)
-
-      await axios.put(`/api/orders/${orderId}`, {total: total})
+      await axios.post(`/api/orders/cart/${orderId}`, {
+        lineItems: cart,
+        total: total
+      })
     }
   } catch (err) {
     console.error(err)
@@ -123,21 +112,6 @@ export const editOrderStatus = id => {
     }
   }
 }
-
-// Experiment with this later?
-/*export const setThunkFactory = (cartFunction) => {
-  return (...params) => {
-    return dispatch => {
-      const cart = cartFunction.apply(null, params)
-      dispatch(setCart(cart))
-    }
-  }
-}
-
-export const newAddItem = setThunkFactory(addProductToCart)
-export const newRemoveItem = setThunkFactory(removeProductFromCart)
-export const newFetchCart = setThunkFactory(getShoppingCart)
-*/
 
 //Initial State
 const initialState = {

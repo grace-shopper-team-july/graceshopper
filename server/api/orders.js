@@ -148,3 +148,34 @@ router.delete('/orderItem/:orderId', async (req, res, next) => {
     next(err)
   }
 })
+
+router.post('/cart/:orderId', async (req, res, next) => {
+  try {
+    console.log('rejfhvuvhf', req.params.orderId)
+    const deleted = await OrderLineItem.destroy({
+      where: {
+        orderId: req.params.orderId
+      }
+    })
+    for (let i = 0; i < req.body.lineItems.length; i++) {
+      let prd = req.body.lineItems[i]
+      await OrderLineItem.create({
+        productId: prd.id,
+        orderId: req.params.orderId,
+        quantity: prd.qty,
+        price: prd.price
+      })
+    }
+    const changeOrder = await Order.update(
+      {total: req.body.total},
+      {
+        where: {
+          id: req.params.orderId
+        }
+      }
+    )
+    res.json(changeOrder)
+  } catch (err) {
+    next(err)
+  }
+})
