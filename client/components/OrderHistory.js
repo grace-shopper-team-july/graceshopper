@@ -17,13 +17,11 @@ export class OrderHistory extends React.Component {
   }
 
   render() {
-    console.log(this.props.admin)
     const user = this.props.user
     const orderArr = this.props.order.orders
     const thisUsersOrder = orderArr.filter(order => {
       return order.userId === user.id
     })
-    console.log(thisUsersOrder[0])
     return (
       <div>
         <div>

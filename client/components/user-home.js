@@ -21,7 +21,6 @@ export class UserHome extends React.Component {
 
   render() {
     const user = this.props.user
-    console.log('ppppo', user)
     return (
       <div>
         <div>
