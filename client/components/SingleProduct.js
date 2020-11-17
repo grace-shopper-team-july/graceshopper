@@ -21,10 +21,6 @@ class SingleProduct extends React.Component {
 
   render() {
     const product = this.props.singleProduct
-    //const quantityArray = []
-    //for (let i = 1; i <= product.qoh; i++) {
-    //quantityArray.push(i)
-    //}
     return (
       <div className="main-content">
         {product ? (
@@ -43,6 +39,7 @@ class SingleProduct extends React.Component {
                 value={this.props.productQtySelected}
                 onChange={evt => this.handleChange(evt)}
               />
+              <br />
               <button type="button" onClick={() => this.handleClick(product)}>
                 ADD TO CART
               </button>

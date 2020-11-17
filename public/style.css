@@ -50,6 +50,16 @@ img {
   height: 300px;
 }
 
+input {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 0.95em;
+  height: 25px;
+  padding: 7px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
 .main-content {
   padding: 60px;
   padding-top: 50px;
