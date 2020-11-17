@@ -186,6 +186,32 @@ input[type='number'] {
   padding-left: 25px;
 }
 
+.shopping-cart {
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.shopping-cart-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart-right {
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cart-item-right {
+  margin-left: 100px;
+  margin-right: 300px;
+}
+
 #navbar {
   display: flex;
   flex-direction: row;
