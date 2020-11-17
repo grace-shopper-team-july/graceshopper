@@ -14,6 +14,34 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/cart/:userId', async (req, res, next) => {
+  try {
+    console.log('cart route')
+    let activeOrder = await Order.findOne({
+      where: {
+        userId: req.params.userId,
+        active: true
+      },
+      include: [{model: Product}, {model: User}]
+    })
+    if (!activeOrder) {
+      activeOrder = await Order.create({
+        userId: req.params.userId
+      })
+      activeOrder = await Order.findOne({
+        where: {
+          userId: req.params.userId,
+          active: true
+        },
+        include: [{model: Product}, {model: User}]
+      })
+    }
+    res.json(activeOrder)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/:orderId', async (req, res, next) => {
   try {
     const singleOrder = await Order.findOne({
@@ -114,6 +142,37 @@ router.delete('/orderItem/:orderId', async (req, res, next) => {
       }
     })
     res.status(204).send()
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.post('/cart/:orderId', async (req, res, next) => {
+  try {
+    console.log('rejfhvuvhf', req.params.orderId)
+    const deleted = await OrderLineItem.destroy({
+      where: {
+        orderId: req.params.orderId
+      }
+    })
+    for (let i = 0; i < req.body.lineItems.length; i++) {
+      let prd = req.body.lineItems[i]
+      await OrderLineItem.create({
+        productId: prd.id,
+        orderId: req.params.orderId,
+        quantity: prd.qty,
+        price: prd.price
+      })
+    }
+    const changeOrder = await Order.update(
+      {total: req.body.total},
+      {
+        where: {
+          id: req.params.orderId
+        }
+      }
+    )
+    res.json(changeOrder)
   } catch (err) {
     next(err)
   }

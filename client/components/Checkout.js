@@ -12,6 +12,17 @@ class Checkout extends React.Component {
     return (
       <div>
         <h1>Your Order Has Been Confirmed!</h1>
+        <iframe
+          src="https://giphy.com/embed/Yb8ebQV8Ua2Y0"
+          width="480"
+          height="221"
+          frameBorder="0"
+          className="giphy-embed"
+          allowFullScreen
+        />
+        <p>
+          <a href="https://giphy.com/gifs/steve-carell-cute-the-office-Yb8ebQV8Ua2Y0" />
+        </p>
         <h5>Thank you for your purchase :)</h5>
       </div>
     )

@@ -15,6 +15,7 @@ import EditUser from './components/EditUser'
 import ManageProducts from './components/Admin_ManageProducts'
 import EditProduct from './components/Admin_EditProduct'
 import Checkout from './components/Checkout'
+import HomePage from './components/Home'
 /**
  * COMPONENT
  */
@@ -29,7 +30,8 @@ class Routes extends Component {
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
-        <Route path="/login" component={Login} />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/products/:productId" component={SinglePage} />
         <Route path="/products" component={AllProducts} />
@@ -77,7 +79,7 @@ class Routes extends Component {
         )}
 
         {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        <Route path="/login" component={Login} />
       </Switch>
     )
   }

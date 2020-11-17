@@ -50,6 +50,26 @@ img {
   height: 300px;
 }
 
+.homeCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #2a9d8f;
+}
+
+.home1 img {
+  display: flex;
+  width: 50vw;
+  height: 100vh;
+}
+
+/* .home img{
+  display: flex;
+  width: 50vw;
+  height: 100vh;
+  justify-self: center;
+} */
+
 input {
   font-family: Roboto, sans-serif;
   font-weight: bold;
@@ -129,3 +149,4 @@ input {
   font-family: Roboto, sans-serif;
   color: #ffffff;
 }
+

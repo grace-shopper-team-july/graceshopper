@@ -10,6 +10,7 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
+
     <div className="main-content">
       <div className="main-content-child">
         <h1>Welcome Back Friend! Sign Into Your Account </h1>
