@@ -28,7 +28,6 @@ router.get('/:productId', async (req, res, next) => {
 })
 
 router.put('/:productId', async (req, res, next) => {
-  console.log('put', req.body)
   try {
     const change = await Product.update(req.body, {
       where: {

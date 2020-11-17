@@ -1,9 +1,24 @@
 body {
-  font-family: sans-serif;
+  font-family: Roboto, sans-serif;
+  margin: 0px;
 }
 
 a {
   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0px;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: bolder;
 }
 
 label {
@@ -13,30 +28,125 @@ label {
 nav a {
   display: inline-block;
   margin: 1em;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+nav h4 {
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 form div {
   margin: 1em;
   display: inline-block;
 }
+
 img {
   width: 400px;
   height: 300px;
 }
+
 .homeCont {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background-color: #2a9d8f;
 }
+
 .home1 img {
   display: flex;
   width: 50vw;
   height: 100vh;
 }
+
 /* .home img{
   display: flex;
   width: 50vw;
   height: 100vh;
   justify-self: center;
 } */
+
+input {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 0.95em;
+  height: 25px;
+  padding: 7px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+.button {
+  background-color: #a91010;
+  color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px;
+  border: 2px solid #6a0505;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #830d0d;
+}
+
+.main-content {
+  padding: 60px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-content-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.form {
+  width: 500px;
+  text-align: center;
+}
+
+.form input {
+  width: 400px;
+}
+.product-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-detail-img {
+  padding: 20px;
+}
+
+.product-detail-desc {
+  padding: 20px;
+  width: 500px;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #a91010;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+#logo {
+  display: inline-block;
+  font-family: Roboto, sans-serif;
+  color: #ffffff;
+}
+

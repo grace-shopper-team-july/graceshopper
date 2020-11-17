@@ -54,8 +54,6 @@ class EditUser extends React.Component {
   }
 
   render() {
-    console.log(this.props)
-    console.log(this.props.user.user.id)
     const user = this.props.user.user
     return (
       <div>

@@ -14,7 +14,6 @@ export class AdminManageUsers extends React.Component {
   }
 
   toggleStatus(user) {
-    console.log('userObj in toggle', user)
     let admin = false
     if (user.admin === true) {
       this.props.updateAdmin(user.id, {admin})
@@ -26,18 +25,14 @@ export class AdminManageUsers extends React.Component {
   }
 
   render() {
-    console.log('this is the user', this.props.user.user)
     const userArr = this.props.user.allUsers
     userArr.sort((a, b) => a.id - b.id)
-    //   console.log(userArr)
-    // console.log(thisUsersOrder[0])
     return (
       <div>
         <h2>Manage Users</h2>
 
         {userArr && userArr.length > 0 ? (
           userArr.map(user => {
-            console.log(user.id)
             return (
               <div key={user.id}>
                 <p>User Id: {user.id}</p>
