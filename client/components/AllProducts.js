@@ -102,39 +102,7 @@ export class AllProducts extends React.Component {
       filteredProducts = this.state.itemList
     } else {
       let lowCurrFilters = this.state.currFilters.map(currFilt => {
-        if (currFilt === 'DOG') {
-          return 'dog'
-        }
-        if (currFilt === 'CAT') {
-          return 'cat'
-        }
-        if (currFilt === 'HEDGEHOG') {
-          return 'hedgehog'
-        }
-        if (currFilt === 'REPTILE') {
-          return 'reptile'
-        }
-        if (currFilt === 'FERRET') {
-          return 'ferret'
-        }
-        if (currFilt === 'FORMAL') {
-          return 'formal'
-        }
-        if (currFilt === 'HOLIDAY') {
-          return 'holiday'
-        }
-        if (currFilt === 'WEATHERWEAR') {
-          return 'weatherwear'
-        }
-        if (currFilt === 'COSTUME') {
-          return 'costume'
-        }
-        if (currFilt === 'ACCESSORIES') {
-          return 'accessories'
-        }
-        if (currFilt === 'EVERYDAY') {
-          return 'everyday'
-        }
+        return currFilt.toLowerCase()
       })
       let products = [...this.state.itemList]
       for (let i = 0; i < products.length; i++) {
@@ -151,6 +119,16 @@ export class AllProducts extends React.Component {
             lowCurrFilters.includes(this.state.itemList[i].category)
           ) {
             filteredProducts.push(this.state.itemList[i])
+          } else if (
+            !lowCurrFilters.includes(this.state.itemList[i].species) &&
+            lowCurrFilters.includes(this.state.itemList[i].category)
+          ) {
+            filteredProducts.push(this.state.itemList[i])
+          } else if (
+            lowCurrFilters.includes(this.state.itemList[i].species) &&
+            !lowCurrFilters.includes(this.state.itemList[i].category)
+          ) {
+            filteredProducts.push(this.state.itemList[i])
           }
         } else {
           break
@@ -162,7 +140,7 @@ export class AllProducts extends React.Component {
     return (
       <div className="searchContainer">
         <form>
-          <div id="allFilter">
+          <div key="allCheck" id="allFilter">
             <label htmlFor="myInput">All</label>
             <input
               id="myInput"
@@ -173,8 +151,8 @@ export class AllProducts extends React.Component {
               }
             />
           </div>
-          {species.map(filt => (
-            <div id="speciesFilters">
+          {species.map((filt, idx) => (
+            <div key={idx} id="speciesFilters">
               <React.Fragment>
                 <label htmlFor={filt.id}>{filt.name}</label>
                 <input
@@ -186,8 +164,8 @@ export class AllProducts extends React.Component {
               </React.Fragment>
             </div>
           ))}
-          {categories.map(filt => (
-            <div id="categoriesFilters">
+          {categories.map((filt, idx) => (
+            <div key={idx} id="categoriesFilters">
               <React.Fragment>
                 <label htmlFor={filt.id}>{filt.name}</label>
                 <input
@@ -204,7 +182,6 @@ export class AllProducts extends React.Component {
           {filteredProducts.map(item => (
             <div key={item.id}>
               <li>
-                {/* {item.name} -- {item.species} */}
                 <h3>{item.name}</h3>
                 <img src={item.imageUrl} />
                 <h4>{`$${item.price}`}</h4>
