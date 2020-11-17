@@ -60,6 +60,23 @@ input {
   border-radius: 4px;
 }
 
+.button {
+  background-color: #a91010;
+  color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px;
+  border: 2px solid #6a0505;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #830d0d;
+}
+
 .main-content {
   padding: 60px;
   padding-top: 50px;

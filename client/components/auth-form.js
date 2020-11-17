@@ -26,7 +26,9 @@ const AuthForm = props => {
                 required
               />
             </p>
-            <button type="submit">{displayName}</button>
+            <button type="submit" className="button">
+              {displayName}
+            </button>
             {error && error.response && <div> {error.response.data} </div>}
           </div>
         </form>
