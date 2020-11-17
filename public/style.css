@@ -67,6 +67,21 @@ input {
   justify-content: center;
 }
 
+.main-content-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.form {
+  width: 500px;
+  text-align: center;
+}
+
+.form input {
+  width: 400px;
+}
 .product-detail {
   display: flex;
   flex-direction: row;
