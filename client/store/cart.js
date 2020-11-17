@@ -63,7 +63,6 @@ export const fetchActiveCartOrder = userId => {
   return async dispatch => {
     try {
       let {data} = await axios.get(`/api/orders/cart/${userId}`)
-      console.log('this isssssbejf j ve lv  ', data)
       let lineItems = data.products.map(prd => {
         return {
           id: prd.id,
@@ -73,7 +72,6 @@ export const fetchActiveCartOrder = userId => {
           qty: prd.orderLineItem.quantity
         }
       })
-      console.log('lineItems', lineItems)
       setShoppingCart(lineItems)
       dispatch(getActiveCartOrder(lineItems, data.id))
     } catch (err) {
@@ -84,7 +82,6 @@ export const fetchActiveCartOrder = userId => {
 
 export const saveCartToDB = async (cart, orderId) => {
   try {
-    console.log('postcart')
     if (orderId > 0) {
       let total = cart.reduce((accum, product) => {
         return accum + product.qty * product.price
@@ -101,7 +98,6 @@ export const saveCartToDB = async (cart, orderId) => {
 
 export const editOrderStatus = id => {
   return async dispatch => {
-    console.log('editOd')
     try {
       const {data} = await axios.put(`/api/orders/${id}`, {active: false})
       setShoppingCart([])
