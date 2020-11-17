@@ -16,6 +16,10 @@ h6 {
   margin-top: 0px;
 }
 
+h3 {
+  margin-top: 15px;
+}
+
 h4 {
   font-size: 1em;
   font-weight: bolder;
@@ -141,6 +145,18 @@ input[type='number'] {
   width: 400px;
 }
 
+.all-products {
+  text-align: center;
+}
+
+.all-products-single {
+  margin: 40px;
+  display: inline-block;
+}
+
+.searchContainer form {
+  text-align: center;
+}
 .product-detail {
   display: flex;
   flex-direction: row;
