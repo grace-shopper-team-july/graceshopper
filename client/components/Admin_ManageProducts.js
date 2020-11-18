@@ -22,14 +22,16 @@ class ManageProducts extends React.Component {
     const productsArr = this.props.products
     productsArr.sort((a, b) => a.id - b.id)
     return (
-      <div>
-        <AddProduct />
-        <div>
+      <div className="manage">
+        <div className="add">
+          <AddProduct />
+        </div>
+        <div className="manageProducts">
           <h3>Manage Existing Products</h3>
           {productsArr && productsArr.length > 0 ? (
             productsArr.map(product => {
               return (
-                <div key={product.id}>
+                <div className="each" key={product.id}>
                   <h4>Product Id: {product.id}</h4>
                   <h4>Product Name: {product.name}</h4>
                   <Link to={`/home/edit/${product.id}`}>

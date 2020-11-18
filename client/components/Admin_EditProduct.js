@@ -46,20 +46,26 @@ class EditSingleProduct extends React.Component {
   render() {
     const product = this.props.singleProduct
     return (
-      <div>
+      <div className="mainEdit">
         <div>
           {product ? (
-            <div>
-              <h1>Product: {product.name}</h1>
-              <img src={product.imageUrl} />
-              <p>Description: {product.description}</p>
-              <p>Quantity On Hand: {product.qoh}</p>
-              <p>Price: {product.price}</p>
+            <div className="productBox">
+              <div>
+                <div className="product-detail-img">
+                  <img src={product.imageUrl} />
+                </div>
+                <div className="product-detail-desc">
+                  <h1>Product: {product.name}</h1>
+                  <p>Description: {product.description}</p>
+                  <p>Quantity On Hand: {product.qoh}</p>
+                  <p>Price: {product.price}</p>
+                </div>
+              </div>
             </div>
           ) : (
             <div />
           )}
-          <div>
+          <div className="productUpdate">
             <h3>Update Product Info:</h3>
             <form onSubmit={this.handleSubmit(product.id)}>
               <div>
