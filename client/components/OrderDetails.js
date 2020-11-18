@@ -15,7 +15,7 @@ class OrderDetails extends React.Component {
     const order = this.props.order
     const productsArr = this.props.order.products
     return (
-      <div>
+      <div className="orderPage">
         <div>
           <h1>Order Details </h1>
           <p>Order#: {order.id}</p>
@@ -23,17 +23,21 @@ class OrderDetails extends React.Component {
           <p>Payment Type: {order.payment}</p>
           <p>Order Total: {order.total}</p>
         </div>
-        <div>
-          <h3>Product Details</h3>
+        <div className="orderBox">
+          <h2>Product Details</h2>
           {productsArr && productsArr.length > 0 ? (
             productsArr.map(product => {
               return (
-                <div key={product.id}>
-                  <h4>Product Name: {product.name}</h4>
-                  <img src={product.imageUrl} />
-                  <p>Purchase Price: {product.orderLineItem.price}</p>
-                  <p>Quantity Purchased: {product.orderLineItem.quantity}</p>
-                  <p>Product Description:{product.description}</p>
+                <div className="historyDetails" key={product.id}>
+                  <div className="product-detail-img">
+                    <img src={product.imageUrl} />
+                  </div>
+                  <div div className="product-detail-desc">
+                    <h4>Product Name: {product.name}</h4>
+                    <p>Purchase Price: {product.orderLineItem.price}</p>
+                    <p>Quantity Purchased: {product.orderLineItem.quantity}</p>
+                    <p>Product Description:{product.description}</p>
+                  </div>
                 </div>
               )
             })

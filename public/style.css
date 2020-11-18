@@ -258,10 +258,25 @@ input {
 .checkout {
   display: flex;
   justify-content: center;
+  font-family: Roboto, sans-serif;
 }
 
 .innerCheckout {
   display: flex;
   flex-direction: column;
   margin: 50px;
+}
+.historyDetails {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.orderBox {
+  margin-top: 50px;
+}
+
+.orderPage {
+  font-family: Roboto, sans-serif;
 }
