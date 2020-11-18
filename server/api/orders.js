@@ -149,7 +149,6 @@ router.delete('/orderItem/:orderId', async (req, res, next) => {
 
 router.post('/cart/:orderId', async (req, res, next) => {
   try {
-    console.log('rejfhvuvhf', req.params.orderId)
     const deleted = await OrderLineItem.destroy({
       where: {
         orderId: req.params.orderId

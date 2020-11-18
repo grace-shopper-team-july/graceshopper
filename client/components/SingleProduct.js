@@ -34,16 +34,26 @@ class SingleProduct extends React.Component {
               <label htmlFor="quantity">
                 <h4>Quantity:</h4>
               </label>
-              <input
-                type="number"
-                value={this.props.productQtySelected}
-                onChange={evt => this.handleChange(evt)}
-              />
+              <div className="product-quantity-and-notification">
+                <input
+                  type="number"
+                  value={this.props.productQtySelected}
+                  onChange={evt => this.handleChange(evt)}
+                />
+                {this.props.displayAddedToCart ? (
+                  <div className="product-added-to-cart">Added to cart!</div>
+                ) : (
+                  <div />
+                )}
+              </div>
               <br />
-              <button type="button" onClick={() => this.handleClick(product)}>
+              <button
+                type="button"
+                className="button"
+                onClick={() => this.handleClick(product)}
+              >
                 ADD TO CART
               </button>
-              {this.props.displayAddedToCart ? <p>Added to cart!</p> : <div />}
             </div>
           </div>
         ) : (

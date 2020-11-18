@@ -48,79 +48,82 @@ export class SignupForm extends React.Component {
   render() {
     const redirectToLogin = this.state.redirectToLogin
     return (
-      <div>
-        <h1>Hi There, Create Your Account Here! </h1>
-        <form onSubmit={this.handleSubmit} name={this.props.name}>
-          <div>
-            <label htmlFor="firstName">
-              <small>First Name</small>
-            </label>
-            <input name="firstName" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="lastName">
-              <small>Last Name</small>
-            </label>
-            <input name="lastName" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="addressLine1">
-              <small>Address Line 1</small>
-            </label>
-            <input name="addressLine1" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="addressLine2">
-              <small>Address Line 2</small>
-            </label>
-            <input name="addressLine2" type="text" />
-          </div>
-          <div>
-            <label htmlFor="city">
-              <small>City</small>
-            </label>
-            <input name="city" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="state">
-              <small>State</small>
-            </label>
-            <input name="state" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="zip">
-              <small>Zip Code</small>
-            </label>
-            <input name="zip" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="phone">
-              <small>Phone</small>
-            </label>
-            <input name="phone" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="email">
-              <small>Email</small>
-            </label>
-            <input name="email" type="text" required />
-          </div>
-          <div>
-            <label htmlFor="password">
-              <small>Password</small>
-            </label>
-            <input name="password" type="password" required />
-          </div>
-          <div>
-            <button type="submit">{this.props.displayName}</button>
-          </div>
-          {this.props.error &&
-            this.props.error.response && (
-              <div> {this.props.error.response.data} </div>
-            )}
-        </form>
-        {redirectToLogin && <Redirect to="/login" />}
-        <a href="/auth/google">{this.props.displayName} with Google</a>
+      <div className="main-content">
+        <div className="main-content-child">
+          <h1>Hi There, Create Your Account Here! </h1>
+          <form onSubmit={this.handleSubmit} name={this.props.name}>
+            <div className="form">
+              <p>
+                <input
+                  name="firstName"
+                  type="text"
+                  placeholder="First Name"
+                  required
+                />
+              </p>
+              <p>
+                <input
+                  name="lastName"
+                  type="text"
+                  placeholder="Last Name"
+                  required
+                />
+              </p>
+              <p>
+                <input
+                  name="addressLine1"
+                  type="text"
+                  placeholder="Address Line 1"
+                  required
+                />
+              </p>
+              <p>
+                <input
+                  name="addressLine2"
+                  type="text"
+                  placeholder="Address Line2 (optional)"
+                />
+              </p>
+              <p>
+                <input name="city" type="text" placeholder="City" required />
+              </p>
+              <p>
+                <input name="state" type="text" placeholder="State" required />
+              </p>
+              <p>
+                <input name="zip" type="text" placeholder="Zip Code" required />
+              </p>
+              <p>
+                <input
+                  name="phone"
+                  type="text"
+                  placeholder="Phone Number"
+                  required
+                />
+              </p>
+              <p>
+                <input name="email" type="email" placeholder="Email" required />
+              </p>
+              <p>
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  required
+                />
+              </p>
+              <button type="submit" className="button">
+                {this.props.displayName}
+              </button>
+            </div>
+            {this.props.error &&
+              this.props.error.response && (
+                <div> {this.props.error.response.data} </div>
+              )}
+          </form>
+          {redirectToLogin && <Redirect to="/login" />}
+          <a href="/auth/google">{this.props.displayName} with Google</a>
+        </div>
       </div>
     )
   }

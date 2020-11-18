@@ -111,58 +111,60 @@ export class AllProducts extends React.Component {
     let species = this.state.filterList.slice(0, 5)
     let categories = this.state.filterList.slice(5)
     return (
-      <div className="searchContainer">
-        <form>
-          <div key="allCheck" id="allFilter">
-            <label htmlFor="myInput">All</label>
-            <input
-              id="myInput"
-              type="checkbox"
-              onClick={() => this.onFilterChange('ALL')}
-              checked={
-                this.state.currFilters.length === this.state.filterList.length
-              }
-            />
+      <div className="main-content">
+        <div className="searchContainer">
+          <form>
+            <div key="allCheck" id="allFilter">
+              <label htmlFor="myInput">All</label>
+              <input
+                id="myInput"
+                type="checkbox"
+                onClick={() => this.onFilterChange('ALL')}
+                checked={
+                  this.state.currFilters.length === this.state.filterList.length
+                }
+              />
+            </div>
+            {species.map((filt, idx) => (
+              <div key={idx} id="speciesFilters">
+                <React.Fragment>
+                  <label htmlFor={filt.id}>{filt.value.toLowerCase()}</label>
+                  <input
+                    id={filt.id}
+                    type="checkbox"
+                    checked={this.state.currFilters.includes(filt.value)}
+                    onClick={() => this.onFilterChange(filt.value)}
+                  />
+                </React.Fragment>
+              </div>
+            ))}
+            {categories.map((filt, idx) => (
+              <div key={idx} id="categoriesFilters">
+                <React.Fragment>
+                  <label htmlFor={filt.id}>{filt.value.toLowerCase()}</label>
+                  <input
+                    id={filt.id}
+                    type="checkbox"
+                    checked={this.state.currFilters.includes(filt.value)}
+                    onClick={() => this.onFilterChange(filt.value)}
+                  />
+                </React.Fragment>
+              </div>
+            ))}
+          </form>
+          <div className="all-products">
+            {productsToShow.map(item => (
+              <Link to={`/products/${item.id}`} key={item.id}>
+                <div className="all-products-single">
+                  <img src={item.imageUrl} />
+                  <h3>
+                    {item.name} - ${item.price}
+                  </h3>
+                </div>
+              </Link>
+            ))}
           </div>
-          {species.map((filt, idx) => (
-            <div key={idx} id="speciesFilters">
-              <React.Fragment>
-                <label htmlFor={filt.id}>{filt.value.toLowerCase()}</label>
-                <input
-                  id={filt.id}
-                  type="checkbox"
-                  checked={this.state.currFilters.includes(filt.value)}
-                  onClick={() => this.onFilterChange(filt.value)}
-                />
-              </React.Fragment>
-            </div>
-          ))}
-          {categories.map((filt, idx) => (
-            <div key={idx} id="categoriesFilters">
-              <React.Fragment>
-                <label htmlFor={filt.id}>{filt.value.toLowerCase()}</label>
-                <input
-                  id={filt.id}
-                  type="checkbox"
-                  checked={this.state.currFilters.includes(filt.value)}
-                  onClick={() => this.onFilterChange(filt.value)}
-                />
-              </React.Fragment>
-            </div>
-          ))}
-        </form>
-        <ul style={{marginLeft: '70px'}}>
-          {productsToShow.map(item => (
-            <div key={item.id}>
-              <li>
-                <h3>{item.name}</h3>
-                <img src={item.imageUrl} />
-                <h4>{`$${item.price}`}</h4>
-                <Link to={`/products/${item.id}`}>View Product Details</Link>
-              </li>
-            </div>
-          ))}
-        </ul>
+        </div>
       </div>
     )
   }

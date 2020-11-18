@@ -37,39 +37,37 @@ export class Cart extends React.Component {
 
   render() {
     const redirectToCheckout = this.state.redirectToCheckout
-    const testProduct = {
-      id: 5,
-      name: 'ferret-dress',
-      price: 32.99,
-      imageUrl: 'https://cozypetz.com/OPFerretinPinkstripdressharness.jpg',
-      qty: 1
-    }
     return (
-      <div>
-        <div id="shopping-cart-left">
-          <div id="shopping-cart-title">
-            <h3>Shopping Cart</h3>
-            <hr />
+      <div className="main-content">
+        <div className="shopping-cart">
+          <div id="shopping-cart-left">
+            <div id="shopping-cart-title">
+              <h1>Shopping Cart</h1>
+              <hr />
+            </div>
+            {getShoppingCart().length === 0
+              ? this.renderShoppingCartEmpty()
+              : this.renderShoppingCart()}
           </div>
-          {/* <div id="shopping-cart-table-header">
-            <p>Item</p>
-            <p>Item Price</p>
-            <p>Quantity</p>
-            <p>Total Price</p>
-            <hr />
-          </div> */}
-          {getShoppingCart().length === 0
-            ? this.renderShoppingCartEmpty()
-            : this.renderShoppingCart()}
-        </div>
-        <div id="shopping-cart-right">
-          <div id="shopping-cart-order-summary-title">
-            <h4>Order Summary</h4>
+          <div className="shopping-cart-right">
+            <div id="shopping-cart-order-summary-title">
+              <h4>Order Summary</h4>
+            </div>
+            {this.renderOrderSummaryList()}
           </div>
-          {this.renderOrderSummaryList()}
+          <div>
+            <p>
+              <button
+                type="button"
+                className="button"
+                onClick={() => this.handleClick()}
+              >
+                CHECKOUT
+              </button>
+            </p>
+            {redirectToCheckout && <Redirect to="/checkout" />}
+          </div>
         </div>
-        <button onClick={() => this.handleClick()}>CHECKOUT</button>
-        {redirectToCheckout && <Redirect to="/checkout" />}
       </div>
     )
   }
@@ -77,14 +75,14 @@ export class Cart extends React.Component {
   renderShoppingCart() {
     return getShoppingCart().map((item, idx) => {
       return (
-        <div id="cart-item" key={idx}>
-          <div id="cart-item-left">
-            <div id="cart-item-image">
+        <div className="cart-item" key={idx}>
+          <div className="cart-item-left">
+            <div className="cart-item-image">
               <img src={item.imageUrl} />
             </div>
           </div>
-          <div id="cart-item-right">
-            <div id="cart-item-attributes">Name: {item.name}</div>
+          <div className="cart-item-right">
+            <div id="cart-item-attributes">Name: {item.name}></div>
             <div id="cart-item-price">
               Price: {currency(item.price).format()}
             </div>
@@ -108,7 +106,6 @@ export class Cart extends React.Component {
               </button>
             </div>
           </div>
-          <hr />
         </div>
       )
     })
