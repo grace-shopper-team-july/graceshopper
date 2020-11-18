@@ -12,11 +12,25 @@ const app = express()
 // const socketio = require('socket.io')
 module.exports = app
 
-function isAdmin(req, res, next) {
-  if (req.body.user.admin) {
-    return true
+// function isAdmin(req, res, next) {
+//   if (req.body.user.admin) {
+//     return true
+//   }
+//   return false
+// }
+
+async function isAdmin(req, res, next) {
+  try {
+    console.log('in isAdmin')
+    console.log('REQ.BODY.USER.ADMIN:  ', req.user.dataValues.admin)
+    if (req.user.dataValues.admin) {
+      console.log('returning true')
+      return true
+    }
+    return false
+  } catch (error) {
+    next(error)
   }
-  return false
 }
 
 module.exports = isAdmin

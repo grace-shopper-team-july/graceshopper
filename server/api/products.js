@@ -1,21 +1,7 @@
 const router = require('express').Router()
 const Product = require('../db/models/products')
-// const isAdmin = require('./adminCheck')
+const isAdmin = require('./adminCheck')
 module.exports = router
-
-async function isAdmin(req, res, next) {
-  try {
-    console.log('in isAdmin')
-    console.log('REQ.BODY.USER.ADMIN:  ', req.user.dataValues.admin)
-    if (req.user.dataValues.admin) {
-      console.log('returning true')
-      return true
-    }
-    return false
-  } catch (error) {
-    next(error)
-  }
-}
 
 //get all products
 router.get('/', async (req, res, next) => {
