@@ -28,18 +28,29 @@ export class AdminManageUsers extends React.Component {
     const userArr = this.props.user.allUsers
     userArr.sort((a, b) => a.id - b.id)
     return (
-      <div>
-        <h2>Manage Users</h2>
-
+      <div className="ordzz">
+        <div className="ordTitle">
+          <h2>Manage Users</h2>
+        </div>
         {userArr && userArr.length > 0 ? (
           userArr.map(user => {
             return (
-              <div key={user.id}>
-                <p>User Id: {user.id}</p>
-                <p>User First Name: {user.firstName}</p>
-                <p>User Last Name: {user.lastName}</p>
-                <p>User Email: {user.email}</p>
-                <p>Admin Status: {user.admin.toString()}</p>
+              <div className="orderHistory" key={user.id}>
+                <div className="orders">
+                  <p>Id: {user.id}</p>
+                </div>
+                <div className="orders">
+                  <p>First Name: {user.firstName}</p>
+                </div>
+                <div className="orders">
+                  <p>Last Name: {user.lastName}</p>
+                </div>
+                <div className="orders">
+                  <p>Email: {user.email}</p>
+                </div>
+                <div className="orders">
+                  <p>Admin Status: {user.admin.toString()}</p>
+                </div>
 
                 <button onClick={() => this.toggleStatus(user)}>
                   Toggle Admin Status

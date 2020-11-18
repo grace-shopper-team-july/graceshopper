@@ -4,53 +4,55 @@ import {postProduct} from '../store/products'
 
 const AddProduct = props => {
   return (
-    <div>
+    <div className="newProducts">
       <h3>Add A New Product</h3>
-      <form onSubmit={props.handleSubmit}>
-        <div>
-          <label htmlFor="name">
-            <small>Name: </small>
-          </label>
-          <input name="name" type="text" />
-        </div>
-        <div>
-          <label htmlFor="description">
-            <small>Description: </small>
-          </label>
-          <input name="description" type="text" />
-        </div>
-        <div>
-          <label htmlFor="price">
-            <small>Price: </small>
-          </label>
-          <input name="price" type="text" />
-        </div>
-        <div>
-          <label htmlFor="imageUrl">
-            <small>Image: </small>
-          </label>
-          <input name="imageUrl" type="url" />
-        </div>
-        <div>
-          <label htmlFor="qoh">
-            <small>Quantity: </small>
-          </label>
-          <input name="qoh" type="text" />
-        </div>
-        <div>
-          <label htmlFor="species">
-            <small>Species: </small>
-          </label>
-          <input name="species" type="text" />
-        </div>
-        <div>
-          <label htmlFor="category">
-            <small>Category: </small>
-          </label>
-          <input name="category" type="text" />
-        </div>
-        <button>Submit</button>
-      </form>
+      <div className="userUpdateForm">
+        <form onSubmit={props.handleSubmit}>
+          <div>
+            <label htmlFor="name">
+              <small>Name: </small>
+            </label>
+            <input name="name" type="text" />
+          </div>
+          <div>
+            <label htmlFor="description">
+              <small>Description: </small>
+            </label>
+            <input name="description" type="text" />
+          </div>
+          <div>
+            <label htmlFor="price">
+              <small>Price: </small>
+            </label>
+            <input name="price" type="text" />
+          </div>
+          <div>
+            <label htmlFor="imageUrl">
+              <small>Image: </small>
+            </label>
+            <input name="imageUrl" type="url" />
+          </div>
+          <div>
+            <label htmlFor="qoh">
+              <small>Quantity: </small>
+            </label>
+            <input name="qoh" type="text" />
+          </div>
+          <div>
+            <label htmlFor="species">
+              <small>Species: </small>
+            </label>
+            <input name="species" type="text" />
+          </div>
+          <div>
+            <label htmlFor="category">
+              <small>Category: </small>
+            </label>
+            <input name="category" type="text" />
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
     </div>
   )
 }

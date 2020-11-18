@@ -21,23 +21,28 @@ export class AdminHome extends React.Component {
     const user = this.props.user.user
 
     return (
-      <div>
-        <div>
+      <div className="adminWelcome">
+        <div className="welcome">
           <h1>Welcome, {`${user.firstName} ${user.lastName}!`}</h1>
-          <h4>{user.email}</h4>
+          {/* <h4>{user.email}</h4> */}
         </div>
 
-        <div>
-          <h2>Admin Portal Options</h2>
+        <div className="adminPortal">
+          <h4>Admin Portal Options</h4>
+        </div>
+        <div className="adminPortalBtns">
           <Link to="/home/edit_account">
             <button>Edit Your Account</button>
           </Link>
+
           <Link to="/home/manageusers">
             <button>Manage Users</button>
           </Link>
+
           <Link to="/home/orders">
             <button>Order History</button>
           </Link>
+
           <Link to="/home/manageproducts">
             <button>Manage Products</button>
           </Link>

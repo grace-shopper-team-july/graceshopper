@@ -86,6 +86,111 @@ img {
   height: 100vh;
   justify-self: center;
 } */
+/* admin home */
+.adminWelcome {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+}
+
+.adminPortal {
+  margin-top: 50px;
+  font-family: Roboto, sans-serif;
+}
+.welcome {
+  display: flex;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+}
+.adminPortalBtns {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+}
+.userPortal {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: Roboto, sans-serif;
+}
+
+/* Edit your account */
+.userCont {
+  display: flex;
+  font-family: Roboto, sans-serif;
+  height: 80vh;
+}
+.userUpdateForm {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 50%;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 50%;
+}
+.update {
+  display: flex;
+}
+
+/* order history */
+.ordzz {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+}
+.ordTitle {
+  margin-left: 50px;
+}
+.orderHistory {
+  display: flex;
+  padding: 10px;
+  margin: 0px;
+  align-items: baseline;
+  border: 1px solid black;
+}
+.orders {
+  display: flex;
+  padding: 10px;
+}
+/* manage products */
+
+.manage {
+  display: flex;
+  font-family: Roboto, sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+.manageProducts {
+  display: flex;
+  flex-direction: column;
+}
+.each {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+.add {
+  display: flex;
+  width: 20%;
+}
+.mainEdit {
+  padding: 20px;
+  padding-top: 20px;
+  display: flex;
+}
+.productUpdate {
+  display: flex;
+  flex-direction: column;
+}
+.productBox {
+  display: flex;
+}
 
 input {
   font-family: Roboto, sans-serif;
@@ -225,4 +330,30 @@ input[type='number'] {
   display: inline-block;
   font-family: Roboto, sans-serif;
   color: #ffffff;
+}
+
+.checkout {
+  display: flex;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+}
+
+.innerCheckout {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+.historyDetails {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.orderBox {
+  margin-top: 50px;
+}
+
+.orderPage {
+  font-family: Roboto, sans-serif;
 }

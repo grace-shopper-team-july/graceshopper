@@ -22,19 +22,22 @@ export class UserHome extends React.Component {
   render() {
     const user = this.props.user
     return (
-      <div>
-        <div>
+      <div className="adminWelcome">
+        <div className="welcome">
           <h1>Welcome, {`${user.firstName} ${user.lastName}!`}</h1>
-          <h4>{user.email}</h4>
         </div>
         <div>
-          <h3>User Portal Options</h3>
-          <Link to="/home/edit_account">
-            <button>Edit Your Account</button>
-          </Link>
-          <Link to="home/orders">
-            <button>Order History</button>
-          </Link>
+          <div className="userPortal">
+            <h4>User Portal Options</h4>
+          </div>
+          <div className="adminPortalBtns">
+            <Link to="/home/edit_account">
+              <button>Edit Your Account</button>
+            </Link>
+            <Link to="home/orders">
+              <button>Order History</button>
+            </Link>
+          </div>
         </div>
       </div>
     )
