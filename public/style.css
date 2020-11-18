@@ -16,6 +16,10 @@ h6 {
   margin-top: 0px;
 }
 
+h3 {
+  margin-top: 15px;
+}
+
 h4 {
   font-size: 1em;
   font-weight: bolder;
@@ -25,10 +29,23 @@ label {
   display: block;
 }
 
+a {
+  color: #000000;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #a91010;
+}
+
 nav a {
   display: inline-block;
   margin: 1em;
   margin-top: 10px;
+  color: #ffffff;
+}
+
+nav a:hover {
   color: #ffffff;
 }
 
@@ -80,6 +97,12 @@ input {
   border-radius: 4px;
 }
 
+input[type='number'] {
+  width: 45px;
+  text-align: center;
+  display: block;
+}
+
 .button {
   background-color: #a91010;
   color: #ffffff;
@@ -121,6 +144,19 @@ input {
 .form input {
   width: 400px;
 }
+
+.all-products {
+  text-align: center;
+}
+
+.all-products-single {
+  margin: 40px;
+  display: inline-block;
+}
+
+.searchContainer form {
+  text-align: center;
+}
 .product-detail {
   display: flex;
   flex-direction: row;
@@ -133,6 +169,47 @@ input {
 .product-detail-desc {
   padding: 20px;
   width: 500px;
+}
+
+.product-quantity-and-notification {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.product-added-to-cart {
+  font-size: 15px;
+  font-weight: bold;
+  color: #a91010;
+  padding: 10px;
+  padding-left: 25px;
+}
+
+.shopping-cart {
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.shopping-cart-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart-right {
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cart-item-right {
+  margin-left: 100px;
+  margin-right: 300px;
 }
 
 #navbar {
@@ -149,4 +226,3 @@ input {
   font-family: Roboto, sans-serif;
   color: #ffffff;
 }
-
