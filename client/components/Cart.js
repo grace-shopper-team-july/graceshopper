@@ -82,7 +82,7 @@ export class Cart extends React.Component {
             </div>
           </div>
           <div className="cart-item-right">
-            <div id="cart-item-attributes">Name: {item.name}></div>
+            <div id="cart-item-attributes">Name: {item.name}</div>
             <div id="cart-item-price">
               Price: {currency(item.price).format()}
             </div>
